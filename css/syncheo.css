@@ -1,3 +1,15 @@
-.img-responsive .centree {
- margin: 0 auto;
+.img-responsive {
+	max-width : 80%;
+	display: flex;
+	padding: 20;
+	margin: 0 auto;
+	vertical-align: middle
+}
+
+.contact {
+	padding-left: 20px
+}
+
+.en-construction {
+	text-align: center
 }
