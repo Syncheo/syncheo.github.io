@@ -22,7 +22,7 @@ pluralizelisttitles = false
         shortname = "devcows"
     # Enable Google Analytics by entering your tracking code
     [services.googleAnalytics]
-        id = ""
+        id = "G-22LN7TMTXE"
 
 # Define the number of posts per page
 [pagination]
