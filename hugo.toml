@@ -166,7 +166,7 @@ pluralizelisttitles = false
     googleRecaptchaKey = "6Lep2FEsAAAAAAKkGwuiO6fhq0AHrvy4wt1fvkE9"
 
     about_us = "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>"
-    copyright = "Copyright (c) 2015 - 2016, YourCompany; all rights reserved."
+    copyright = "Copyright (c) 2026, Syncheo; all rights reserved."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
