@@ -163,7 +163,7 @@ pluralizelisttitles = false
     #   6. enter site key into `googleRecaptchaKey` to enable a recaptcha widget in your page.
     #
     enableRecaptchaInContactForm = true
-    googleRecaptchaKey = "6LelyVEsAAAAAMHhW2TFgTMlQbjGRMtHJvwDSjgj"
+    googleRecaptchaKey = "6Lep2FEsAAAAAAKkGwuiO6fhq0AHrvy4wt1fvkE9"
 
     about_us = "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>"
     copyright = "Copyright (c) 2015 - 2016, YourCompany; all rights reserved."
