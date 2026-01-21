@@ -1,10 +1,14 @@
 baseURL = "https://www.syncheo.tech/"
-title = "Universal"
+title = "Syncheo - Expertise IBM Jazz ELM"
 theme = "hugo-universal-theme"
 themesDir = "themes"
-languageCode = "en-us"
+languageCode = "fr-fr"
 # Site language. Available translations in the theme's `/i18n` directory.
-defaultContentLanguage = "en"
+defaultContentLanguage = "fr"
+
+[languages.fr]
+    languageName = "Français"
+    weight = 1
 
 # number of words of summarized post content (default 70)
 summaryLength = 70
@@ -27,22 +31,23 @@ pluralizelisttitles = false
 # Main menu
 [menu]
 [[menu.main]]
-    name       = "Home"
+    name       = "Accueil"
     identifier = "menu.home"
     url        = "/"
     weight     = 1
 
 [[menu.main]]
-    name       = "Option 1: Default Page"
-    url        = "/"
-    weight     = 1
-    parent     = "menu.home"
+    name       = "Services"
+    url        = "/services/"
+    weight     = 2
+    identifier = "menu.services"
 
 [[menu.main]]
-    name       = "Option 2: Application"
-    url        = "/"
-    weight     = 2
-    parent     = "menu.home"
+    name = "Contact"
+    url  = "/contact/"
+    weight = 3
+    identifier = "menu.contact"
+
 
 [[menu.main]]
     name       = "Option 3: Startup"
