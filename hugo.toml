@@ -110,6 +110,7 @@ pluralizelisttitles = false
     pre = "<i class='fas fa-2x fa-envelope'></i>"
 
 [params]
+    favicon = "img/favicon.png"
     viewMorePostLink = "/blog/"
     author = "DevCows"
     defaultKeywords = ["devcows", "hugo", "go"]
