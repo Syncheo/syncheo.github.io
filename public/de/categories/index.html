@@ -36,7 +36,7 @@
 
 
 
-<link href="/css/custom.css?1769095701" rel="stylesheet">
+<link href="/css/custom.css?1769106424" rel="stylesheet">
 
 
 
@@ -133,16 +133,22 @@
                         </span>
                         <div class="ct-lang-dropdown">
                             
-                            <a href="http://localhost:1313/categories/" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
+							<a href="/categories/" 
+								onclick="localStorage.setItem('site_lang','fr'); sessionStorage.setItem('manualLanguageChoice','true')">
+
                                 🇫🇷 FRANÇAIS
                             </a>
                             
-                            <a href="http://localhost:1313/en/categories/" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
+							<a href="/en/categories/" 
+								onclick="localStorage.setItem('site_lang','en'); sessionStorage.setItem('manualLanguageChoice','true')">
+
                                 🇺🇸 ENGLISH
 								
                             </a>
                             
-                            <a href="http://localhost:1313/de/categories/" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
+							<a href="/de/categories/" 
+								onclick="localStorage.setItem('site_lang','de'); sessionStorage.setItem('manualLanguageChoice','true')">
+
                                 🇩🇪 DEUTSCH
 								
                             </a>
@@ -545,31 +551,33 @@
 
 <script>
 (function () {
-  
-  const saved = localStorage.getItem("site_lang");
-  if (saved) return;
-
   const path = window.location.pathname;
 
   
-  if (
-    path === "/en/" || path.startsWith("/en/") ||
-    path === "/de/" || path.startsWith("/de/")
-  ) return;
+  if (path === "/en/" || path.startsWith("/en/") || path === "/de/" || path.startsWith("/de/")) return;
+
+  
+  const savedLang = localStorage.getItem("site_lang"); 
+  if (savedLang && savedLang !== "fr") {
+    window.location.replace("/" + savedLang + (path === "/" ? "/" : path));
+    return;
+  }
+  if (savedLang === "fr") return;
+
+  
+  if (sessionStorage.getItem("manualLanguageChoice")) return;
 
   
   const navLang = (navigator.language || "").toLowerCase();
-
-  let targetLang = null;
-  if (navLang.startsWith("en")) targetLang = "en";
-  else if (navLang.startsWith("de")) targetLang = "de";
+  let target = null;
+  if (navLang.startsWith("en")) target = "en";
+  else if (navLang.startsWith("de")) target = "de";
   else return; 
 
-  
-  const newUrl = "/" + targetLang + (path === "/" ? "/" : path);
-  window.location.replace(newUrl);
+  window.location.replace("/" + target + (path === "/" ? "/" : path));
 })();
 </script>
+
 
 
 

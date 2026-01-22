@@ -36,40 +36,6 @@
                 href="http://localhost:1313/de/categories/"
                 />
   </url><url>
-    <loc>http://localhost:1313/de/portfolio/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="http://localhost:1313/portfolio/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/portfolio/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de-de"
-                href="http://localhost:1313/de/portfolio/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/de/services/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr-fr"
-                href="http://localhost:1313/services/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="http://localhost:1313/en/services/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de-de"
-                href="http://localhost:1313/de/services/"
-                />
-  </url><url>
     <loc>http://localhost:1313/de/</loc>
     <xhtml:link
                 rel="alternate"

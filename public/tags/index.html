@@ -36,7 +36,7 @@
 
 
 
-<link href="/css/custom.css?1769095701" rel="stylesheet">
+<link href="/css/custom.css?1769106424" rel="stylesheet">
 
 
 
@@ -79,7 +79,7 @@
   <meta property="og:image:height" content="420">
 
 
-
+<meta property="og:updated_time" content="2021-08-01T21:29:20&#43;0200">
 
 
 
@@ -133,16 +133,22 @@
                         </span>
                         <div class="ct-lang-dropdown">
                             
-                            <a href="http://localhost:1313/tags/" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
+							<a href="/tags/" 
+								onclick="localStorage.setItem('site_lang','fr'); sessionStorage.setItem('manualLanguageChoice','true')">
+
                                 🇫🇷 FRANÇAIS
                             </a>
                             
-                            <a href="http://localhost:1313/en/tags/" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
+							<a href="/en/tags/" 
+								onclick="localStorage.setItem('site_lang','en'); sessionStorage.setItem('manualLanguageChoice','true')">
+
                                 🇺🇸 ENGLISH
 								
                             </a>
                             
-                            <a href="http://localhost:1313/de/tags/" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
+							<a href="/de/tags/" 
+								onclick="localStorage.setItem('site_lang','de'); sessionStorage.setItem('manualLanguageChoice','true')">
+
                                 🇩🇪 DEUTSCH
 								
                             </a>
@@ -435,12 +441,82 @@
 
 
 
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Catégories</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            
+            
+            <li >
+                <a href="/categories/lorem">LOREM (2)</a>
+            </li>
+            
+            <li >
+                <a href="/categories/programming">PROGRAMMING (3)</a>
+            </li>
+            
+            <li >
+                <a href="/categories/pseudo">PSEUDO (2)</a>
+            </li>
+            
+            <li >
+                <a href="/categories/starting">STARTING (1)</a>
+            </li>
+            
+        </ul>
+    </div>
+
+</div>
 
 
 
 
 
 
+
+
+<div class="panel sidebar-menu">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">Tags</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            
+            
+            <li >
+                <a href="/tags/go"><i class="fas fa-tags"></i> go</a>
+            </li>
+            
+            <li >
+                <a href="/tags/golang"><i class="fas fa-tags"></i> golang</a>
+            </li>
+            
+            <li >
+                <a href="/tags/hugo"><i class="fas fa-tags"></i> hugo</a>
+            </li>
+            
+            <li >
+                <a href="/tags/ipsum"><i class="fas fa-tags"></i> ipsum</a>
+            </li>
+            
+            <li >
+                <a href="/tags/programming"><i class="fas fa-tags"></i> programming</a>
+            </li>
+            
+            <li >
+                <a href="/tags/theme"><i class="fas fa-tags"></i> theme</a>
+            </li>
+            
+        </ul>
+    </div>
+
+</div>
 
 
 
@@ -482,6 +558,45 @@
             <h4>Billets récents</h4>
 
             <div class="blog-entries">
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="http://localhost:1313/blog/2021/08/01/categories-post/">
+                          
+                            <img src="/img/banners/banner-4.jpg" class="img-responsive" alt="Categories Post" />
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="http://localhost:1313/blog/2021/08/01/categories-post/">Categories Post</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="http://localhost:1313/blog/2015/10/02/linked-post/">
+                          
+                            <img src="/img/banners/banner-4.jpg" class="img-responsive" alt="Linked post" />
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="http://localhost:1313/blog/2015/10/02/linked-post/">Linked post</a></h5>
+                    </div>
+                </div>
+                
+                <div class="item same-height-row clearfix">
+                    <div class="image same-height-always">
+                        <a href="http://localhost:1313/blog/2015/09/17/go-is-for-lovers/">
+                          
+                            <img src="/img/banners/banner-2.jpg" class="img-responsive" alt="Go is for lovers" />
+                          
+                        </a>
+                    </div>
+                    <div class="name same-height-always">
+                        <h5><a href="http://localhost:1313/blog/2015/09/17/go-is-for-lovers/">Go is for lovers</a></h5>
+                    </div>
+                </div>
                 
             </div>
 
@@ -545,31 +660,33 @@
 
 <script>
 (function () {
-  
-  const saved = localStorage.getItem("site_lang");
-  if (saved) return;
-
   const path = window.location.pathname;
 
   
-  if (
-    path === "/en/" || path.startsWith("/en/") ||
-    path === "/de/" || path.startsWith("/de/")
-  ) return;
+  if (path === "/en/" || path.startsWith("/en/") || path === "/de/" || path.startsWith("/de/")) return;
+
+  
+  const savedLang = localStorage.getItem("site_lang"); 
+  if (savedLang && savedLang !== "fr") {
+    window.location.replace("/" + savedLang + (path === "/" ? "/" : path));
+    return;
+  }
+  if (savedLang === "fr") return;
+
+  
+  if (sessionStorage.getItem("manualLanguageChoice")) return;
 
   
   const navLang = (navigator.language || "").toLowerCase();
-
-  let targetLang = null;
-  if (navLang.startsWith("en")) targetLang = "en";
-  else if (navLang.startsWith("de")) targetLang = "de";
+  let target = null;
+  if (navLang.startsWith("en")) target = "en";
+  else if (navLang.startsWith("de")) target = "de";
   else return; 
 
-  
-  const newUrl = "/" + targetLang + (path === "/" ? "/" : path);
-  window.location.replace(newUrl);
+  window.location.replace("/" + target + (path === "/" ? "/" : path));
 })();
 </script>
+
 
 
 
