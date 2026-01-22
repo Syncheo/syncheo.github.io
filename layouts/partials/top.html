@@ -29,7 +29,7 @@
 </div>
 
 <style>
-/* On force le style pour ne pas casser la topbar du thème */
+/* On force le conteneur social à accepter le menu de langue sans broncher */
 #top .social {
     display: flex;
     align-items: center;
@@ -44,7 +44,9 @@
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
-    color: #eeeeee; /* Couleur du texte original */
+    color: #eeeeee;
+    /* Empêche le bouton principal de se casser en deux */
+    white-space: nowrap; 
 }
 
 .ct-current-lang {
@@ -58,7 +60,8 @@
     top: 100%;
     right: 0;
     background-color: #ffffff;
-    min-width: 150px;
+    /* On augmente la largeur pour tenir "🇫🇷 FRANÇAIS" sur une ligne */
+    min-width: 160px; 
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 9999;
     border-radius: 0 0 4px 4px;
@@ -71,18 +74,26 @@
     display: block !important;
     text-align: left !important;
     border-bottom: 1px solid #f1f1f1 !important;
-    float: none !important; /* Très important pour annuler le float du thème */
+    float: none !important;
     margin: 0 !important;
     line-height: 1.4 !important;
+    /* EMPECHE LE TEXTE DE PASSER A LA LIGNE DANS LE MENU */
+    white-space: nowrap !important; 
+}
+
+.ct-lang-dropdown a:last-child {
+    border-bottom: none !important;
 }
 
 .ct-lang-dropdown a:hover {
     background-color: #f8f8f8 !important;
-    color: #38a7bb !important; /* La couleur bleue de ton thème */
+    color: #38a7bb !important;
 }
 
 .ct-lang-selector:hover .ct-lang-dropdown {
     display: block;
 }
 </style>
+
+
 {{ end }}
