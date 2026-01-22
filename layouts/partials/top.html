@@ -11,21 +11,21 @@
                     <a href="mailto:contact@syncheo.tech" class="email" data-animate-hover="pulse"><i class='fas fa-envelope'></i></a>
 
                     {{ if .IsTranslated }}
-						{{ range .Translations }}
-						<a href="{{ .Permalink }}" class="language" style="font-weight: bold; margin-left: 10px; border-left: 1px solid #777; padding-left: 10px; vertical-align: middle;">
-							{{ if eq .Language.Lang "en" }}🇺🇸{{ else }}🇫🇷{{ end }} {{ .Language.LanguageName | upper }}
-						</a>
-						{{ end }}
-					{{ else }}
-						{{ range .AllTranslations }}
-							{{ if ne .Language $.Language }}
-							<a href="{{ .Permalink }}" class="language" style="font-weight: bold; margin-left: 10px; border-left: 1px solid #777; padding-left: 10px; vertical-align: middle;">
-								{{ if eq .Language.Lang "en" }}🇺🇸{{ else }}🇫🇷{{ end }} {{ .Language.LanguageName | upper }}
-							</a>
-							{{ end }}
-						{{ end }}
-					{{ end }}
-									</div>
+                        {{ range .Translations }}
+                        <a href="{{ .Permalink }}" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')" class="language" style="font-weight: bold; margin-left: 10px; border-left: 1px solid #777; padding-left: 10px; vertical-align: middle;">
+                            {{ if eq .Language.Lang "en" }}🇺🇸{{ else }}🇫🇷{{ end }} {{ .Language.LanguageName | upper }}
+                        </a>
+                        {{ end }}
+                    {{ else }}
+                        {{ range .AllTranslations }}
+                            {{ if ne .Language $.Language }}
+                            <a href="{{ .Permalink }}" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')" class="language" style="font-weight: bold; margin-left: 10px; border-left: 1px solid #777; padding-left: 10px; vertical-align: middle;">
+                                {{ if eq .Language.Lang "en" }}🇺🇸{{ else }}🇫🇷{{ end }} {{ .Language.LanguageName | upper }}
+                            </a>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </div>
             </div>
         </div>
     </div>
