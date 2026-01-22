@@ -1,3 +1,3 @@
 ---
-title: "Expertise IBM Jazz ELM"
+title: "Syncheo - IBM Jazz ELM Experte"
 ---
