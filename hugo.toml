@@ -63,7 +63,7 @@ defaultContentLanguageInSubdir = false
 		[languages.en.menu]
 			[[languages.en.menu.main]]
     			name = "Home"
-    			url = "/en/"
+    			url = "/"
     			weight = 1
 
 			[[languages.en.menu.main]]
@@ -108,7 +108,7 @@ defaultContentLanguageInSubdir = false
 		[languages.de.menu]
 			[[languages.de.menu.main]]
 				name = "Startseite"
-				url = "/de/"
+				url = "/"
 				weight = 1
 
 			[[languages.de.menu.main]]
