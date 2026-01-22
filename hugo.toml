@@ -24,35 +24,35 @@ defaultContentLanguageInSubdir = false
 				
 			[[languages.fr.menu.main]]
 				name = "Services"
-    			url = "/services/"
+    			url = "services"
 				weight = 2
 				
 			[[languages.fr.menu.main]]
     			name = "Réalisations"
-    			url = "/portfolio/"
+    			url = "portfolio"
     			weight = 3
 
 			[[languages.fr.menu.main]]
 				identifier = "ressources_fr"
     			name = "Ressources"
-				url = "/blog/"  # Ou laisse vide si tu veux juste le menu déroulant
+				url = "blog"  # Ou laisse vide si tu veux juste le menu déroulant
 				weight = 4
 				
 				[[languages.fr.menu.main]]
 					parent = "ressources_fr"
 					name = "Blog Technique"
-					url = "/blog/"
+					url = "blog"
 					weight = 1
 
 				[[languages.fr.menu.main]]
 					parent = "ressources_fr"
     				name = "FAQ ELM"
-    				url = "/faq/"
+    				url = "faq"
     				weight = 2
 				
 			[[languages.fr.menu.main]]
     			name = "Contact"
-    			url = "/contact/"
+    			url = "contact"
     			weight = 5
 
 	[languages.en]
@@ -63,40 +63,40 @@ defaultContentLanguageInSubdir = false
 		[languages.en.menu]
 			[[languages.en.menu.main]]
     			name = "Home"
-    			url = "/"
+    			url = "/en/"
     			weight = 1
 
 			[[languages.en.menu.main]]
     			name = "Services"
-    			url = "/services/"
+    			url = "services"
     			weight = 2
 
 			[[languages.en.menu.main]]
 				name = "Portfolio"
-				url = "/portfolio/"
+				url = "portfolio"
 				weight = 3
 					
 			[[languages.en.menu.main]]
 				identifier = "resources_en"
 				name = "Resources"
-				url = "/blog/"
+				url = "blog"
 				weight = 4
 
 				[[languages.en.menu.main]]
 					parent = "resources_en"
 					name = "Technical Blog"
-					url = "/blog/"
+					url = "blog"
 					weight = 1
 
 				[[languages.en.menu.main]]
 					parent = "resources_en"
 					name = "ELM FAQ"
-					url = "/faq/"
+					url = "faq"
 					weight = 2
 
 			[[languages.en.menu.main]]
 				name = "Contact"
-				url = "/contact/"
+				url = "contact"
 				weight = 5
 
 	[languages.de]
@@ -108,40 +108,40 @@ defaultContentLanguageInSubdir = false
 		[languages.de.menu]
 			[[languages.de.menu.main]]
 				name = "Startseite"
-				url = "/"
+				url = "/de/"
 				weight = 1
 
 			[[languages.de.menu.main]]
 				name = "Leistungen"
-				url = "/services/"
+				url = "services"
 				weight = 2
 
 			[[languages.de.menu.main]]
 				name = "Portfolio"
-				url = "/portfolio/"
+				url = "portfolio"
 				weight = 3
 
 			[[languages.de.menu.main]]
 				identifier = "resources_de"
 				name = "Ressourcen"
-				url = "/blog/"
+				url = "blog"
 				weight = 4
 
 				[[languages.de.menu.main]]
 					parent = "resources_de"
 					name = "Technik-Blog"
-					url = "/blog/"
+					url = "blog"
 					weight = 1
 
 				[[languages.de.menu.main]]
 					parent = "resources_de"
 					name = "ELM FAQ"
-					url = "/faq/"
+					url = "faq"
 					weight = 2
 
 			[[languages.de.menu.main]]
 				name = "Kontakt"
-				url = "/contact/"
+				url = "contact"
 				weight = 5
 
 # number of words of summarized post content (default 70)
