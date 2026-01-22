@@ -4,25 +4,50 @@
   <head>
     {{ partial "headers.html" . }}
     {{ partial "custom_headers.html" . }}
-<script>
-  (function() {
-    // Si l'utilisateur a cliqué manuellement sur un drapeau, on arrête la redirection auto
-    if (sessionStorage.getItem('manualLanguageChoice')) {
-      return; 
-    }
+<div class="language-dropdown" style="display: inline-block; position: relative; margin-left: 15px; vertical-align: middle;">
+    <a href="#" style="font-weight: bold; cursor: default;">
+        {{ if eq .Language.Lang "en" }}🇺🇸{{ else if eq .Language.Lang "de" }}🇩🇪{{ else }}🇫🇷{{ end }} {{ .Language.LanguageName | upper }} <i class="fa fa-caret-down"></i>
+    </a>
 
-    if (window.location.pathname === "/" || window.location.pathname === "") {
-      var userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
+    <div class="dropdown-content">
+        {{ range .AllTranslations }}
+        <a href="{{ .Permalink }}" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
+            {{ if eq .Language.Lang "en" }}🇺🇸{{ else if eq .Language.Lang "de" }}🇩🇪{{ else }}🇫🇷{{ end }} {{ .Language.LanguageName | upper }}
+        </a>
+        {{ end }}
+    </div>
+</div>
 
-      if (userLang === 'en') {
-        window.location.href = "/en/";
-      } else if (userLang === 'de') {
-        window.location.href = "/de/";
-      }
-      // Pour 'fr', le comportement par défaut est de rester sur "/"
-    }
-  })();
-</script>
+<style>
+/* Un peu de CSS pour que ce soit beau et fonctionnel */
+.language-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    right: 0;
+    border-radius: 4px;
+}
+
+.language-dropdown .dropdown-content a {
+    color: #333 !important;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.language-dropdown .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
   </head>
 
   <body>
