@@ -175,6 +175,7 @@ pluralizelisttitles = false
     target = "content"
     lang = "en"
 
+
   [[module.mounts]]
     source = "content/shared"
     target = "content"
