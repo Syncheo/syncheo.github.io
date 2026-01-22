@@ -17,7 +17,9 @@
                         <div class="ct-lang-dropdown">
                             {{ range .AllTranslations }}
                             <a href="{{ .Permalink }}" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
-                                {{ if eq .Language.Lang "en" }}🇺🇸 ENGLISH{{ else if eq .Language.Lang "de" }}🇩🇪 DEUTSCH{{ else }}🇫🇷 FRANÇAIS{{ end }}
+                                {{ if eq .Language.Lang "en" }}🇺🇸 ENGLISH
+								{{ else if eq .Language.Lang "de" }}🇩🇪 DEUTSCH
+								{{ else }}🇫🇷 FRANÇAIS{{ end }}
                             </a>
                             {{ end }}
                         </div>
@@ -53,9 +55,6 @@
     padding: 10px 5px;
     display: inline-block;
 }
-
-
-
 
 .ct-lang-dropdown {
     display: none;
