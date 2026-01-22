@@ -1,79 +1,88 @@
-<div class="social">
-    <a href="https://github.com/Syncheo" target="_blank" class="external github" data-animate-hover="pulse"><i class='fab fa-github'></i></a>
-    <a href="mailto:contact@syncheo.tech" class="email" data-animate-hover="pulse"><i class='fas fa-envelope'></i></a>
+{{ if .Site.Params.topbar.enable }}
+<div id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-5 contact">
+                {{ .Site.Params.topbar.text | safeHTML }}
+            </div>
+            <div class="col-xs-7">
+                <div class="social">
+                    <a href="https://github.com/Syncheo" target="_blank" class="external github" data-animate-hover="pulse"><i class='fab fa-github'></i></a>
+                    <a href="mailto:contact@syncheo.tech" class="email" data-animate-hover="pulse"><i class='fas fa-envelope'></i></a>
 
-    <div class="ct-language-container">
-        <button class="ct-language-btn">
-            {{ if eq .Language.Lang "en" }}🇺🇸 EN{{ else if eq .Language.Lang "de" }}🇩🇪 DE{{ else }}🇫🇷 FR{{ end }} <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="ct-language-content">
-            {{ range .AllTranslations }}
-            <a href="{{ .Permalink }}" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
-                {{ if eq .Language.Lang "en" }}🇺🇸 ENGLISH{{ else if eq .Language.Lang "de" }}🇩🇪 DEUTSCH{{ else }}🇫🇷 FRANÇAIS{{ end }}
-            </a>
-            {{ end }}
+                    <div class="ct-lang-selector">
+                        <span class="ct-current-lang">
+                            {{ if eq .Language.Lang "en" }}🇺🇸 EN{{ else if eq .Language.Lang "de" }}🇩🇪 DE{{ else }}🇫🇷 FR{{ end }} <i class="fa fa-caret-down"></i>
+                        </span>
+                        <div class="ct-lang-dropdown">
+                            {{ range .AllTranslations }}
+                            <a href="{{ .Permalink }}" onclick="sessionStorage.setItem('manualLanguageChoice', 'true')">
+                                {{ if eq .Language.Lang "en" }}🇺🇸 ENGLISH{{ else if eq .Language.Lang "de" }}🇩🇪 DEUTSCH{{ else }}🇫🇷 FRANÇAIS{{ end }}
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <style>
-/* On utilise des préfixes 'ct-' pour éviter tout conflit avec le thème */
-.ct-language-container {
-    display: inline-block;
+/* On force le style pour ne pas casser la topbar du thème */
+#top .social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ct-lang-selector {
     position: relative;
+    display: inline-block;
     margin-left: 15px;
-}
-
-.ct-language-btn {
-    background: none;
-    border: none;
-    color: #eee; /* Couleur du texte de la topbar */
-    font-weight: bold;
-    font-size: 12px;
-    text-transform: uppercase;
     cursor: pointer;
-    padding: 5px 10px;
-    line-height: 1;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #eeeeee; /* Couleur du texte original */
 }
 
-.ct-language-content {
+.ct-current-lang {
+    padding: 10px 5px;
+    display: inline-block;
+}
+
+.ct-lang-dropdown {
     display: none;
     position: absolute;
+    top: 100%;
     right: 0;
     background-color: #ffffff;
-    min-width: 140px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 9999;
-    border-radius: 4px;
-    margin-top: 5px;
+    border-radius: 0 0 4px 4px;
 }
 
-.ct-language-content a {
-    color: #333 !important;
+.ct-lang-dropdown a {
+    color: #333333 !important;
     padding: 10px 15px !important;
     text-decoration: none !important;
     display: block !important;
-    font-size: 13px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-    float: none !important; /* Annule le float du thème */
+    text-align: left !important;
+    border-bottom: 1px solid #f1f1f1 !important;
+    float: none !important; /* Très important pour annuler le float du thème */
+    margin: 0 !important;
     line-height: 1.4 !important;
 }
 
-.ct-language-content a:last-child { border-bottom: none; }
-
-.ct-language-content a:hover {
-    background-color: #f1f1f1;
-    color: #38a7bb !important; /* Couleur d'accentuation du thème */
+.ct-lang-dropdown a:hover {
+    background-color: #f8f8f8 !important;
+    color: #38a7bb !important; /* La couleur bleue de ton thème */
 }
 
-/* Affichage au survol */
-.ct-language-container:hover .ct-language-content {
+.ct-lang-selector:hover .ct-lang-dropdown {
     display: block;
 }
-
-/* Alignement mobile */
-@media (max-width: 767px) {
-    .ct-language-container { margin-left: 5px; }
-}
 </style>
+{{ end }}
