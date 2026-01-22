@@ -4,7 +4,22 @@ theme = "hugo-universal-theme"
 themesDir = "themes"
 languageCode = "fr-fr"
 # Site language. Available translations in the theme's `/i18n` directory.
+
 defaultContentLanguage = "fr"
+
+[languages]
+  [languages.fr]
+    languageName = "Français"
+    contentDir = "content/fr"
+    weight = 1
+
+  [languages.en]
+    languageName = "English"
+    contentDir = "content/en"
+    weight = 2
+
+
+
 
 [languages.fr]
     languageName = "Français"
@@ -31,25 +46,39 @@ pluralizelisttitles = false
 [menu]
 
     # ACCUEIL
-    [[menu.main]]
+    [[languages.fr.menu.main]]
+        identifier = "menu.home"
+        name       = "Accueil"
+        url        = "/"
+        weight     = 1
+        
+    [[languages.fr.menu.main]]
+        name = "Services"
+        url = "/services/"
+        weight = 1
+
+    [[languages.fr.menu.main]]
+        name = "Réalisations"
+        url = "/portfolio/"
+        weight = 2
+
+# Menu Anglais
+
+    [[languages.en.menu.main]]
         identifier = "menu.home"
         name       = "Accueil"
         url        = "/"
         weight     = 1
 
-    # SERVICES (Votre offre commerciale)
-    [[menu.main]]
-        identifier = "menu.services"
-        name       = "Services"
-        url        = "/services/"
-        weight     = 2
+    [[languages.en.menu.main]]
+        name = "Services"
+        url = "/en/services/"
+        weight = 1
 
-    # RÉALISATIONS (Preuve sociale / Cas clients)
-    [[menu.main]]
-        identifier = "menu.portfolio"
-        name       = "Réalisations"
-        url        = "/portfolio/"
-        weight     = 3
+    [[languages.en.menu.main]]
+        name = "Portfolio"
+        url = "/en/portfolio/"
+        weight = 2
 
     # RESSOURCES (La proposition en plus : pour capter l'intérêt)
     [[menu.main]]
@@ -98,6 +127,8 @@ pluralizelisttitles = false
     defaultKeywords = ["devcows", "hugo", "go"]
     mainSections = ["blog"]
     defaultDescription = "Site template made by Devcows using Hugo"
+
+    enableLanguageDropdown = true
 
     # Social media
     facebook_site = "" # the Facebook handle of your site ('https://www.facebook.com/HANDLE')
