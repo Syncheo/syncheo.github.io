@@ -32,7 +32,6 @@ defaultContentLanguageInSubdir = false
     			url = "/portfolio/"
     			weight = 3
 
-
 			[[languages.fr.menu.main]]
 				identifier = "ressources_fr"
     			name = "Ressources"

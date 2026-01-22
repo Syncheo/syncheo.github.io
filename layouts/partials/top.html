@@ -1,4 +1,15 @@
 {{ if .Site.Params.topbar.enable }}
+
+<script>
+    // Force la mémorisation de la langue dès qu'on est sur une URL spécifique
+    (function() {
+        var path = window.location.pathname;
+        if (path.includes('/en/') || path.includes('/de/')) {
+            sessionStorage.setItem('manualLanguageChoice', 'true');
+        }
+    })();
+</script>
+
 <div id="top">
     <div class="container">
         <div class="row">
