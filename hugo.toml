@@ -55,48 +55,92 @@ defaultContentLanguageInSubdir = false
     			url = "/contact/"
     			weight = 5
 
-		[languages.en]
-			languageName = "English"
-			contentDir = "content/en"
-			weight = 2
-			[languages.en.menu]
-				[[languages.en.menu.main]]
-    				name = "Home"
-    				url = "/en/"
-    				weight = 1
+	[languages.en]
+		languageName = "English"
+		contentDir = "content/en"
+		weight = 2
+		[languages.en.menu]
+			[[languages.en.menu.main]]
+    			name = "Home"
+    			url = "/en/"
+    			weight = 1
 
-  				[[languages.en.menu.main]]
-    				name = "Services"
-    				url = "/en/services/"
-    				weight = 2
+			[[languages.en.menu.main]]
+    			name = "Services"
+    			url = "/en/services/"
+    			weight = 2
 
-				[[languages.en.menu.main]]
-    				name = "Portfolio"
-    				url = "/en/portfolio/"
-    				weight = 3
+			[[languages.en.menu.main]]
+				name = "Portfolio"
+				url = "/en/portfolio/"
+				weight = 3
 					
+			[[languages.en.menu.main]]
+				identifier = "resources_en"
+				name = "Resources"
+				url = "/en/blog/"
+				weight = 4
+
 				[[languages.en.menu.main]]
-					identifier = "resources_en"
-    				name = "Resources"
-    				url = "/en/blog/"
-    				weight = 4
+					parent = "resources_en"
+					name = "Technical Blog"
+					url = "/en/blog/"
+					weight = 1
 
-  					[[languages.en.menu.main]]
-    					parent = "resources_en"
-    					name = "Technical Blog"
-    					url = "/en/blog/"
-    					weight = 1
-	
-					[[languages.en.menu.main]]
-    					parent = "resources_en"
-    					name = "ELM FAQ"
-    					url = "/en/faq/"
-    					weight = 2
+				[[languages.en.menu.main]]
+					parent = "resources_en"
+					name = "ELM FAQ"
+					url = "/en/faq/"
+					weight = 2
 
-  				[[languages.en.menu.main]]
-    				name = "Contact"
-    				url = "/en/contact/"
-    				weight = 5
+			[[languages.en.menu.main]]
+				name = "Contact"
+				url = "/en/contact/"
+				weight = 5
+
+	[languages.de]
+		languageName = "Deutsch"
+		languageCode = "de-de"
+		contentDir = "content/de"
+		weight = 3
+		[languages.de.menu]
+			[[languages.de.menu.main]]
+				name = "Startseite"
+				url = "/de/"
+				weight = 1
+
+			[[languages.de.menu.main]]
+				name = "Leistungen"
+				url = "/de/services/"
+				weight = 2
+
+			[[languages.de.menu.main]]
+				name = "Portfolio"
+				url = "/de/portfolio/"
+				weight = 3
+
+			[[languages.de.menu.main]]
+				identifier = "resources_de"
+				name = "Ressourcen"
+				url = "/de/blog/"
+				weight = 4
+
+				[[languages.de.menu.main]]
+					parent = "resources_de"
+					name = "Technik-Blog"
+					url = "/de/blog/"
+					weight = 1
+
+				[[languages.de.menu.main]]
+					parent = "resources_de"
+					name = "ELM FAQ"
+					url = "/de/faq/"
+					weight = 2
+
+			[[languages.de.menu.main]]
+				name = "Kontakt"
+				url = "/de/contact/"
+				weight = 5
 
 # number of words of summarized post content (default 70)
 summaryLength = 70
