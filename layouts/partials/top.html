@@ -60,11 +60,12 @@
     top: 100%;
     right: 0;
     background-color: #ffffff;
-    /* On augmente la largeur pour tenir "🇫🇷 FRANÇAIS" sur une ligne */
     min-width: 160px; 
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 9999;
     border-radius: 0 0 4px 4px;
+    /* AJOUT : Un petit padding interne en haut et en bas du menu complet */
+    padding: 5px 0; 
 }
 
 .ct-lang-dropdown a {
@@ -77,10 +78,12 @@
     float: none !important;
     margin: 0 !important;
     line-height: 1.4 !important;
-    /* EMPECHE LE TEXTE DE PASSER A LA LIGNE DANS LE MENU */
     white-space: nowrap !important; 
 }
 
+/* On enlève la bordure du dernier élément pour qu'il soit "propre" */
+/* Mais comme on a ajouté un padding au conteneur parent (le .ct-lang-dropdown), */
+/* il y aura maintenant un bel espace blanc en dessous ! */
 .ct-lang-dropdown a:last-child {
     border-bottom: none !important;
 }
