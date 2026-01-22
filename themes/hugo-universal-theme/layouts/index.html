@@ -4,6 +4,31 @@
   <head>
     {{ partial "headers.html" . }}
     {{ partial "custom_headers.html" . }}
+<script>
+  (function() {
+    // 1. On ne redirige que si on est sur la racine "/"
+    if (window.location.pathname === "/" || window.location.pathname === "") {
+      
+      // 2. On regarde si l'utilisateur a déjà fait un choix manuel (cookie/localStorage)
+      var savedLang = localStorage.getItem('preferredLang');
+      var userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
+
+      if (savedLang) {
+        if (savedLang === 'en') window.location.href = "/en/";
+        if (savedLang === 'de') window.location.href = "/de/";
+        // Si c'est 'fr', on reste sur "/"
+      } else {
+        // 3. Sinon, on utilise la langue du navigateur
+        if (userLang === 'en') {
+          window.location.href = "/en/";
+        } else if (userLang === 'de') {
+          window.location.href = "/de/";
+        }
+        // Par défaut, le navigateur reste sur "/" pour le français
+      }
+    }
+  })();
+</script>
   </head>
 
   <body>
