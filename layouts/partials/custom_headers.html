@@ -6,24 +6,3 @@
 <link rel="manifest" href="/site.webmanifest">
 
 <link rel="shortcut icon" href="/favicon.ico">
-<script>
-(function() {
-    // Si l'utilisateur a cliqué sur un drapeau, on ne touche à rien
-    if (sessionStorage.getItem('manualLanguageChoice') === 'true') return;
-
-    var path = window.location.pathname;
-    
-    // Si on est déjà dans une section /en/ ou /de/, on ne redirige pas
-    if (path.startsWith('/en/') || path.startsWith('/de/')) return;
-
-    // On ne redirige que si on est sur la page d'accueil racine "/"
-    if (path === "/" || path === "") {
-        var lang = navigator.language || navigator.userLanguage;
-        if (lang.startsWith('en')) {
-            window.location.href = "/en/";
-        } else if (lang.startsWith('de')) {
-            window.location.href = "/de/";
-        }
-    }
-})();
-</script>

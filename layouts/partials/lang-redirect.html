@@ -1,0 +1,27 @@
+<script>
+(function () {
+  // Ne force pas si l'utilisateur a déjà choisi une langue
+  const saved = localStorage.getItem("site_lang");
+  if (saved) return;
+
+  const path = window.location.pathname;
+
+  // Si on est déjà sur une langue non FR, ne touche à rien
+  if (
+    path.startsWith("/en/") || path === "/en" ||
+    path.startsWith("/de/") || path === "/de"
+  ) return;
+
+  // Langue navigateur
+  const navLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+
+  let targetLang = null;
+  if (navLang.startsWith("en")) targetLang = "en";
+  else if (navLang.startsWith("de")) targetLang = "de";
+  else return; // FR par défaut
+
+  // Conserve le chemin courant
+  const newUrl = "/" + targetLang + (path === "/" ? "/" : path);
+  window.location.replace(newUrl);
+})();
+</script>
