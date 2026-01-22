@@ -1,6 +1,7 @@
 ---
 title: "Réalisations"
 description: "Projets et cas clients IBM Jazz"
+type: "page"
 ---
 
 ### Mes Réalisations

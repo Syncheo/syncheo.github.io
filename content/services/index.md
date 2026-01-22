@@ -1,6 +1,7 @@
 ---
 title: "Mes Services"
 description: "Expertise IBM Jazz ELM, DNG et EWM"
+type: "page"
 ---
 
 ### Expertise IBM Engineering Lifecycle Management (ELM)
