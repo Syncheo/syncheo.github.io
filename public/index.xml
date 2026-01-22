@@ -51,11 +51,25 @@
       <description>&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-what-to-do-if-i-have-still-not-received-the-order&#34;&gt;1. WHAT TO DO IF I HAVE STILL NOT RECEIVED THE ORDER?&lt;/h2&gt;&#xA;&lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Mes Services</title>
+      <link>http://localhost:1313/services/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/services/</guid>
+      <description>&lt;h3 id=&#34;expertise-ibm-engineering-lifecycle-management-elm&#34;&gt;Expertise IBM Engineering Lifecycle Management (ELM)&lt;/h3&gt;&#xA;&lt;p&gt;Accompagnement technique et développement sur-mesure pour vos outils de gestion du cycle de vie.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Extensions DNG&lt;/strong&gt; : Développement de widgets OpenSocial pour IBM Engineering Requirements Management.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Plugins EWM&lt;/strong&gt; : Automation et extensions Java pour IBM Engineering Workflow Management (RTC).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Architecture OSLC&lt;/strong&gt; : Intégration et interopérabilité entre les outils.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
       <title>Migrate from Jekyll</title>
       <link>http://localhost:1313/blog/1/01/01/migrate-from-jekyll/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/1/01/01/migrate-from-jekyll/</guid>
       <description>&lt;h2 id=&#34;move-static-content-to-static&#34;&gt;Move static content to &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Jekyll has a rule that any directory not starting with &lt;code&gt;_&lt;/code&gt; will be copied as-is to the &lt;code&gt;_site&lt;/code&gt; output. Hugo keeps all static content under &lt;code&gt;static&lt;/code&gt;. You should therefore move it all there.&#xA;With Jekyll, something that looked like&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;▾ &amp;lt;root&amp;gt;/&#xD;&#xA;    ▾ images/&#xD;&#xA;        logo.png&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;should become&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;▾ &amp;lt;root&amp;gt;/&#xD;&#xA;    ▾ static/&#xD;&#xA;        ▾ images/&#xD;&#xA;            logo.png&#xD;&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as &lt;code&gt;CNAME&lt;/code&gt;) to be moved to &lt;code&gt;static&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Réalisations</title>
+      <link>http://localhost:1313/portfolio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/</guid>
+      <description>&lt;h3 id=&#34;mes-réalisations&#34;&gt;Mes Réalisations&lt;/h3&gt;&#xA;&lt;p&gt;Découvrez les projets réalisés pour mes clients dans l&amp;rsquo;écosystème IBM Jazz.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Cette page listera bientôt vos études de cas)&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -168,7 +168,35 @@ pluralizelisttitles = false
   [[module.mounts]]
     source = "content/shared"
     target = "content"
+    lang = "fr"
+
+  [[module.mounts]]
+    source = "content/shared"
+    target = "content"
+    lang = "en"
+
+  [[module.mounts]]
+    source = "content/shared"
+    target = "content"
+    lang = "de"
 	
+  [[module.mounts]]
+    source = "content/fr"
+    target = "content"
+    lang = "fr"
+
+  # Contenu EN
+  [[module.mounts]]
+    source = "content/en"
+    target = "content"
+    lang = "en"
+
+  # Contenu DE
+  [[module.mounts]]
+    source = "content/de"
+    target = "content"
+    lang = "de"
+
 [params]
     favicon = "img/favicon.png"
     author = "Sany Maamari"

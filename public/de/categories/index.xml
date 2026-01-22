@@ -6,6 +6,35 @@
     <description>Recent content in Categories on Syncheo - IBM Jazz ELM Experte</description>
     <generator>Hugo</generator>
     <language>de-de</language>
+    <lastBuildDate>Sun, 01 Aug 2021 21:29:20 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/de/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lorem</title>
+      <link>http://localhost:1313/de/categories/lorem/</link>
+      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
+      <guid>http://localhost:1313/de/categories/lorem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/de/categories/programming/</link>
+      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
+      <guid>http://localhost:1313/de/categories/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pseudo</title>
+      <link>http://localhost:1313/de/categories/pseudo/</link>
+      <pubDate>Sun, 01 Aug 2021 21:29:20 +0200</pubDate>
+      <guid>http://localhost:1313/de/categories/pseudo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Starting</title>
+      <link>http://localhost:1313/de/categories/starting/</link>
+      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
+      <guid>http://localhost:1313/de/categories/starting/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
