@@ -18,13 +18,6 @@ defaultContentLanguage = "fr"
     contentDir = "content/en"
     weight = 2
 
-
-
-
-[languages.fr]
-    languageName = "Français"
-    weight = 1
-
 # number of words of summarized post content (default 70)
 summaryLength = 70
 
