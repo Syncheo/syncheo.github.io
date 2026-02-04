@@ -1,0 +1,42 @@
+{{ if default true .Site.Params.CarouselHomepage.enable }}
+{{ $currentLang := .Language.Lang }}
+{{ $langData := index .Site.Data $currentLang }}
+
+{{ if isset $langData "carousel" }}
+{{ if gt (len (index $langData "carousel")) 0 }}
+
+<section>
+    <div class="home-carousel">
+        <div class="dark-mask"></div>
+        <div class="container">
+            <div class="homepage owl-carousel"
+                data-autoplay="{{ default true .Site.Params.CarouselHomepage.auto_play }}"
+                data-slide-speed="{{ default 2000 .Site.Params.CarouselHomepage.slide_speed }}"
+                data-pagination-speed="{{ default 1000 .Site.Params.CarouselHomepage.pagination_speed }}">
+                {{ range (index $langData "carousel") }}
+                <div class="item">
+                    {{ if .href }}
+                    <a href="{{ .href | relLangURL}}" title="{{ .title | safeHTML }}">
+                    {{ end }}
+                        <div class="row">
+                            <div class="col-sm-5 right">
+                                <h1>{{ .title | safeHTML }}</h1>
+                                {{ .description | safeHTML }}
+                            </div>
+                            <div class="col-sm-7">
+                                <img class="img-responsive" src="{{ .image }}" alt="">
+                            </div>
+                        </div>
+                    {{ if .href }}
+                    </a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+            <!-- /.project owl-slider -->
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
+{{ end }}

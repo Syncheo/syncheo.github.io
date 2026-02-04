@@ -18,15 +18,13 @@
                             {{ if eq .Language.Lang "en" }}🇺🇸 EN{{ else if eq .Language.Lang "de" }}🇩🇪 DE{{ else }}🇫🇷 FR{{ end }} <i class="fa fa-caret-down"></i>
                         </span>
                         <div class="ct-lang-dropdown">
-                            {{ range .AllTranslations }}
-							<a href="{{ .RelPermalink }}" 
-								onclick="localStorage.setItem('site_lang','{{ .Language.Lang }}'); sessionStorage.setItem('manualLanguageChoice','true')">
-
-                                {{ if eq .Language.Lang "en" }}🇺🇸 ENGLISH
-								{{ else if eq .Language.Lang "de" }}🇩🇪 DEUTSCH
-								{{ else }}🇫🇷 FRANÇAIS{{ end }}
-                            </a>
-                            {{ end }}
+							{{ range .AllTranslations }}
+							<a href="{{ .RelPermalink }}" onclick="localStorage.setItem('site_lang','{{ .Language.Lang }}'); sessionStorage.setItem('manualLanguageChoice','true')">
+							{{ if eq .Language.Lang "en" }}🇺🇸 ENGLISH
+							{{ else if eq .Language.Lang "de" }}🇩🇪 DEUTSCH
+							{{ else }}🇫🇷 FRANÇAIS{{ end }}
+							</a>
+							{{ end }}
                         </div>
                     </div>
                 </div>
