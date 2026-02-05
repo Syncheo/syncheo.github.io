@@ -208,6 +208,7 @@ pluralizelisttitles = false
     lang = "de"
 
 [params]
+	date_format = "January 2, 2006" # <-- Ajoutez cette ligne ici en secours
     favicon = "img/favicon.png"
     author = "Sany Maamari"
     defaultKeywords = ["devcows", "hugo", "go"]
