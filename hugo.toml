@@ -18,7 +18,7 @@ disableAliases = true
 		contentDir = "content/fr"
 		weight = 1
 		[languages.fr.params]
-			dateFormat = "2 January 2006"
+			date_format = "2 January 2006"
 			defaultKeywords = ["IBM Jazz ELM", "Ingénierie Système", "IBM ELM 7.x", "Consulting Jazz", "Optimisation ALM", "Syncheo"]
 		[languages.fr.menu]
     		[[languages.fr.menu.main]]
@@ -114,7 +114,7 @@ disableAliases = true
 		contentDir = "content/de"
 		weight = 3
 		[languages.de.params]
-			dateFormat = "2. January 2006"
+			date_format = "2. January 2006"
 			defaultKeywords = ["IBM Jazz ELM", "Systems Engineering", "IBM ELM 7.x", "Jazz Beratung", "ALM Optimierung", "Syncheo"]
 		[languages.de.menu]
 			[[languages.de.menu.main]]
