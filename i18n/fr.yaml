@@ -1,3 +1,12 @@
+- id: cta_title
+  translation: "Approfondir ce sujet"
+
+- id: cta_text
+  translation: "L'optimisation de l'<strong>ingénierie système</strong> exige une approche sur mesure. <strong>Syncheo</strong> accompagne les organisations dans la maîtrise et l'évolution de leurs environnements <strong>IBM Jazz ELM</strong>."
+
+- id: cta_button
+  translation: "Consulter nos experts"
+
 - id: language_name
   translation: "Français"
 
@@ -117,3 +126,4 @@
 
 - id: December
   translation: décembre
+

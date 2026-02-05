@@ -1,3 +1,12 @@
+- id: cta_title
+  translation: "Deepen this topic"
+
+- id: cta_text
+  translation: "The optimization of <strong>systems engineering</strong> requires a tailored approach. <strong>Syncheo</strong> supports organizations in mastering and evolving their <strong>IBM Jazz ELM</strong> environments."
+
+- id: cta_button
+  translation: "Consult our experts"
+  
 - id: language_name
   translation: "English"
 

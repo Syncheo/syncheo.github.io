@@ -17,6 +17,9 @@ disableAliases = true
 		languageCode = "fr-fr"
 		contentDir = "content/fr"
 		weight = 1
+		[languages.fr.params]
+			dateFormat = "2 January 2006"
+			defaultKeywords = ["IBM Jazz ELM", "Ingénierie Système", "IBM ELM 7.x", "Consulting Jazz", "Optimisation ALM", "Syncheo"]
 		[languages.fr.menu]
     		[[languages.fr.menu.main]]
 				name = "Accueil"
@@ -62,6 +65,9 @@ disableAliases = true
 		languageCode = "en-us" # ou en-us selon ton contenu
 		contentDir = "content/en"
 		weight = 2
+		[languages.en.params]
+			date_format = "January 2, 2006"
+			defaultKeywords = ["IBM Jazz ELM", "Systems Engineering", "IBM ELM 7.x", "Jazz Consulting", "ALM Optimization", "Syncheo"]
 		[languages.en.menu]
 			[[languages.en.menu.main]]
     			name = "Home"
@@ -107,6 +113,9 @@ disableAliases = true
 		languageCode = "de-de"
 		contentDir = "content/de"
 		weight = 3
+		[languages.de.params]
+			dateFormat = "2. January 2006"
+			defaultKeywords = ["IBM Jazz ELM", "Systems Engineering", "IBM ELM 7.x", "Jazz Beratung", "ALM Optimierung", "Syncheo"]
 		[languages.de.menu]
 			[[languages.de.menu.main]]
 				name = "Startseite"
@@ -257,11 +266,8 @@ pluralizelisttitles = false
     enableRecaptchaInContactForm = true
     googleRecaptchaKey = "6Lep2FEsAAAAAAKkGwuiO6fhq0AHrvy4wt1fvkE9"
 
-    about_us = "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>"
+    about_us = "<p>Syncheo est un leader technologique spécialisé dans l'optimisation de l'ingénierie système. Nous accompagnons les entreprises dans la maîtrise et l'évolution de leur plateforme IBM Jazz ELM.</p>"
     copyright = "Copyright (c) 2026, Syncheo; all rights reserved."
-
-    # Format dates with Go's time formatting
-    date_format = "January 2, 2006"
 
     dropdown_mouse_over = false
 
