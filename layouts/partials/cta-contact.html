@@ -1,11 +1,19 @@
-<div class="cta-blog-footer" style="margin-top: 50px; padding: 30px; border: 1px solid #e6e6e6; background-color: #f9f9f9; text-align: center; border-radius: 4px;">
-    <h3 style="color: #333; margin-top: 0;">{{ i18n "cta_title" }}</h3>
-    <p style="color: #555; font-size: 1.1em; line-height: 1.6;">
-        {{ i18n "cta_text" | safeHTML }}
-    </p>
-    <p style="margin-bottom: 0;">
-        <a href="{{ "contact/" | relLangURL }}" class="btn btn-template-main" style="margin-top: 15px; padding: 10px 25px; text-transform: uppercase; font-weight: bold;">
-            {{ i18n "cta_button" }}
-        </a>
-    </p>
+<div class="cta-blog-footer" style="margin-top: 50px; margin-bottom: 80px; padding: 40px; border: 1px solid #eee; background-color: #fcfcfc; border-radius: 0;">
+    <div style="display: flex; flex-direction: column; align-items: flex-start;">
+        
+        <h3 style="color: #333; margin-top: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-align: left;">
+            {{ i18n "cta_title" }}
+        </h3>
+        
+        <p style="color: #555; font-size: 1.1em; line-height: 1.7; margin: 20px 0; text-align: left; width: 100%;">
+            {{ i18n "cta_text" | safeHTML }}
+        </p>
+
+        <div style="width: 100%; text-align: right; margin-top: 20px;">
+            <a href="{{ "contact/" | relLangURL }}" class="btn btn-template-main" style="padding: 12px 35px; font-weight: bold; border-radius: 0; display: inline-block;">
+                {{ i18n "cta_button" }}
+            </a>
+        </div>
+        
+    </div>
 </div>
