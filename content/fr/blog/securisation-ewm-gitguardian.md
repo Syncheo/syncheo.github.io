@@ -8,7 +8,11 @@ categories: ["DevSecOps", "Ingénierie Logicielle"]
 tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin Development"]
 ---
 
-Dans un contexte de cybermenaces accrues, la détection préventive de fuites de secrets (clés d'API, certificats, identifiants) au sein du code source est devenue un impératif de gouvernance. Pour répondre à cet enjeu, une solution d'intégration bidirectionnelle entre **IBM Engineering Workflow Management (EWM)** et **GitGuardian** a été développée, permettant de sécuriser le cycle de vie du développement logiciel (SDLC) sans compromettre l'agilité des équipes.
+Dans un contexte de cybermenaces accrues, la détection préventive de fuites de secrets (clés d'API, certificats, identifiants) au sein du code source est devenue un impératif de gouvernance.
+
+<!--more-->
+
+Pour répondre à cet enjeu, une solution d'intégration bidirectionnelle entre **IBM Engineering Workflow Management (EWM)** et **GitGuardian** a été développée, permettant de sécuriser le cycle de vie du développement logiciel (SDLC) sans compromettre l'agilité des équipes.
 
 ## Une Approche Hybride : Client et Serveur
 

@@ -9,7 +9,11 @@ tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin Developmen
 translationKey: "ewm-gitguardian-integration"
 ---
 
-In an era of escalating cyber threats, the proactive detection of secret leaks (API keys, certificates, credentials) within source code has become a governance imperative. To address this challenge, a bidirectional integration solution between **IBM Engineering Workflow Management (EWM)** and **GitGuardian** has been developed, securing the Software Development Life Cycle (SDLC) without compromising team agility.
+In an era of escalating cyber threats, the proactive detection of secret leaks (API keys, certificates, credentials) within source code has become a governance imperative.
+
+<!--more-->
+
+To address this challenge, a bidirectional integration solution between **IBM Engineering Workflow Management (EWM)** and **GitGuardian** has been developed, securing the Software Development Life Cycle (SDLC) without compromising team agility.
 
 ## A Hybrid Approach: Client and Server-Side
 

@@ -1,4 +1,6 @@
 +++
+draft = true
+expiryDate = "2020-01-01T00:00:00Z"
 title = "FAQ"
 description = "Frequently asked questions"
 type = "page"

@@ -126,3 +126,12 @@
 
 - id: December
   translation: December
+
+- id: recentPostsTitle
+  translation: "Latest Articles"
+
+- id: recentPostsSubtitle
+  translation: "Find our technical analyses and feedback on the IBM Jazz ELM ecosystem."
+
+- id: aboutUsText
+  translation: "<p>Syncheo is a technology expert specializing in systems engineering optimization. We support organizations in mastering and evolving their IBM Jazz ELM platform.</p>"

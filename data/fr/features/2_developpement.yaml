@@ -1,0 +1,5 @@
+weight: 2
+name: "Développement Sur-Mesure"
+icon: "fas fa-code"
+url: "/services/#developpement"
+description: "Extension des capacités natives via le SDK Jazz : widgets OpenSocial pour DNG et plugins Dojo pour EWM, parfaitement adaptés à vos processus."

@@ -1,4 +1,6 @@
 +++
+draft = true
+expiryDate = "2020-01-01T00:00:00Z"
 title = "Categories Post"
 date = "2021-08-01T21:29:20+02:00"
 tags = ["golang", "programming", "theme", "hugo"]

@@ -163,8 +163,8 @@ pluralizelisttitles = false
 
 [services]
     # Enable comments by entering your Disqus shortname
-    [services.disqus]
-        shortname = "devcows"
+    # [services.disqus]
+    #     shortname = ""  # À configurer si vous souhaitez activer les commentaires Disqus
     # Enable Google Analytics by entering your tracking code
     [services.googleAnalytics]
         id = "G-22LN7TMTXE"
@@ -210,16 +210,16 @@ pluralizelisttitles = false
 	date_format = "January 2, 2006" # <-- Ajoutez cette ligne ici en secours
     favicon = "img/favicon.png"
     author = "Sany Maamari"
-    defaultKeywords = ["devcows", "hugo", "go"]
+    defaultKeywords = ["IBM Jazz ELM", "Ingénierie Système", "IBM ELM 7.x", "Consulting Jazz", "Syncheo"]
     mainSections = ["blog"]
-    defaultDescription = "Site template made by Devcows using Hugo"
+    defaultDescription = "Syncheo - Expertise IBM Jazz ELM, accompagnement et développement sur-mesure pour l'ingénierie système."
 
     topBarEnabled = true
     enableLanguageDropdown = true
 
     # Social media
     facebook_site = "" # the Facebook handle of your site ('https://www.facebook.com/HANDLE')
-    twitter_site = "GoHugoIO" # the Twitter handle of your site (without the '@')
+    twitter_site = "" # le handle Twitter de Syncheo (sans le '@'), si applicable
     default_sharing_image = "img/sharing-default.png"
 
     # Google Maps widget: If `googleMapsApiKey` is not set, no key will be passed to Google (which likely results in a broken map widget).
@@ -333,33 +333,22 @@ pluralizelisttitles = false
     # For more information take a look at the README.
 
 [params.testimonials]
-    enable = true
-    # All testimonials are defined in their own files. You can find example items
-    # at 'exampleSite/data/testimonials'.
-    # For more information take a look at the README.
-    title = "Testimonials"
-    subtitle = "We have worked with many clients and we always like to hear they come out from the cooperation happy and satisfied. Have a look what our clients said about us."
+    enable = false  # À réactiver une fois les vrais témoignages renseignés dans data/testimonials/
+    title = "Ils nous font confiance"
+    subtitle = "Nos clients témoignent de leur expérience avec Syncheo."
 
 [params.see_more]
-    enable = true
-    icon = "far fa-file-alt"
-    title = "Do you want to see more?"
-    subtitle = "We have prepared for you more than 40 different HTML pages, including 5 variations of homepage."
-    link_url = "#"
-    link_text = "Check other homepages"
+    enable = false  # Section de démo désactivée
 
 [params.clients]
-    enable = true
-    # All clients are defined in their own files. You can find example items
-    # at 'exampleSite/data/clients'.
-    # For more information take a look at the README.
-    title = "Our Clients"
+    enable = false  # À réactiver une fois les vrais logos clients renseignés dans data/clients/
+    title = "Ils nous font confiance"
     subtitle = ""
 
 [params.recent_posts]
     enable = true
-    title = "From our blog"
-    subtitle = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
+    title = "Derniers articles"
+    subtitle = "Retrouvez nos analyses techniques et retours d'expérience sur l'écosystème IBM Jazz ELM."
     hide_summary = false
 
 [params.footer.recent_posts]

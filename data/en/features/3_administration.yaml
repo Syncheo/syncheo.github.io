@@ -1,0 +1,5 @@
+weight: 3
+name: "Administration & Infrastructure"
+icon: "fas fa-server"
+url: "/services/#administration"
+description: "Installation, configuration and upgrades to ELM 7.x. Optimization of your complex topologies (JTS, LQE, data servers)."

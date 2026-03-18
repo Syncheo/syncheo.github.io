@@ -1,0 +1,5 @@
+weight: 2
+name: "Maßgeschneiderte Entwicklung"
+icon: "fas fa-code"
+url: "/services/#developpement"
+description: "Erweiterung nativer Funktionen über das Jazz SDK: OpenSocial-Widgets (DNG) und Dojo-Plugins (EWM), perfekt auf Ihre Prozesse abgestimmt."
