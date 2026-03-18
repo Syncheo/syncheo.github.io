@@ -1,0 +1,19 @@
+{{ with .Params.social_proof }}
+<section class="section-home social-proof-section">
+  <div class="container text-center">
+    <h2 class="section-heading">{{ .title }}</h2>
+    <p class="section-lead mx-auto">{{ .subtitle }}</p>
+    <div class="proof-missions">
+      {{ range .missions }}
+      <div class="proof-mission-item">
+        <span class="proof-icon">{{ .icon }}</span>
+        <span class="proof-label">{{ .label }}</span>
+      </div>
+      {{ end }}
+    </div>
+    {{ if .note }}
+    <p class="proof-note">{{ .note }}</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

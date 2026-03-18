@@ -1,0 +1,15 @@
+{{ with .Params.hero }}
+<section class="hero-home">
+  <div class="container hero-inner">
+    {{ if .badge }}
+    <div class="hero-badge">{{ .badge }}</div>
+    {{ end }}
+    <h1 class="hero-headline">{{ .headline }}</h1>
+    <p class="hero-sub">{{ .subheadline }}</p>
+    <div class="hero-actions">
+      <a href="{{ .cta_primary_link | relLangURL }}" class="btn-hero-primary">{{ .cta_primary }}</a>
+      <a href="{{ .cta_secondary_link | relLangURL }}" class="btn-hero-secondary">{{ .cta_secondary }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

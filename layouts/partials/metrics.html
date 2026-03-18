@@ -1,11 +1,11 @@
 {{ with .Params.metrics }}
-<section class="section-home">
+<section class="section-home snap-section">
   <div class="container">
     <h2 class="section-heading">{{ .title }}</h2>
     <p class="section-lead">{{ .subtitle }}</p>
-    <div class="row">
+    <div class="metrics-row">
       {{ range .items }}
-      <div class="col-md-3 col-sm-6" style="margin-bottom:20px;">
+      <div class="col-md-3 col-sm-6 metrics-col">
         <div class="metric-card">
           <strong>{{ .value }}</strong>
           <span>{{ .label }}</span>

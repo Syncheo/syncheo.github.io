@@ -1,18 +1,93 @@
 <style>
+  /* ── Scroll snap par section ── */
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  .hero-home,
+  .section-home,
+  .section-home-alt,
+  .industries-section,
+  .process-section,
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
   /* Ancres : compense la hauteur du header fixe */
   h1[id], h2[id], h3[id], h4[id] {
     scroll-margin-top: 100px;
   }
+
+  /* ── Hero ── */
+  .hero-home {
+    background: linear-gradient(135deg, #0b1020 0%, #172554 60%, #1e3a8a 100%);
+    padding: 100px 0 80px;
+    text-align: center;
+    color: #fff;
+  }
+  .hero-inner { max-width: 820px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(37,99,235,0.25);
+    border: 1px solid rgba(96,165,250,0.4);
+    color: #93c5fd;
+    padding: 6px 18px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+  .hero-headline {
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.15;
+    font-weight: 800;
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.78);
+    max-width: 680px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-hero-primary {
+    display: inline-block;
+    background: #2563eb;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-hero-primary:hover { background: #1d4ed8; color: #fff; }
+  .btn-hero-secondary {
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.35);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .btn-hero-secondary:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.6); }
 
   /* ── Sections homepage ── */
   .section-home { padding: 64px 0; }
   .section-home-alt { padding: 64px 0; background: #f8fafc; }
 
   .section-home .section-heading,
-  .section-home-alt .section-heading { margin-bottom: 12px; }
+  .section-home-alt .section-heading {
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
   .section-home .section-lead,
   .section-home-alt .section-lead {
-    color: #5c6475; max-width: 760px; margin-bottom: 36px;
+    color: #5c6475;
+    max-width: 760px;
+    margin-bottom: 36px;
     line-height: 1.7;
   }
 
@@ -26,28 +101,120 @@
     box-shadow: 0 4px 20px rgba(15,23,42,0.06);
     margin-bottom: 24px;
   }
-  .problem-card h3 { 
-	margin-bottom: 14px; 
-	font-weight: 700; 
-}
+  .problem-card h3 { margin-bottom: 14px; font-weight: 700; }
   .problem-card ul { list-style: none; padding: 0; margin: 0; }
-  .problem-card ul li { 
-	padding: 6px 0; 
-	color: #5c6475; 
-}
+  .problem-card ul li { padding: 6px 0; color: #5c6475; }
   .problem-card ul li::before { content: "•"; color: #ef4444; font-weight: 900; margin-right: 10px; }
 
-  /* Métriques */
+  /* Preuve sociale */
+  .social-proof-section { background: #f0f7ff; }
+  .proof-missions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin: 32px 0 16px;
+  }
+  .proof-mission-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    padding: 14px 20px;
+    box-shadow: 0 2px 8px rgba(15,23,42,0.05);
+    min-width: 200px;
+  }
+  .proof-icon { font-size: 1.5rem; }
+  .proof-label { color: #1e3a8a; font-weight: 600; }
+
+  /* Métriques — hauteur égale */
+  .metrics-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .metrics-col {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+  }
   .metric-card {
     background: #eff6ff;
     border: 1px solid #dbeafe;
     border-radius: 12px;
     padding: 28px 20px;
     text-align: center;
-    margin-bottom: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  .metric-card strong { display: block; color: #1d4ed8; margin-bottom: 8px; line-height: 1.2; font-weight: 700; }
-  .metric-card span { color: #5c6475; line-height: 1.5; }
+  .metric-card strong {
+    display: block;
+    color: #1d4ed8;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  .metric-card span { color: #5c6475; line-height: 1.6; }
+
+  /* Process */
+  .process-steps { margin-top: 40px; margin-bottom: 36px; }
+  .process-card {
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-radius: 12px;
+    padding: 32px 24px;
+    box-shadow: 0 4px 20px rgba(15,23,42,0.06);
+    height: 100%;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .process-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 18px;
+  }
+  .process-card h3 { font-weight: 700; margin-bottom: 10px; }
+  .process-card p { color: #5c6475; line-height: 1.7; margin: 0; }
+  .guarantee-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-left: 4px solid #16a34a;
+    border-radius: 12px;
+    padding: 28px 32px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .guarantee-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 50%;
+    background: #16a34a;
+    color: #fff;
+    font-weight: 700;
+  }
+  .guarantee-box strong { display: block; color: #15803d; font-weight: 700; margin-bottom: 8px; }
+  .guarantee-box p { color: #5c6475; margin: 0; line-height: 1.7; }
 
   /* Pourquoi Syncheo */
   .why-card {
@@ -59,10 +226,33 @@
     height: 100%;
     margin-bottom: 24px;
   }
-  .why-card h3 { margin-bottom: 14px;  font-weight: 700; }
+  .why-card h3 { margin-bottom: 14px; font-weight: 700; }
   .why-card ul { list-style: none; padding: 0; margin: 0; }
-  .why-card ul li { padding: 6px 0; color: #5c6475;  }
+  .why-card ul li { padding: 7px 0; color: #5c6475; }
   .why-card ul li::before { content: "✓"; color: #2563eb; font-weight: 700; margin-right: 10px; }
+
+  /* Industries */
+  .industries-section {
+    padding: 28px 0;
+    background: #f8fafc;
+    border-top: 1px solid #e7eaf0;
+    border-bottom: 1px solid #e7eaf0;
+  }
+  .industries-label {
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .industries-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .industry-tag {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 999px;
+    padding: 7px 20px;
+    color: #475569;
+    font-weight: 500;
+  }
 
   /* CTA home */
   .cta-home {
@@ -78,13 +268,18 @@
     display: inline-block;
     background: #2563eb;
     color: #fff;
-    padding: 14px 28px;
+    padding: 14px 32px;
     border-radius: 999px;
     font-weight: 700;
     transition: background 0.2s;
     text-decoration: none;
   }
   .cta-home .btn-cta:hover { background: #1d4ed8; color: #fff; }
+
+  /* ── Responsive ── */
+  @media (max-width: 767px) {
+    .metrics-col { width: 50%; }
+  }
 </style>
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

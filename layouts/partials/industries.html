@@ -1,0 +1,12 @@
+{{ with .Params.industries }}
+<section class="industries-section">
+  <div class="container text-center">
+    <p class="industries-label">{{ .title }}</p>
+    <div class="industries-tags">
+      {{ range .items }}
+      <span class="industry-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

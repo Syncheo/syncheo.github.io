@@ -1,0 +1,30 @@
+{{ with .Params.process }}
+<section class="section-home-alt process-section">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading">{{ .title }}</h2>
+      <p class="section-lead mx-auto">{{ .subtitle }}</p>
+    </div>
+    <div class="row process-steps">
+      {{ range .steps }}
+      <div class="col-md-4">
+        <div class="process-card">
+          <div class="process-number">{{ .number }}</div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ with .guarantee }}
+    <div class="guarantee-box">
+      <div class="guarantee-icon">✓</div>
+      <div>
+        <strong>{{ .title }}</strong>
+        <p>{{ .text }}</p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
