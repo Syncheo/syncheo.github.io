@@ -2,33 +2,54 @@
 title: "Expertise IBM Jazz ELM & Développement Sur-Mesure"
 description: "Optimisez votre ingénierie système avec un expert des solutions IBM Engineering Lifecycle Management."
 
-# Section Hero
-hero:
-  title: "Optimisez votre ingénierie système avec l'expertise IBM Jazz ELM."
-  subtitle: "Accompagnement stratégique, déploiement et personnalisation de votre environnement ELM (DOORS Next, EWM, ETM) pour des cycles de développement fluides et conformes."
-  cta_text: "Demander un diagnostic technique"
-  cta_link: "#contact"
+problems:
+  title: "Tirez le meilleur de votre plateforme IBM ELM"
+  subtitle: "De nombreuses équipes s'appuient sur IBM ELM mais se retrouvent freinées par la complexité, des workflows fragmentés et des coûts de maintenance croissants."
+  ops:
+    title: "Friction opérationnelle"
+    items:
+      - "Workflows lents et trop complexes"
+      - "Tâches manuelles qui gaspillent le temps des ingénieurs"
+      - "Adoption difficile à cause de problèmes d'ergonomie"
+  risks:
+    title: "Risques plateforme"
+    items:
+      - "Montées de version et migrations laborieuses"
+      - "Problèmes de performance impactant la productivité"
+      - "Lacunes de conformité entre exigences, tests et livraisons"
 
-# Section Services
-services:
-  - title: "Développement de Gadgets OpenSocial (DNG)"
-    description: "Extension des capacités de DOORS Next Generation. Création de widgets sur-mesure pour automatiser le contrôle des exigences et injecter votre logique métier."
-    icon: "code"
+metrics:
+  title: "Un impact concret pour vos équipes"
+  subtitle: "Un environnement IBM ELM bien configuré améliore la vitesse de livraison, la traçabilité et la fiabilité opérationnelle."
+  items:
+    - value: "Workflows"
+      label: "plus fluides et moins de friction pour vos équipes"
+    - value: "Traçabilité"
+      label: "bout-en-bout entre exigences, tests et livraisons"
+    - value: "Automatisation"
+      label: "des tâches répétitives et des règles de validation"
+    - value: "Autonomie"
+      label: "accélérée grâce à la formation et au transfert de compétences"
 
-  - title: "Personnalisation IHM EWM (Dojo)"
-    description: "Modification profonde de l'interface web d'EWM. Affichez exactement les informations souhaitées grâce au développement de plugins Dojo pour une expérience utilisateur totalement personnalisée."
-    icon: "layout"
+why:
+  title: "Pourquoi Syncheo ?"
+  subtitle: "Vos équipes n'ont pas besoin d'un prestataire généraliste. Elles ont besoin d'un expert qui maîtrise IBM ELM en profondeur et transforme cette expertise en résultats concrets."
+  specialized:
+    title: "Spécialiste, pas généraliste"
+    items:
+      - "Focalisé sur l'écosystème IBM ELM et Jazz"
+      - "Expertise technique de bout en bout"
+      - "Expérience avancée en personnalisation et intégration"
+  business:
+    title: "Orienté résultats"
+    items:
+      - "Nous résolvons vos problèmes opérationnels et de livraison"
+      - "Nous visons les résultats, pas juste l'implémentation"
+      - "Agile, réactif et simple à engager"
 
-  - title: "Architecture & Déploiement"
-    description: "Installation, configuration de topologies complexes et montées de version vers ELM 7.x. Optimisation de vos serveurs JTS et LQE."
-    icon: "server"
-
-  - title: "Reporting & Traçabilité"
-    description: "Conception de rapports avancés avec JRS et Engineering Publishing (PUB) pour garantir la conformité aux normes industrielles."
-    icon: "bar-chart"
-
-# Section Pourquoi moi
-about:
-  title: "La double expertise : Métier & Développement"
-  content: "Spécialiste de la niche IBM Jazz, je ne me contente pas de configurer vos outils. Je maîtrise le SDK Jazz pour briser les limites standards de la plateforme et adapter l'outil à vos équipes, et non l'inverse."
+cta_home:
+  title: "Améliorons votre plateforme ELM ensemble"
+  text: "Obtenez un diagnostic gratuit et identifiez les quick wins dans votre environnement. Optimisation, migration, support ou développement sur-mesure : nous vous aidons à avancer plus vite avec moins de complexité."
+  button: "Réserver un appel gratuit"
+  link: "/contact/"
 ---

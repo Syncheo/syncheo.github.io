@@ -1,0 +1,11 @@
+{{ with .Params.cta_home }}
+<section class="section-home">
+  <div class="container">
+    <div class="cta-home">
+      <h2>{{ .title }}</h2>
+      <p>{{ .text }}</p>
+      <a href="{{ .link }}" class="btn-cta">{{ .button }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,34 +1,55 @@
 ---
-title: "Expertise IBM Jazz ELM & Développement Sur-Mesure"
-description: "Optimisez votre ingénierie système avec un expert des solutions IBM Engineering Lifecycle Management."
+title: "IBM Jazz ELM Expertise & Maßgeschneiderte Entwicklung"
+description: "Optimieren Sie Ihr Systems Engineering mit einem Experten für IBM Engineering Lifecycle Management."
 
-# Section Hero
-hero:
-  title: "Optimisez votre ingénierie système avec l'expertise IBM Jazz ELM."
-  subtitle: "Accompagnement stratégique, déploiement et personnalisation de votre environnement ELM (DOORS Next, EWM, ETM) pour des cycles de développement fluides et conformes."
-  cta_text: "Demander un diagnostic technique"
-  cta_link: "#contact"
+problems:
+  title: "Holen Sie das Beste aus Ihrer IBM ELM-Plattform heraus"
+  subtitle: "Viele Engineering-Teams verlassen sich auf IBM ELM, werden aber durch Komplexität, fragmentierte Workflows und steigende Wartungskosten ausgebremst."
+  ops:
+    title: "Betriebliche Reibung"
+    items:
+      - "Langsame und zu komplexe Workflows"
+      - "Manuelle Aufgaben, die Ingenieurzeit verschwenden"
+      - "Geringe Akzeptanz aufgrund von Usability-Problemen"
+  risks:
+    title: "Plattformrisiken"
+    items:
+      - "Schwierige Upgrades und Migrationen"
+      - "Leistungsprobleme, die die Produktivität beeinträchtigen"
+      - "Konformitätslücken zwischen Anforderungen, Tests und Lieferungen"
 
-# Section Services
-services:
-  - title: "Développement de Gadgets OpenSocial (DNG)"
-    description: "Extension des capacités de DOORS Next Generation. Création de widgets sur-mesure pour automatiser le contrôle des exigences et injecter votre logique métier."
-    icon: "code"
+metrics:
+  title: "Konkrete Wirkung für Ihre Teams"
+  subtitle: "Ein gut konfiguriertes IBM ELM-Umfeld verbessert die Liefergeschwindigkeit, Rückverfolgbarkeit und Betriebszuverlässigkeit."
+  items:
+    - value: "Workflows"
+      label: "reibungsloser und weniger Komplexität für Ihre Teams"
+    - value: "Traceability"
+      label: "durchgängig von Anforderungen bis Tests und Lieferung"
+    - value: "Automatisierung"
+      label: "repetitiver Aufgaben und Validierungsregeln"
+    - value: "Autonomie"
+      label: "durch gezielte Schulung und Wissenstransfer beschleunigt"
 
-  - title: "Personnalisation IHM EWM (Dojo)"
-    description: "Modification profonde de l'interface web d'EWM. Affichez exactement les informations souhaitées grâce au développement de plugins Dojo pour une expérience utilisateur totalement personnalisée."
-    icon: "layout"
+why:
+  title: "Warum Syncheo?"
+  subtitle: "Ihre Teams brauchen kein generalistisches Dienstleistungsunternehmen. Sie brauchen ein Team, das IBM ELM in der Tiefe versteht und dieses Wissen in greifbare Ergebnisse umsetzt."
+  specialized:
+    title: "Spezialist, kein Generalist"
+    items:
+      - "Fokus auf IBM ELM und das Jazz-Ökosystem"
+      - "Tiefgreifende technische Expertise über den gesamten Stack"
+      - "Umfangreiche Erfahrung in Customization und Integration"
+  business:
+    title: "Ergebnisorientierte Umsetzung"
+    items:
+      - "Wir lösen operative und lieferbezogene Probleme"
+      - "Wir fokussieren auf Ergebnisse, nicht nur auf Implementierung"
+      - "Agil, reaktionsschnell und unkompliziert in der Zusammenarbeit"
 
-  - title: "Architecture & Déploiement"
-    description: "Installation, configuration de topologies complexes et montées de version vers ELM 7.x. Optimisation de vos serveurs JTS et LQE."
-    icon: "server"
-
-  - title: "Reporting & Traçabilité"
-    description: "Conception de rapports avancés avec JRS et Engineering Publishing (PUB) pour garantir la conformité aux normes industrielles."
-    icon: "bar-chart"
-
-# Section Pourquoi moi
-about:
-  title: "La double expertise : Métier & Développement"
-  content: "Spécialiste de la niche IBM Jazz, je ne me contente pas de configurer vos outils. Je maîtrise le SDK Jazz pour briser les limites standards de la plateforme et adapter l'outil à vos équipes, et non l'inverse."
+cta_home:
+  title: "Lassen Sie uns Ihre ELM-Plattform gemeinsam verbessern"
+  text: "Erhalten Sie eine kostenlose Diagnose und identifizieren Sie Quick Wins in Ihrer Umgebung. Ob Optimierung, Migration, Support oder maßgeschneiderte Entwicklung — wir helfen Ihnen, schneller mit weniger Komplexität voranzukommen."
+  button: "Kostenloses Gespräch buchen"
+  link: "/contact/"
 ---

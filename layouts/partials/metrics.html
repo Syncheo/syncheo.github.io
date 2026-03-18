@@ -1,0 +1,18 @@
+{{ with .Params.metrics }}
+<section class="section-home">
+  <div class="container">
+    <h2 class="section-heading">{{ .title }}</h2>
+    <p class="section-lead">{{ .subtitle }}</p>
+    <div class="row">
+      {{ range .items }}
+      <div class="col-md-3 col-sm-6" style="margin-bottom:20px;">
+        <div class="metric-card">
+          <strong>{{ .value }}</strong>
+          <span>{{ .label }}</span>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

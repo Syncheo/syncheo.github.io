@@ -1,34 +1,55 @@
 ---
-title: "Expertise IBM Jazz ELM & Développement Sur-Mesure"
-description: "Optimisez votre ingénierie système avec un expert des solutions IBM Engineering Lifecycle Management."
+title: "IBM Jazz ELM Expertise & Custom Development"
+description: "Optimize your systems engineering with an IBM Engineering Lifecycle Management expert."
 
-# Section Hero
-hero:
-  title: "Optimisez votre ingénierie système avec l'expertise IBM Jazz ELM."
-  subtitle: "Accompagnement stratégique, déploiement et personnalisation de votre environnement ELM (DOORS Next, EWM, ETM) pour des cycles de développement fluides et conformes."
-  cta_text: "Demander un diagnostic technique"
-  cta_link: "#contact"
+problems:
+  title: "Get the most out of your IBM ELM platform"
+  subtitle: "Many engineering teams rely on IBM ELM but end up slowed down by complexity, fragmented workflows, and growing maintenance costs."
+  ops:
+    title: "Operational friction"
+    items:
+      - "Slow and overly complex workflows"
+      - "Manual tasks that waste engineering time"
+      - "Poor adoption due to usability issues"
+  risks:
+    title: "Platform risks"
+    items:
+      - "Difficult upgrades and migrations"
+      - "Performance issues impacting productivity"
+      - "Compliance gaps across requirements, tests, and delivery"
 
-# Section Services
-services:
-  - title: "Développement de Gadgets OpenSocial (DNG)"
-    description: "Extension des capacités de DOORS Next Generation. Création de widgets sur-mesure pour automatiser le contrôle des exigences et injecter votre logique métier."
-    icon: "code"
+metrics:
+  title: "Real impact for engineering teams"
+  subtitle: "A strong IBM ELM setup improves delivery speed, traceability, and operational reliability."
+  items:
+    - value: "Workflows"
+      label: "smoother and less friction for your engineering teams"
+    - value: "Traceability"
+      label: "end-to-end from requirements to tests and delivery"
+    - value: "Automation"
+      label: "of repetitive tasks and validation rules"
+    - value: "Autonomy"
+      label: "accelerated through training and knowledge transfer"
 
-  - title: "Personnalisation IHM EWM (Dojo)"
-    description: "Modification profonde de l'interface web d'EWM. Affichez exactement les informations souhaitées grâce au développement de plugins Dojo pour une expérience utilisateur totalement personnalisée."
-    icon: "layout"
+why:
+  title: "Why Syncheo?"
+  subtitle: "Your teams do not need a generic service company. They need a team that understands IBM ELM in depth and turns that expertise into practical results."
+  specialized:
+    title: "Specialized, not generalist"
+    items:
+      - "Focused on IBM ELM and the Jazz ecosystem"
+      - "Strong technical depth across the full stack"
+      - "Advanced experience in customization and integration"
+  business:
+    title: "Business-oriented execution"
+    items:
+      - "We solve operational and delivery problems"
+      - "We focus on outcomes, not just implementation"
+      - "Agile, responsive, and easy to work with"
 
-  - title: "Architecture & Déploiement"
-    description: "Installation, configuration de topologies complexes et montées de version vers ELM 7.x. Optimisation de vos serveurs JTS et LQE."
-    icon: "server"
-
-  - title: "Reporting & Traçabilité"
-    description: "Conception de rapports avancés avec JRS et Engineering Publishing (PUB) pour garantir la conformité aux normes industrielles."
-    icon: "bar-chart"
-
-# Section Pourquoi moi
-about:
-  title: "La double expertise : Métier & Développement"
-  content: "Spécialiste de la niche IBM Jazz, je ne me contente pas de configurer vos outils. Je maîtrise le SDK Jazz pour briser les limites standards de la plateforme et adapter l'outil à vos équipes, et non l'inverse."
+cta_home:
+  title: "Let us improve your ELM platform together"
+  text: "Get a free diagnostic and identify quick wins in your setup. Whether you need optimization, migration, support, or custom development, we can help you move faster with less complexity."
+  button: "Book a free call"
+  link: "/contact/"
 ---

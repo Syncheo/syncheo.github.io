@@ -1,8 +1,85 @@
 <style>
-  /* Compense la hauteur du header fixe (~30px topbar + ~65px navbar) lors du scroll vers une ancre */
+  /* Ancres : compense la hauteur du header fixe */
   h1[id], h2[id], h3[id], h4[id] {
     scroll-margin-top: 100px;
   }
+
+  /* ── Sections homepage ── */
+  .section-home { padding: 64px 0; }
+  .section-home-alt { padding: 64px 0; background: #f8fafc; }
+
+  .section-home .section-heading,
+  .section-home-alt .section-heading { margin-bottom: 12px; }
+  .section-home .section-lead,
+  .section-home-alt .section-lead {
+    color: #5c6475; max-width: 760px; margin-bottom: 36px;
+    font-size: 1.15rem; line-height: 1.7;
+  }
+
+  /* Cartes problèmes */
+  .problem-card {
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-left: 4px solid #ef4444;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(15,23,42,0.06);
+    margin-bottom: 24px;
+  }
+  .problem-card h3 { margin-bottom: 14px; font-size: 1.25rem !important; font-weight: 700; }
+  .problem-card ul { list-style: none; padding: 0; margin: 0; }
+  .problem-card ul li { padding: 6px 0; color: #5c6475; font-size: 1rem; }
+  .problem-card ul li::before { content: "•"; color: #ef4444; font-weight: 900; margin-right: 10px; }
+
+  /* Métriques */
+  .metric-card {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .metric-card strong { display: block; font-size: 1.5rem; color: #1d4ed8; margin-bottom: 8px; line-height: 1.2; font-weight: 700; }
+  .metric-card span { color: #5c6475; font-size: 1rem; line-height: 1.5; }
+
+  /* Pourquoi Syncheo */
+  .why-card {
+    background: #fff;
+    border: 1px solid #e7eaf0;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 4px 20px rgba(15,23,42,0.06);
+    height: 100%;
+    margin-bottom: 24px;
+  }
+  .why-card h3 { margin-bottom: 14px; font-size: 1.25rem !important; font-weight: 700; }
+  .why-card ul { list-style: none; padding: 0; margin: 0; }
+  .why-card ul li { padding: 6px 0; color: #5c6475; font-size: 1rem; }
+  .why-card ul li::before { content: "✓"; color: #2563eb; font-weight: 700; margin-right: 10px; }
+
+  /* CTA home */
+  .cta-home {
+    background: linear-gradient(135deg, #0b1020 0%, #172554 100%);
+    border-radius: 20px;
+    padding: 56px 40px;
+    text-align: center;
+    color: #fff;
+  }
+  .cta-home h2 { color: #fff; margin-bottom: 16px; }
+  .cta-home p { color: rgba(255,255,255,0.85); max-width: 680px; margin: 0 auto 28px; font-size: 1.15rem; line-height: 1.7; }
+  .cta-home .btn-cta {
+    display: inline-block;
+    background: #2563eb;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+  .cta-home .btn-cta:hover { background: #1d4ed8; color: #fff; }
 </style>
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

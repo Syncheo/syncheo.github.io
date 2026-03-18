@@ -1,0 +1,26 @@
+{{ with .Params.problems }}
+<section class="section-home-alt">
+  <div class="container">
+    <h2 class="section-heading">{{ .title }}</h2>
+    <p class="section-lead">{{ .subtitle }}</p>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="problem-card">
+          <h3>{{ .ops.title }}</h3>
+          <ul>
+            {{ range .ops.items }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="problem-card">
+          <h3>{{ .risks.title }}</h3>
+          <ul>
+            {{ range .risks.items }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
