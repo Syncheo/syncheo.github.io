@@ -93,13 +93,13 @@ disableAliases = true
 				[[languages.en.menu.main]]
 					parent = "resources_en"
 					name = "Technical Blog"
-					url = "/blog/"
+					url = "/en/blog/"
 					weight = 1
 
 				[[languages.en.menu.main]]
 					parent = "resources_en"
 					name = "ELM FAQ"
-					url = "/faq/"
+					url = "/en/faq/"
 					weight = 2
 
 			[[languages.en.menu.main]]
@@ -141,13 +141,13 @@ disableAliases = true
 				[[languages.de.menu.main]]
 					parent = "resources_de"
 					name = "Technik-Blog"
-					url = "/blog/"
+					url = "/de/blog/"
 					weight = 1
 
 				[[languages.de.menu.main]]
 					parent = "resources_de"
 					name = "ELM FAQ"
-					url = "/faq/"
+					url = "/de/faq/"
 					weight = 2
 
 			[[languages.de.menu.main]]
