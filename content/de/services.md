@@ -32,6 +32,7 @@ Die IBM ELM-Tools bieten leistungsstarke Erweiterungspunkte, die wir nutzen, um 
 Eine leistungsfähige ELM-Umgebung basiert auf einer gut dimensionierten und korrekt konfigurierten Infrastruktur.
 
 - Installation und Konfiguration komplexer Topologien (JTS, LQE, GC, Datenserver).
+- Einrichtung von Reverse Proxy und End-to-End-SSL-Zertifikatsverwaltung.
 - Upgrades auf **IBM ELM 7.x** mit Datenmigration und Validierung.
 - Leistungsoptimierung (LQE-Abfragen, Indexierung, JVM-Tuning).
 - Implementierung von Backup-Strategien und Notfallwiederherstellungsplänen.

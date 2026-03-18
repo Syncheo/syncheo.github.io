@@ -32,6 +32,7 @@ IBM ELM tools offer powerful extension points that we leverage to adapt the plat
 A high-performing ELM environment relies on a well-sized and properly configured infrastructure.
 
 - Installation and configuration of complex topologies (JTS, LQE, GC, data servers).
+- Reverse proxy setup and end-to-end SSL certificate management.
 - Upgrades to **IBM ELM 7.x** with data migration and validation.
 - Performance optimization (LQE queries, indexing, JVM tuning).
 - Implementation of backup strategies and disaster recovery plans.
