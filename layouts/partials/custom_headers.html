@@ -341,11 +341,18 @@
   }
 
   /* ══════════════════════════════════════════════
-     SCROLL SNAP — effet slides
+     SCROLL SNAP — effet slides (desktop + mobile)
      ══════════════════════════════════════════════ */
   html {
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    height: 100%;
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
   #all { scroll-snap-align: start; }
   .hero-home,
@@ -353,7 +360,7 @@
   .section-home-alt,
   .process-section,
   .snap-section {
-    height: 100vh;
+    height: 100svh;
     box-sizing: border-box;
     padding-top: 100px;
     display: flex;
@@ -560,8 +567,10 @@
   @media (max-width: 767px) {
     .metrics-col { width: 50%; }
     .hero-home, .section-home, .section-home-alt, .process-section, .snap-section {
-      height: auto;
-      min-height: 100vh;
+      height: 100svh;
+      min-height: 100svh;
+      padding-top: 80px;
+      padding-bottom: 20px;
     }
   }
 </style>
