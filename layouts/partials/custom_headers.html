@@ -341,26 +341,27 @@
   }
 
   /* ══════════════════════════════════════════════
-     SCROLL SNAP — effet slides (desktop + mobile)
+     SCROLL SNAP — desktop uniquement
      ══════════════════════════════════════════════ */
-  html {
-    height: 100%;
-    overflow: hidden;
+  html { scroll-behavior: smooth; }
+
+  @media (min-width: 992px) {
+    html { height: 100%; overflow: hidden; }
+    body {
+      height: 100%;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
   }
-  body {
-    height: 100%;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
+
   #all { scroll-snap-align: start; }
   .hero-home,
   .section-home,
   .section-home-alt,
   .process-section,
   .snap-section {
-    height: 100svh;
+    height: 100vh;
     box-sizing: border-box;
     padding-top: 100px;
     display: flex;
@@ -564,13 +565,15 @@
   .cta-home .btn-cta:hover { background: #1a8fd1; color: #fff; }
 
   /* ── Responsive ── */
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     .metrics-col { width: 50%; }
     .hero-home, .section-home, .section-home-alt, .process-section, .snap-section {
-      height: 100svh;
+      height: auto;
       min-height: 100svh;
-      padding-top: 80px;
-      padding-bottom: 20px;
+      scroll-snap-align: none;
+      scroll-snap-stop: normal;
+      padding-top: 90px;
+      padding-bottom: 40px;
     }
   }
 </style>
