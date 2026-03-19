@@ -57,11 +57,19 @@
   var langBtn  = document.getElementById('sy-lang-btn');
   var langDd   = document.getElementById('sy-lang-dropdown');
 
-  /* Scroll — opacité nav */
-  function updateNav() {
-    nav.classList.toggle('sy-scrolled', window.pageYOffset > 40);
+  /* Scroll snap — homepage uniquement */
+  var isHome = document.body.classList.contains('page-home');
+  if (isHome && window.innerWidth >= 992) {
+    document.documentElement.classList.add('snap-active');
   }
-  window.addEventListener('scroll', updateNav, { passive: true });
+
+  /* Scroll — opacité nav (body est le container scroll sur homepage) */
+  var scrollEl = isHome ? document.body : window;
+  function updateNav() {
+    var pos = isHome ? document.body.scrollTop : window.pageYOffset;
+    nav.classList.toggle('sy-scrolled', pos > 40);
+  }
+  scrollEl.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
   /* Burger mobile */

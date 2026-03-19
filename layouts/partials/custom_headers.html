@@ -18,6 +18,11 @@
   body { padding-top: 0 !important; }
   #top { display: none !important; }
 
+  /* ── Compensation nav fixe sur pages internes ── */
+  #content { padding-top: 88px; }
+  .breadcrumb-wrapper,
+  #breadcrumbs { padding-top: 88px; }
+
   /* ══════════════════════════════════════════════
      NAVIGATION PREMIUM
      ══════════════════════════════════════════════ */
@@ -302,24 +307,25 @@
   .btn-hero-secondary:hover { background: rgba(33,13,186,0.06); border-color: #210DBA; color: #210DBA; transform: translateY(-1px); }
 
   /* ══════════════════════════════════════════════
-     BANNIÈRE PAGES INTERNES
+     BANNIÈRE PAGES INTERNES — même style que hero
      ══════════════════════════════════════════════ */
   .sy-page-header {
     position: relative;
     overflow: hidden;
-    padding: 130px 0 52px;
+    padding: 120px 0 48px;
     background:
-      radial-gradient(ellipse at 68% 40%, rgba(46,163,242,0.10) 0%, transparent 50%),
-      linear-gradient(135deg, #1C1C2E 0%, #2D2B3D 100%);
-    color: #fff;
+      radial-gradient(ellipse at 75% 30%, rgba(255,69,28,0.07) 0%, transparent 50%),
+      radial-gradient(ellipse at 15% 70%, rgba(33,13,186,0.05) 0%, transparent 45%),
+      linear-gradient(145deg, #ffffff 0%, #F4F6FA 100%);
+    border-bottom: 1px solid rgba(33,13,186,0.08);
   }
   .sy-page-header::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(46,163,242,0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(46,163,242,0.045) 1px, transparent 1px);
+      linear-gradient(rgba(33,13,186,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(33,13,186,0.035) 1px, transparent 1px);
     background-size: 64px 64px;
     z-index: 0;
     pointer-events: none;
@@ -329,25 +335,25 @@
     z-index: 1;
   }
   .sy-page-title {
-    color: #fff;
-    font-weight: 700;
+    color: #1a1a2e;
+    font-weight: 800;
     margin-bottom: 10px;
   }
   .sy-page-desc {
-    color: rgba(255,255,255,0.65);
+    color: #4a4a6a;
     max-width: 580px;
     line-height: 1.7;
     margin: 0;
   }
 
   /* ══════════════════════════════════════════════
-     SCROLL SNAP — desktop uniquement
+     SCROLL SNAP — homepage desktop uniquement
      ══════════════════════════════════════════════ */
   html { scroll-behavior: smooth; }
 
   @media (min-width: 992px) {
-    html { height: 100%; overflow: hidden; }
-    body {
+    html.snap-active { height: 100%; overflow: hidden; }
+    body.page-home {
       height: 100%;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
@@ -355,12 +361,12 @@
     }
   }
 
-  #all { scroll-snap-align: start; }
-  .hero-home,
-  .section-home,
-  .section-home-alt,
-  .process-section,
-  .snap-section {
+  body.page-home #all { scroll-snap-align: start; }
+  body.page-home .hero-home,
+  body.page-home .section-home,
+  body.page-home .section-home-alt,
+  body.page-home .process-section,
+  body.page-home .snap-section {
     height: 100vh;
     box-sizing: border-box;
     padding-top: 100px;
@@ -567,7 +573,11 @@
   /* ── Responsive ── */
   @media (max-width: 991px) {
     .metrics-col { width: 50%; }
-    .hero-home, .section-home, .section-home-alt, .process-section, .snap-section {
+    body.page-home .hero-home,
+    body.page-home .section-home,
+    body.page-home .section-home-alt,
+    body.page-home .process-section,
+    body.page-home .snap-section {
       height: auto;
       min-height: unset;
       overflow-y: visible;
@@ -577,6 +587,14 @@
       padding-top: 90px;
       padding-bottom: 40px;
     }
+  }
+
+  /* ── Pages internes — nav fixe compensation ── */
+  body:not(.page-home) #content {
+    padding-top: 0;
+  }
+  body:not(.page-home) .sy-page-header {
+    padding-top: 110px;
   }
 </style>
 

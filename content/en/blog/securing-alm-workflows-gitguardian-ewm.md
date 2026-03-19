@@ -7,6 +7,7 @@ description: "Bidirectional integration architecture between IBM Engineering Wor
 categories: ["DevSecOps", "Software Engineering"]
 tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin Development"]
 translationKey: "ewm-gitguardian-integration"
+banner: "img/blog/ewm-gitguardian-banner.png"
 ---
 
 In an era of escalating cyber threats, the proactive detection of secret leaks (API keys, certificates, credentials) within source code has become a governance imperative.

@@ -6,6 +6,7 @@ author: "Syncheo"
 description: "Architecture d'intégration bidirectionnelle entre IBM Engineering Workflow Management et GitGuardian pour la détection de secrets."
 categories: ["DevSecOps", "Ingénierie Logicielle"]
 tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin Development"]
+banner: "img/blog/ewm-gitguardian-banner.png"
 ---
 
 Dans un contexte de cybermenaces accrues, la détection préventive de fuites de secrets (clés d'API, certificats, identifiants) au sein du code source est devenue un impératif de gouvernance.
@@ -17,6 +18,8 @@ Pour répondre à cet enjeu, une solution d'intégration bidirectionnelle entre 
 ## Une Approche Hybride : Client et Serveur
 
 L'architecture de cette solution repose sur deux composants complémentaires, offrant une flexibilité totale dans la gestion de la politique de sécurité de l'entreprise.
+
+![Architecture d'intégration EWM x GitGuardian](/img/blog/ewm-gitguardian-architecture.png)
 
 ### 1. Extension Serveur : Le Garde-Fou Institutionnel
 Le plugin côté serveur agit comme l'autorité finale lors de la livraison des *change sets*. Son rôle est d'assurer la conformité stricte du code avant son intégration dans le flux commun.
