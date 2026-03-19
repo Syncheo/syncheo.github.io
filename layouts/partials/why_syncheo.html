@@ -21,6 +21,16 @@
         </div>
       </div>
     </div>
+    {{ with $.Params.industries }}
+    <div class="text-center" style="margin-top:16px;">
+      <p class="industries-label">{{ .title }}</p>
+      <div class="industries-tags">
+        {{ range .items }}
+        <span class="industry-tag">{{ . }}</span>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
   </div>
 </section>
 {{ end }}

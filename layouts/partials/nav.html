@@ -1,0 +1,88 @@
+<nav id="sy-nav" class="sy-navbar" role="navigation" aria-label="Navigation principale">
+  <div class="container sy-nav-inner">
+
+    <!-- Logo -->
+    <a href="{{ "/" | relLangURL }}" class="sy-brand" title="{{ .Site.Params.name }}">
+      {{ if .Site.Params.logo }}
+      <img src="{{ .Site.Params.logo | relURL }}" alt="{{ .Site.Params.name }}" class="sy-logo">
+      {{ else }}
+      <span class="sy-brand-text">{{ .Site.Params.name }}</span>
+      {{ end }}
+    </a>
+
+    <!-- Burger mobile -->
+    <button class="sy-burger" id="sy-burger" aria-label="Menu" aria-expanded="false" aria-controls="sy-nav-right">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Menu + langue + CTA -->
+    <div class="sy-nav-right" id="sy-nav-right">
+
+      <ul class="sy-menu">
+        {{ range .Site.Menus.main }}
+        <li{{ if $.IsMenuCurrent "main" . }} class="sy-menu-active"{{ end }}>
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+
+      <!-- Sélecteur de langue avec drapeaux -->
+      <div class="sy-lang" id="sy-lang-btn" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+        <span class="sy-lang-current">
+          {{ if eq .Language.Lang "en" }}🇺🇸 EN
+          {{ else if eq .Language.Lang "de" }}🇩🇪 DE
+          {{ else }}🇫🇷 FR{{ end }}
+          <svg class="sy-lang-caret" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <div class="sy-lang-dropdown" id="sy-lang-dropdown">
+          {{ range .AllTranslations }}
+          <a href="{{ .Permalink }}" class="{{ if eq .Language.Lang $.Language.Lang }}sy-lang-dd-active{{ end }}">
+            {{ if eq .Language.Lang "en" }}🇺🇸 English
+            {{ else if eq .Language.Lang "de" }}🇩🇪 Deutsch
+            {{ else }}🇫🇷 Français{{ end }}
+          </a>
+          {{ end }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<script>
+(function () {
+  var nav     = document.getElementById('sy-nav');
+  var burger  = document.getElementById('sy-burger');
+  var navRight = document.getElementById('sy-nav-right');
+  var langBtn  = document.getElementById('sy-lang-btn');
+  var langDd   = document.getElementById('sy-lang-dropdown');
+
+  /* Scroll — opacité nav */
+  function updateNav() {
+    nav.classList.toggle('sy-scrolled', window.pageYOffset > 40);
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  /* Burger mobile */
+  burger.addEventListener('click', function () {
+    var open = navRight.classList.toggle('sy-open');
+    burger.classList.toggle('sy-burger-open', open);
+    this.setAttribute('aria-expanded', String(open));
+  });
+
+  /* Dropdown langue */
+  langBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var open = langDd.classList.toggle('sy-dd-open');
+    this.setAttribute('aria-expanded', String(open));
+  });
+  document.addEventListener('click', function () {
+    langDd.classList.remove('sy-dd-open');
+    langBtn.setAttribute('aria-expanded', 'false');
+  });
+  langBtn.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); }
+  });
+})();
+</script>

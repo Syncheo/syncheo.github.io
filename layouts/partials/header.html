@@ -1,0 +1,10 @@
+{{ if not .IsHome }}
+<section class="sy-page-header" role="banner">
+  <div class="container sy-page-header-inner">
+    <h1 class="sy-page-title">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="sy-page-desc">{{ . }}</p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
