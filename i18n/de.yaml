@@ -135,3 +135,6 @@
 
 - id: aboutUsText
   translation: "<p>Syncheo ist ein Technologieexperte, spezialisiert auf die Optimierung des Systems Engineering. Wir unterstützen Unternehmen bei der Beherrschung und Weiterentwicklung ihrer IBM Jazz ELM-Plattform.</p>"
+
+- id: privacyNotice
+  translation: "Datenschutzerklärung"
