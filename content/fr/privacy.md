@@ -7,69 +7,74 @@ translationKey = "privacy"
 
 # Politique de Confidentialité
 
-**Version :** 1.0 — Mars 2026
-**Prochaine révision :** Mars 2027
-**Responsable du traitement :** Syncheo
+**Date :** 10 avril 2026
+**Société :** Syncheo — 20 Rue Jean Baptiste Pigalle, 75009 Paris
+**Contact :** [administration@syncheo.tech](mailto:administration@syncheo.tech)
+**SIRET :** 848 187 308 00012
 
 ---
 
 ## 1. Introduction
 
-Syncheo (« nous », « notre ») s'engage à protéger la vie privée et les données personnelles de toutes les personnes avec lesquelles nous interagissons — clients, prospects, partenaires, fournisseurs et visiteurs de notre site web.
+La présente Politique de Confidentialité décrit la manière dont Syncheo (« nous », « notre ») collecte, utilise et protège les informations personnelles dans le cadre de ses activités et de son site web ([syncheo.tech](https://syncheo.tech)).
 
-La présente Politique de Confidentialité explique quelles données personnelles nous collectons, pourquoi nous les collectons, comment nous les utilisons, et quels droits vous disposez au titre du **Règlement Général sur la Protection des Données (RGPD)** et de la loi française applicable.
-
-**Responsable du traitement :**
-Syncheo
-20 Rue Jean Baptiste Pigalle, 75009 Paris, France
-SIRET : 848 187 308 00012
-Email : [administration@syncheo.tech](mailto:administration@syncheo.tech)
+Syncheo est une organisation de conseil individuelle spécialisée dans la gestion du cycle de vie des systèmes, basée à Paris, France.
 
 ---
 
 ## 2. Catégories de Données Personnelles Collectées
 
-Nous collectons uniquement les données nécessaires à nos activités commerciales légitimes :
+Nous sommes susceptibles de collecter et de traiter les catégories de données personnelles suivantes :
 
-**Données de contact professionnelles** — noms, intitulés de poste, noms d'entreprises, adresses e-mail professionnelles et numéros de téléphone de nos clients, prospects et partenaires.
-
-**Données de facturation et contractuelles** — noms, adresses, informations de paiement et détails des contrats nécessaires à la fourniture de nos services et au respect de nos obligations légales.
-
-**Données d'utilisation du site web** — données analytiques anonymisées collectées via Google Analytics (anonymisation des adresses IP activée). Aucun identifiant personnel n'est conservé.
-
-**Données de communication** — emails, notes de réunions et correspondances de projets nécessaires à la prestation de services et à la gestion de la relation client.
+- **Coordonnées professionnelles** — nom, intitulé de poste, entreprise, adresse e-mail, numéro de téléphone
+- **Informations de facturation** — nom, société, adresse à des fins de facturation
+- **Données d'utilisation du site web** — adresse IP anonymisée, pages visitées, type de navigateur (via Google Analytics)
+- **Communications** — e-mails et messages échangés dans le cadre des activités commerciales
 
 ---
 
 ## 3. Finalités et Bases Légales des Traitements
 
-| Finalité | Base légale |
-|---|---|
-| Exécution des services contractuels | Nécessité contractuelle (Art. 6(1)(b) RGPD) |
-| Facturation et comptabilité | Obligation légale (Art. 6(1)(c) RGPD) |
-| Développement commercial et gestion de la relation client | Intérêt légitime (Art. 6(1)(f) RGPD) |
-| Analyses du site web (anonymisées) | Intérêt légitime (Art. 6(1)(f) RGPD) |
-| Respect des exigences légales et réglementaires | Obligation légale (Art. 6(1)(c) RGPD) |
+Les données personnelles sont collectées et traitées aux fins suivantes :
+
+- **Prestation de services** — pour réaliser des missions de conseil dans le cadre d'un contrat *(base légale : nécessité contractuelle)*
+- **Facturation** — pour émettre des factures et gérer les paiements *(base légale : obligation légale)*
+- **Communications commerciales** — pour répondre aux demandes et gérer les relations clients *(base légale : intérêt légitime)*
+- **Analyses du site web** — pour comprendre le trafic de manière agrégée *(base légale : intérêt légitime — données anonymisées uniquement)*
 
 ---
 
 ## 4. Sous-Traitants et Prestataires Tiers
 
-Nous faisons appel à un nombre limité de services tiers de confiance pour exploiter notre activité :
+Nous faisons appel aux services tiers suivants susceptibles de traiter des données personnelles en notre nom :
 
-**Microsoft 365** — Messagerie, gestion documentaire et outils de collaboration. Les données sont traitées dans le cadre de l'Accord de Traitement des Données de Microsoft, avec des Clauses Contractuelles Types (CCT) pour tout transfert hors UE.
+- **Microsoft 365** — messagerie, stockage de documents et communication *(États-Unis — Clauses Contractuelles Types)*
+- **GitHub** — gestion du code et des projets *(États-Unis — Clauses Contractuelles Types)*
+- **Google Analytics** — analyses du site web en mode anonymisé *(États-Unis — Clauses Contractuelles Types)*
 
-**JePilote** — Plateforme française de comptabilité et de facturation. Les données sont hébergées en France et dans l'UE, en pleine conformité avec le RGPD.
-
-**GitHub** — Gestion du code source et contrôle de version pour les projets techniques. Les données sont traitées dans le cadre de l'Accord de Traitement des Données de GitHub, avec des CCT pour les transferts hors UE.
-
-**Google Analytics** — Analyses du trafic web avec anonymisation complète des adresses IP. Aucune donnée permettant l'identification personnelle n'est conservée. Les données sont traitées dans le cadre de l'Accord de Traitement des Données de Google, avec des CCT.
+Nous ne vendons, ne louons ni ne partageons les données personnelles avec des tiers à des fins marketing.
 
 ---
 
 ## 5. Technologies Web et Numériques
 
-Notre site web utilise **Google Analytics** avec anonymisation complète des adresses IP. Nous n'utilisons pas de cookies de suivi, de pixels publicitaires, ni aucune technologie visant à constituer des profils individuels d'utilisateurs à des fins marketing.
+### Google Analytics
+
+Notre site web utilise Google Analytics pour collecter des statistiques de trafic anonymisées. Nous avons configuré Google Analytics en mode respectueux de la vie privée :
+
+- L'anonymisation des adresses IP est activée — les adresses IP complètes ne sont jamais stockées
+- Aucune fonction de suivi inter-sites ni de publicité n'est utilisée
+- Aucune information personnellement identifiable n'est collectée via les analyses
+
+### Cookies
+
+Notre site web peut utiliser des cookies essentiels au bon fonctionnement de base. Aucun cookie de suivi ni cookie publicitaire n'est utilisé.
+
+### Pas de Publicité Ciblée
+
+Nous n'utilisons ni pixels, ni balises web, ni géolocalisation, ni aucun outil de publicité ciblée. Google Analytics est utilisé uniquement à des fins d'analyse agrégée du trafic en mode anonymisé.
+
+### Désactivation
 
 Vous pouvez désactiver le suivi Google Analytics en installant le [module complémentaire de désactivation de Google Analytics](https://tools.google.com/dlpage/gaoptout).
 
@@ -77,51 +82,45 @@ Vous pouvez désactiver le suivi Google Analytics en installant le [module compl
 
 ## 6. Durées de Conservation
 
-Nous conservons les données personnelles uniquement aussi longtemps que nécessaire à la finalité pour laquelle elles ont été collectées :
+- **Données clients et projets** — conservées pour la durée de la mission, plus toute période contractuellement requise
+- **Données de facturation et financières** — 10 ans *(obligation légale française)*
+- **Communications commerciales** — conservées pour la durée de la relation commerciale
+- **Analyses du site web** — 26 mois *(paramètre par défaut de Google Analytics, données anonymisées)*
 
-| Catégorie | Durée de conservation |
-|---|---|
-| Données clients et contractuelles | Durée du contrat + 5 ans (obligation légale) |
-| Documents comptables et de facturation | 10 ans (loi comptable française) |
-| Données de prospection et contacts marketing | 3 ans à compter du dernier contact |
-| Données analytiques du site web | 26 mois (paramètre par défaut Google Analytics) |
-| Données employés et RH | Durée du contrat de travail + délais légaux applicables |
+Les données sont supprimées de manière sécurisée à l'expiration de la période de conservation applicable.
 
 ---
 
-## 7. Transferts Internationaux de Données
+## 7. Transferts Internationaux
 
-Certains de nos prestataires (Microsoft, GitHub, Google) ont leur siège en dehors de l'Espace Économique Européen. Tous ces transferts sont encadrés par les **Clauses Contractuelles Types (CCT)** approuvées par la Commission européenne, garantissant un niveau équivalent de protection des données.
+Certains de nos prestataires sont établis hors de l'UE/EEE (notamment Microsoft et Google aux États-Unis). Tous les transferts sont encadrés par les **Clauses Contractuelles Types (CCT)** approuvées par la Commission européenne, garantissant une protection adéquate de vos données personnelles.
 
 ---
 
-## 8. Vos Droits au Titre du RGPD
+## 8. Vos Droits
 
-Vous disposez des droits suivants concernant vos données personnelles :
+Conformément au RGPD, vous disposez des droits suivants concernant vos données personnelles :
 
-- **Droit d'accès** — Vous pouvez demander une copie des données personnelles que nous détenons vous concernant.
-- **Droit de rectification** — Vous pouvez demander la correction de données inexactes ou incomplètes.
-- **Droit à l'effacement** — Vous pouvez demander la suppression de vos données lorsqu'il n'existe plus de motif légitime de les traiter.
-- **Droit à la limitation du traitement** — Vous pouvez demander la limitation du traitement de vos données dans certaines circonstances.
-- **Droit à la portabilité** — Vous pouvez demander une copie de vos données dans un format structuré et lisible par machine.
-- **Droit d'opposition** — Vous pouvez vous opposer à un traitement fondé sur l'intérêt légitime, y compris la prospection commerciale.
+- **Droit d'accès** — obtenir une copie de vos données personnelles
+- **Droit de rectification** — corriger des données inexactes
+- **Droit à l'effacement** — demander la suppression de vos données
+- **Droit à la limitation du traitement**
+- **Droit à la portabilité des données**
+- **Droit d'opposition au traitement**
 
-Pour exercer l'un de ces droits, contactez-nous à **[administration@syncheo.tech](mailto:administration@syncheo.tech)**. Nous vous répondrons dans un délai de 30 jours.
+Pour exercer vos droits, contactez-nous à : [administration@syncheo.tech](mailto:administration@syncheo.tech)
 
-Vous avez également le droit d'introduire une réclamation auprès de l'autorité française de protection des données :
-**CNIL** — [www.cnil.fr](https://www.cnil.fr) — 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07
+Vous avez également le droit d'introduire une réclamation auprès de la **CNIL** ([www.cnil.fr](https://www.cnil.fr)).
 
 ---
 
 ## 9. Contact
 
-Pour toute question relative à la présente Politique de Confidentialité ou à nos pratiques de traitement des données :
+Pour toute question relative à la présente Politique de Confidentialité ou au traitement de vos données personnelles :
 
-**Syncheo**
-20 Rue Jean Baptiste Pigalle
-75009 Paris, France
+**Syncheo** — 20 Rue Jean Baptiste Pigalle, 75009 Paris
 [administration@syncheo.tech](mailto:administration@syncheo.tech)
 
 ---
 
-*Cette politique a été mise à jour en mars 2026. Nous pouvons la réviser périodiquement — la version en vigueur est toujours disponible sur cette page.*
+*Cette Politique de Confidentialité est révisée annuellement et mise à jour si nécessaire. Dernière approbation : 10 avril 2026 par Sany Maamari, Fondateur.*

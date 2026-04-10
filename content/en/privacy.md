@@ -7,69 +7,74 @@ translationKey = "privacy"
 
 # Privacy Notice
 
-**Version:** 1.0 — March 2026
-**Next review:** March 2027
-**Data Controller:** Syncheo
+**Date:** April 10, 2026
+**Company:** Syncheo — 20 Rue Jean Baptiste Pigalle, 75009 Paris
+**Contact:** [administration@syncheo.tech](mailto:administration@syncheo.tech)
+**SIRET:** 848 187 308 00012
 
 ---
 
 ## 1. Introduction
 
-Syncheo ("we", "us", "our") is committed to protecting the privacy and personal data of all individuals we interact with — including clients, prospects, partners, suppliers and website visitors.
+This Privacy Notice describes how Syncheo ("we", "us", "our") collects, uses, and protects personal information in the context of our business activities and website ([syncheo.tech](https://syncheo.tech)).
 
-This Privacy Notice explains what personal data we collect, why we collect it, how we use it, and what rights you have under the **General Data Protection Regulation (GDPR)** and applicable French law.
-
-**Data Controller:**
-Syncheo
-20 Rue Jean Baptiste Pigalle, 75009 Paris, France
-SIRET: 848 187 308 00012
-Email: [administration@syncheo.tech](mailto:administration@syncheo.tech)
+Syncheo is a single-person consulting organisation specialising in system lifecycle management, based in Paris, France.
 
 ---
 
-## 2. Categories of Personal Data We Collect
+## 2. Categories of Personal Information Collected
 
-We collect only the data that is necessary for our legitimate business activities:
+We may collect and process the following categories of personal information:
 
-**Professional contact data** — names, job titles, company names, professional email addresses and phone numbers of clients, prospects and partners.
-
-**Billing and contractual data** — names, addresses, payment information and contract details necessary to deliver our services and comply with legal obligations.
-
-**Website usage data** — anonymised analytics data collected via Google Analytics (IP anonymisation enabled). No personal identifiers are stored.
-
-**Communications data** — emails, meeting notes and project correspondence necessary for service delivery and relationship management.
+- **Professional contact details** — name, job title, company, email address, phone number
+- **Billing information** — name, company, address for invoicing purposes
+- **Website usage data** — anonymised IP address, pages visited, browser type (via Google Analytics)
+- **Communications** — emails and messages exchanged in the course of business
 
 ---
 
-## 3. Purposes and Legal Bases for Processing
+## 3. Purpose & Legal Basis for Processing
 
-| Purpose | Legal Basis |
-|---|---|
-| Delivering contracted services | Contractual necessity (Art. 6(1)(b) GDPR) |
-| Invoicing and accounting | Legal obligation (Art. 6(1)(c) GDPR) |
-| Business development and client relationship management | Legitimate interest (Art. 6(1)(f) GDPR) |
-| Website analytics (anonymised) | Legitimate interest (Art. 6(1)(f) GDPR) |
-| Compliance with legal and regulatory requirements | Legal obligation (Art. 6(1)(c) GDPR) |
+Personal information is collected and processed for the following purposes:
+
+- **Service delivery** — to perform consulting services under contract *(legal basis: contractual necessity)*
+- **Invoicing** — to issue invoices and manage payments *(legal basis: legal obligation)*
+- **Business communications** — to respond to enquiries and manage client relationships *(legal basis: legitimate interest)*
+- **Website analytics** — to understand website traffic in aggregate *(legal basis: legitimate interest — anonymised data only)*
 
 ---
 
 ## 4. Third-Party Service Providers
 
-We use a limited number of trusted third-party services to operate our business:
+We use the following third-party services that may process personal information on our behalf:
 
-**Microsoft 365** — Email, document management and collaboration tools. Data is processed under Microsoft's Data Processing Agreement with EU Standard Contractual Clauses (SCCs) for any transfers outside the EU.
+- **Microsoft 365** — email, document storage and communication *(US — Standard Contractual Clauses)*
+- **GitHub** — code and project management *(US — Standard Contractual Clauses)*
+- **Google Analytics** — website analytics in anonymised mode *(US — Standard Contractual Clauses)*
 
-**JePilote** — French accounting and invoicing platform. Data is hosted within France and the EU, fully compliant with GDPR.
-
-**GitHub** — Source code management and version control for technical projects. Data is processed under GitHub's Data Processing Agreement with SCCs for transfers outside the EU.
-
-**Google Analytics** — Website traffic analytics with IP anonymisation enabled. No personally identifiable data is stored. Data is processed under Google's Data Processing Agreement with SCCs.
+We do not sell, rent, or share personal information with third parties for marketing purposes.
 
 ---
 
-## 5. Web and Digital Technologies
+## 5. Web & Digital Technologies
 
-Our website uses **Google Analytics** with full IP anonymisation. We do not use tracking cookies, advertising pixels, or any technology designed to build individual user profiles for marketing purposes.
+### Google Analytics
+
+Our website uses Google Analytics to collect anonymised traffic statistics. We have configured Google Analytics in privacy-preserving mode:
+
+- IP anonymisation is enabled — full IP addresses are never stored
+- No cross-site tracking or advertising features are used
+- No personally identifiable information is collected through analytics
+
+### Cookies
+
+Our website may use essential cookies required for basic functionality. No tracking cookies or advertising cookies are used.
+
+### No Targeted Advertising
+
+We do not use pixels, web beacons, geolocation tracking, or any tools for targeted advertising. Google Analytics is used solely for aggregate traffic analysis in anonymised mode.
+
+### Opt-Out
 
 You may opt out of Google Analytics tracking by installing the [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout).
 
@@ -77,51 +82,45 @@ You may opt out of Google Analytics tracking by installing the [Google Analytics
 
 ## 6. Retention Schedules
 
-We retain personal data only as long as necessary for the purpose for which it was collected:
+- **Client and project data** — retained for the duration of the engagement plus any contractually required period
+- **Billing and financial data** — 10 years *(French legal requirement)*
+- **Business communications** — retained for the duration of the business relationship
+- **Website analytics** — 26 months *(Google Analytics default, anonymised)*
 
-| Category | Retention Period |
-|---|---|
-| Client and contract data | Duration of contract + 5 years (legal obligation) |
-| Billing and accounting records | 10 years (French accounting law) |
-| Prospect and marketing contact data | 3 years from last interaction |
-| Website analytics data | 26 months (Google Analytics default) |
-| Employee and HR data | Duration of employment + applicable legal periods |
+Data is securely deleted when the applicable retention period expires.
 
 ---
 
-## 7. International Data Transfers
+## 7. International Transfers
 
-Some of our service providers (Microsoft, GitHub, Google) are headquartered outside the European Economic Area. All such transfers are governed by **Standard Contractual Clauses (SCCs)** approved by the European Commission, ensuring an equivalent level of data protection.
+Some of our service providers are located outside the EU/EEA (notably Microsoft and Google in the US). All transfers are governed by **Standard Contractual Clauses (SCCs)** approved by the European Commission, ensuring adequate protection of your personal data.
 
 ---
 
-## 8. Your Rights Under GDPR
+## 8. Your Rights
 
-You have the following rights regarding your personal data:
+Under GDPR, you have the following rights regarding your personal data:
 
-- **Right of access** — You may request a copy of the personal data we hold about you.
-- **Right of rectification** — You may request correction of inaccurate or incomplete data.
-- **Right to erasure** — You may request deletion of your data where there is no legitimate reason for us to continue processing it.
-- **Right to restriction** — You may request that we restrict processing of your data in certain circumstances.
-- **Right to data portability** — You may request a copy of your data in a structured, machine-readable format.
-- **Right to object** — You may object to processing based on legitimate interest, including direct marketing.
+- **Right of access** — to obtain a copy of your personal data
+- **Right to rectification** — to correct inaccurate data
+- **Right to erasure** — to request deletion of your data
+- **Right to restriction of processing**
+- **Right to data portability**
+- **Right to object to processing**
 
-To exercise any of these rights, please contact us at **[administration@syncheo.tech](mailto:administration@syncheo.tech)**. We will respond within 30 days.
+To exercise your rights, please contact us at: [administration@syncheo.tech](mailto:administration@syncheo.tech)
 
-You also have the right to lodge a complaint with the French data protection authority:
-**CNIL** — [www.cnil.fr](https://www.cnil.fr) — 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07
+You also have the right to lodge a complaint with the **CNIL** ([www.cnil.fr](https://www.cnil.fr)).
 
 ---
 
 ## 9. Contact
 
-For any questions about this Privacy Notice or our data processing practices:
+For any questions regarding this Privacy Notice or the processing of your personal data:
 
-**Syncheo**
-20 Rue Jean Baptiste Pigalle
-75009 Paris, France
+**Syncheo** — 20 Rue Jean Baptiste Pigalle, 75009 Paris
 [administration@syncheo.tech](mailto:administration@syncheo.tech)
 
 ---
 
-*This notice was last updated in March 2026. We may update it periodically — the current version is always available on this page.*
+*This Privacy Notice is reviewed annually and updated as required. Last approved: April 10, 2026 by Sany Maamari, Founder.*
