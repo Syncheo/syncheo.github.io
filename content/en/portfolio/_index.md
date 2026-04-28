@@ -1,7 +1,6 @@
 ---
 title: "Portfolio"
 description: "IBM Jazz projects and customer case studies"
-type: "page"
 ---
 
 ## Our Projects

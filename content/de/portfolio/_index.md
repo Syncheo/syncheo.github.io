@@ -1,7 +1,6 @@
 ---
 title: "Referenzen"
 description: "IBM Jazz Projekte und Kundenfallstudien"
-type: "page"
 ---
 
 ## Unsere Projekte

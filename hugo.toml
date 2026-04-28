@@ -15,7 +15,6 @@ disableAliases = true
 		title = "Syncheo - Expertise IBM Jazz ELM"
 		languageName = "Français"
 		languageCode = "fr-fr"
-		contentDir = "content/fr"
 		weight = 1
 		[languages.fr.params]
 			date_format = "2 January 2006"
@@ -63,7 +62,6 @@ disableAliases = true
 		title = "Syncheo - IBM Jazz ELM Expertise"
 		languageName = "English"
 		languageCode = "en-us" # ou en-us selon ton contenu
-		contentDir = "content/en"
 		weight = 2
 		[languages.en.params]
 			date_format = "January 2, 2006"
@@ -111,7 +109,6 @@ disableAliases = true
 		title = "Syncheo - IBM Jazz ELM Experte"
 		languageName = "Deutsch"
 		languageCode = "de-de"
-		contentDir = "content/de"
 		weight = 3
 		[languages.de.params]
 			date_format = "2. January 2006"
@@ -174,23 +171,7 @@ pluralizelisttitles = false
     pagerSize = 10
 
 [module]
-  # 1. Montage des ressources partagées (communes à toutes les langues)
-  [[module.mounts]]
-    source = "content/shared"
-    target = "content"
-    lang = "fr"
-
-  [[module.mounts]]
-    source = "content/shared"
-    target = "content"
-    lang = "en"
-
-  [[module.mounts]]
-    source = "content/shared"
-    target = "content"
-    lang = "de"
-
-  # 2. Montage des contenus spécifiques par langue (Prioritaires)
+  # 1. Contenus spécifiques par langue (priorité maximale)
   [[module.mounts]]
     source = "content/fr"
     target = "content"
@@ -203,6 +184,22 @@ pluralizelisttitles = false
 
   [[module.mounts]]
     source = "content/de"
+    target = "content"
+    lang = "de"
+
+  # 2. Ressources partagées (fallback pour toutes les langues)
+  [[module.mounts]]
+    source = "content/shared"
+    target = "content"
+    lang = "fr"
+
+  [[module.mounts]]
+    source = "content/shared"
+    target = "content"
+    lang = "en"
+
+  [[module.mounts]]
+    source = "content/shared"
     target = "content"
     lang = "de"
 
@@ -286,7 +283,6 @@ pluralizelisttitles = false
 
 [permalinks]
     blog = "/blog/:year/:month/:day/:contentbasename/"
-    portfolio = "/portfolio/:slug/"
 
 # Enable or disable top bar with social icons
 [params.topbar]
