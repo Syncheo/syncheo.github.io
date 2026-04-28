@@ -6,7 +6,7 @@ slug: "ewm-plugin-show-workflow"
 tags: ["IBM EWM", "ELM", "Plugin", "Jazz", "Workflow"]
 author: "Syncheo Engineering"
 summary: "Syncheo a developpe un plugin pour IBM Engineering Workflow Management (EWM) qui affiche le diagramme d'etats complet d'un work item directement dans son editeur, sans quitter la page."
-banner: "img/blog/ewm-workflow-plugin-banner.png"
+banner: "img/portfolio/ewm-workflow-plugin-banner.png"
 translationKey: "ewm-plugin-show-workflow"
 ---
 
@@ -24,7 +24,7 @@ Un nouveau bouton apparaît dans la barre d'outils de l'éditeur de work item. S
 
 Le diagramme est rendu en SVG vectoriel : parfaitement net quel que soit le zoom du navigateur ou la résolution de l'écran. Les états sont organisés en colonnes selon leur groupe EWM ("Ouverts", "En cours", "Résolus / Fermés"), avec des couleurs distinctes par groupe. Les transitions apparaissent sous forme de flèches étiquetées avec le nom de l'action. Pendant la création d'un work item -- avant le premier enregistrement, donc sans identifiant réel -- le bouton est grisé et la bulle ne s'ouvre pas.
 
-![Démonstration du plugin Show Workitem Workflow](/img/blog/ewm-workflow-plugin-demo.gif)
+![Démonstration du plugin Show Workitem Workflow](/img/portfolio/ewm-workflow-plugin-demo.gif)
 
 ## Sous le capot
 

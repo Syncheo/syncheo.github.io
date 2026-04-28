@@ -10,3 +10,14 @@ fix_hugo_toml.py
 fix_index.py
 fix_mounts.py
 verify_portfolio.py
+check_gif.py
+copy_gif.py
+migrate_portfolio_imgs.py
+write_portfolio_translations.py
+add_banner_portfolio.py
+check_banner.py
+preview_banner.py
+read_templates.py
+regen_banner.py
+test_fonts.py
+update_index_and_banner.py
