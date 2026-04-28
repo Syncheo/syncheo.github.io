@@ -20,8 +20,14 @@
 
       <ul class="sy-menu">
         {{ range .Site.Menus.main }}
+        {{ $href := "" }}
+        {{ with .Page }}
+          {{ $href = .RelPermalink }}
+        {{ else }}
+          {{ $href = .URL | relLangURL }}
+        {{ end }}
         <li{{ if $.IsMenuCurrent "main" . }} class="sy-menu-active"{{ end }}>
-          <a href="{{ .URL }}">{{ .Name }}</a>
+          <a href="{{ $href }}">{{ .Name }}</a>
         </li>
         {{ end }}
       </ul>

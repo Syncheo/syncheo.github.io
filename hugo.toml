@@ -22,40 +22,40 @@ disableAliases = true
 		[languages.fr.menu]
     		[[languages.fr.menu.main]]
 				name = "Accueil"
-    			url = "/"
+    			pageRef = "/"
     			weight = 1
-				
+
 			[[languages.fr.menu.main]]
 				name = "Services"
-    			url = "/services/"
+    			pageRef = "/services"
 				weight = 2
-				
+
 			[[languages.fr.menu.main]]
     			name = "Réalisations"
-    			url = "/portfolio/"
+    			pageRef = "/portfolio"
     			weight = 3
 
 			[[languages.fr.menu.main]]
 				identifier = "ressources_fr"
     			name = "Ressources"
-				url = "/blog/"  # Ou laisse vide si tu veux juste le menu déroulant
+				pageRef = "/blog"
 				weight = 4
-				
+
 				[[languages.fr.menu.main]]
 					parent = "ressources_fr"
 					name = "Blog Technique"
-					url = "/blog/"
+					pageRef = "/blog"
 					weight = 1
 
 				[[languages.fr.menu.main]]
 					parent = "ressources_fr"
     				name = "FAQ ELM"
-    				url = "/faq/"
+    				pageRef = "/faq"
     				weight = 2
-				
+
 			[[languages.fr.menu.main]]
     			name = "Contact"
-    			url = "/contact/"
+    			pageRef = "/contact"
     			weight = 5
 
 	[languages.en]
@@ -69,40 +69,40 @@ disableAliases = true
 		[languages.en.menu]
 			[[languages.en.menu.main]]
     			name = "Home"
-    			url = "/"
+    			pageRef = "/"
     			weight = 1
 
 			[[languages.en.menu.main]]
     			name = "Services"
-    			url = "/services/"
+    			pageRef = "/services"
     			weight = 2
 
 			[[languages.en.menu.main]]
 				name = "Portfolio"
-				url = "/portfolio/"
+				pageRef = "/portfolio"
 				weight = 3
-					
+
 			[[languages.en.menu.main]]
 				identifier = "resources_en"
 				name = "Resources"
-				url = "/en/blog/"
+				pageRef = "/blog"
 				weight = 4
 
 				[[languages.en.menu.main]]
 					parent = "resources_en"
 					name = "Technical Blog"
-					url = "/en/blog/"
+					pageRef = "/blog"
 					weight = 1
 
 				[[languages.en.menu.main]]
 					parent = "resources_en"
 					name = "ELM FAQ"
-					url = "/en/faq/"
+					pageRef = "/faq"
 					weight = 2
 
 			[[languages.en.menu.main]]
 				name = "Contact"
-				url = "/contact/"
+				pageRef = "/contact"
 				weight = 5
 
 	[languages.de]
@@ -116,40 +116,40 @@ disableAliases = true
 		[languages.de.menu]
 			[[languages.de.menu.main]]
 				name = "Startseite"
-				url = "/"
+				pageRef = "/"
 				weight = 1
 
 			[[languages.de.menu.main]]
 				name = "Leistungen"
-				url = "/services/"
+				pageRef = "/services"
 				weight = 2
 
 			[[languages.de.menu.main]]
 				name = "Portfolio"
-				url = "/portfolio/"
+				pageRef = "/portfolio"
 				weight = 3
 
 			[[languages.de.menu.main]]
 				identifier = "resources_de"
 				name = "Ressourcen"
-				url = "/de/blog/"
+				pageRef = "/blog"
 				weight = 4
 
 				[[languages.de.menu.main]]
 					parent = "resources_de"
 					name = "Technik-Blog"
-					url = "/de/blog/"
+					pageRef = "/blog"
 					weight = 1
 
 				[[languages.de.menu.main]]
 					parent = "resources_de"
 					name = "ELM FAQ"
-					url = "/de/faq/"
+					pageRef = "/faq"
 					weight = 2
 
 			[[languages.de.menu.main]]
 				name = "Kontakt"
-				url = "/contact/"
+				pageRef = "/contact"
 				weight = 5
 
 # number of words of summarized post content (default 70)
