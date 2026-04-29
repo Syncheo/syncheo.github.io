@@ -1,0 +1,51 @@
+{{/*
+  Sidebar dédiée à la section "portfolio".
+  - Pas de widget "Categories" (les articles portfolio n'utilisent pas de catégories).
+  - Le widget "Tags" est filtré pour ne lister que les tags effectivement
+    utilisés par au moins un article de la section portfolio (l'ordre
+    alphabétique est conservé via le tri des clés de la taxonomie).
+  - Les liens pointent vers la page de tag globale standard d'Hugo.
+*/}}
+
+{{ partial "widgets/search.html" . }}
+
+{{ if .Site.Params.widgets.tags }}
+{{ if isset .Site.Taxonomies "tags" }}
+
+{{/* Construit la liste filtrée : tags utilisés par au moins une page portfolio. */}}
+{{ $portfolioTags := slice }}
+{{ range $name, $items := .Site.Taxonomies.tags }}
+  {{ $hasPortfolio := false }}
+  {{ range $items }}
+    {{ if eq .Page.Section "portfolio" }}
+      {{ $hasPortfolio = true }}
+    {{ end }}
+  {{ end }}
+  {{ if $hasPortfolio }}
+    {{ $portfolioTags = $portfolioTags | append (dict "name" $name "items" $items) }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $portfolioTags) 0 }}
+<div class="panel sidebar-menu">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ i18n "tagsTitle" }}</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            {{ $current := . }}
+            {{ range $portfolioTags }}
+            <li {{ if eq $current.RelPermalink (printf "%s/%s/" ("tags" | relLangURL) (.name | urlize | lower)) }}class="active"{{ end }}>
+                <a href="{{ "tags/" | relLangURL }}{{ .name | urlize | lower }}"><i class="fas fa-tags"></i> {{ .name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+</div>
+{{ end }}
+
+{{ end }}
+{{ end }}
