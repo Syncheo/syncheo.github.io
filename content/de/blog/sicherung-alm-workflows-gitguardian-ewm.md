@@ -5,7 +5,7 @@ draft: false
 author: "Syncheo"
 description: "Bidirektionale Integrationsarchitektur zwischen IBM Engineering Workflow Management und GitGuardian zur Erkennung von Secrets."
 categories: ["DevSecOps", "Software-Engineering"]
-tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin-Entwicklung"]
+tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin Development"]
 translationKey: "ewm-gitguardian-integration"
 banner: "img/blog/ewm-gitguardian-banner.png"
 ---

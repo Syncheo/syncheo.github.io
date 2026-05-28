@@ -1,6 +1,13 @@
 <meta charset="utf-8">
+{{/* Les pages de taxonomie (/tags/, /categories/) et de terme (/tags/xxx/)
+     sont du contenu mince : on les laisse explorables mais en noindex,
+     pour qu'elles ne soient pas traitées comme des doublons par Google. */}}
+{{ if in (slice "taxonomy" "term") .Kind }}
+<meta name="robots" content="noindex, follow">
+{{ else }}
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
+{{ end }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ $title_plain := .Title | markdownify | plainify }}
 <title>{{ $title_plain }}</title>
@@ -13,6 +20,20 @@
 {{ end }}
 {{ $description_plain := default .Site.Params.defaultDescription .Description | markdownify | plainify }}
 <meta name="description" content="{{ $description_plain }}">
+
+{{/* ─── SEO multilingue : canonique + hreflang ─────────────────────────
+     Chaque page se canonise vers elle-même (jamais vers la version FR).
+     Hreflang annonce à Google toutes les variantes linguistiques de la
+     page courante, plus un x-default pointant vers la version FR. */}}
+{{ if .Permalink }}
+<link rel="canonical" href="{{ .Permalink }}" />
+{{ end }}
+{{ range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" />
+{{ end }}
+{{ range .AllTranslations }}{{ if eq .Language.Lang "fr" }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+{{ end }}{{ end }}
 
 {{ hugo.Generator }}
 

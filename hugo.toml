@@ -354,7 +354,8 @@ pluralizelisttitles = false
 [taxonomies]
     category = "categories"
     tag = "tags"
-    author = "authors"
+    # 'author' retiré : les articles utilisent un champ 'author' simple (chaîne),
+    # pas la taxonomie 'authors' — elle ne générait qu'une page /authors/ vide.
 
 [markup]
   [markup.goldmark]

@@ -22,9 +22,9 @@ L'ajout d'un enfant à un parent existant est lui aussi peu naturel : il passe p
 
 Syncheo a développé **Child Items Presentation**, une présentation Jazz qui remplace la version native dans n'importe quel éditeur de type de work item. Elle conserve la place et le rôle de la présentation Children officielle, et y ajoute trois capacités majeures : une vue tabulaire enrichie et configurable, l'édition en ligne des enfants, et l'ajout / suppression d'enfants directement depuis le parent.
 
-[INSÉRER GIF ICI — `/img/portfolio/ewm-childitems-plugin-demo.gif`]
+![Démonstration du plugin Child Items Presentation](/img/portfolio/ewm-childitems-plugin-demo.gif)
 
-*Légende suggérée : édition en masse de plusieurs work items enfants depuis l'éditeur du parent, ajout d'un nouvel enfant via la dialog Jazz officielle, suppression d'un lien — le tout persisté en un seul clic Save.*
+*Édition en masse de plusieurs work items enfants depuis l'éditeur du parent, ajout d'un nouvel enfant via la dialog Jazz officielle, suppression d'un lien — le tout persisté en un seul clic Save.*
 
 Comme toute présentation Jazz, le widget se déclare dans la Process Configuration et s'intègre nativement à l'éditeur : aucun bouton Save propre, aucun cycle de persistance parallèle. Les modifications sont attachées à la working copy de l'éditeur courant et persistées au clic sur le bouton Save global de la barre d'outils — exactement comme tous les autres champs.
 
