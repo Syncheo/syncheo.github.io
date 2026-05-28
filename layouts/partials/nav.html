@@ -20,15 +20,36 @@
 
       <ul class="sy-menu">
         {{ range .Site.Menus.main }}
-        {{ $href := "" }}
-        {{ with .Page }}
-          {{ $href = .RelPermalink }}
-        {{ else }}
-          {{ $href = .URL | relLangURL }}
+        {{ if not .Parent }}
+          {{ $href := "" }}
+          {{ with .Page }}
+            {{ $href = .RelPermalink }}
+          {{ else }}
+            {{ $href = .URL | relLangURL }}
+          {{ end }}
+          {{ if .HasChildren }}
+          <li class="sy-has-dropdown{{ if $.IsMenuCurrent "main" . }} sy-menu-active{{ end }}">
+            <a href="{{ $href }}" class="sy-menu-toggle">{{ .Name }}<span class="sy-caret">▾</span></a>
+            <ul class="sy-dropdown">
+              {{ range .Children }}
+              {{ $childHref := "" }}
+              {{ with .Page }}
+                {{ $childHref = .RelPermalink }}
+              {{ else }}
+                {{ $childHref = .URL | relLangURL }}
+              {{ end }}
+              <li{{ if $.IsMenuCurrent "main" . }} class="sy-menu-active"{{ end }}>
+                <a href="{{ $childHref }}">{{ .Name }}</a>
+              </li>
+              {{ end }}
+            </ul>
+          </li>
+          {{ else }}
+          <li{{ if $.IsMenuCurrent "main" . }} class="sy-menu-active"{{ end }}>
+            <a href="{{ $href }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
         {{ end }}
-        <li{{ if $.IsMenuCurrent "main" . }} class="sy-menu-active"{{ end }}>
-          <a href="{{ $href }}">{{ .Name }}</a>
-        </li>
         {{ end }}
       </ul>
 
@@ -83,6 +104,31 @@
     var open = navRight.classList.toggle('sy-open');
     burger.classList.toggle('sy-burger-open', open);
     this.setAttribute('aria-expanded', String(open));
+  });
+
+  /* Dropdowns sous-menu (Syncheo > Sponsoring) */
+  document.querySelectorAll('.sy-has-dropdown > a').forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      var li = this.closest('.sy-has-dropdown');
+      var isOpen = li.classList.contains('sy-dd-open');
+      /* Ferme tous les autres */
+      document.querySelectorAll('.sy-has-dropdown').forEach(function (el) {
+        el.classList.remove('sy-dd-open');
+      });
+      if (!isOpen) {
+        li.classList.add('sy-dd-open');
+        e.preventDefault(); /* évite de naviguer vers "#" */
+      }
+    });
+  });
+
+  /* Ferme les dropdowns au clic extérieur */
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.sy-has-dropdown')) {
+      document.querySelectorAll('.sy-has-dropdown').forEach(function (el) {
+        el.classList.remove('sy-dd-open');
+      });
+    }
   });
 
   /* Dropdown langue */

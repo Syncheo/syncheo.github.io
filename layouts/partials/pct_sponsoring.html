@@ -1,0 +1,200 @@
+{{ $lang := .Language.Lang }}
+<div class="pct-page">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="pct-hero" style="background-image: url('{{ "img/pct/start_pct.png" | relURL }}')">
+    <div class="pct-hero-overlay">
+      <div class="container">
+        <div class="pct-hero-content text-center">
+          {{ if eq $lang "en" }}
+          <span class="pct-badge">🌲 Live Adventure · Pacific Crest Trail</span>
+          <h1 class="pct-hero-title">Syncheo Conquers the United States</h1>
+          <p class="pct-hero-sub">4,265 km &nbsp;·&nbsp; From Mexico to Canada &nbsp;·&nbsp; Florian Bertin</p>
+          {{ else if eq $lang "de" }}
+          <span class="pct-badge">🌲 Live-Abenteuer · Pacific Crest Trail</span>
+          <h1 class="pct-hero-title">Syncheo&nbsp;erobert die Vereinigten&nbsp;Staaten</h1>
+          <p class="pct-hero-sub">4.265 km &nbsp;·&nbsp; Von Mexiko nach Kanada &nbsp;·&nbsp; Florian Bertin</p>
+          {{ else }}
+          <span class="pct-badge">🌲 Aventure en direct · Pacific Crest Trail</span>
+          <h1 class="pct-hero-title">Syncheo part à la conquête&nbsp;des États-Unis</h1>
+          <p class="pct-hero-sub">4 265 km &nbsp;·&nbsp; Du Mexique au Canada &nbsp;·&nbsp; Florian Bertin</p>
+          {{ end }}
+          <a href="#pct-main" class="btn pct-btn-hero">
+            {{ if eq $lang "en" }}📍 Follow the adventure live{{ else if eq $lang "de" }}📍 Abenteuer live verfolgen{{ else }}📍 Suivre l'aventure en direct{{ end }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ STATS ═══ -->
+  <section class="pct-stats">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-xs-6 col-sm-3 pct-stat">
+          <div class="pct-stat-value">4 265 km</div>
+          <div class="pct-stat-label">{{ if eq $lang "en" }}Total distance{{ else if eq $lang "de" }}Gesamtdistanz{{ else }}Distance totale{{ end }}</div>
+        </div>
+        <div class="col-xs-6 col-sm-3 pct-stat">
+          <div class="pct-stat-value">3</div>
+          <div class="pct-stat-label">{{ if eq $lang "en" }}States crossed{{ else if eq $lang "de" }}Bundesstaaten{{ else }}États traversés{{ end }}</div>
+        </div>
+        <div class="col-xs-6 col-sm-3 pct-stat">
+          <div class="pct-stat-value">~160 j</div>
+          <div class="pct-stat-label">{{ if eq $lang "en" }}Estimated duration{{ else if eq $lang "de" }}Geschätzte Dauer{{ else }}Durée estimée{{ end }}</div>
+        </div>
+        <div class="col-xs-6 col-sm-3 pct-stat">
+          <div class="pct-stat-value">4 421 m</div>
+          <div class="pct-stat-label">{{ if eq $lang "en" }}Mt Whitney (highest US peak){{ else if eq $lang "de" }}Mt Whitney (höchster US-Gipfel){{ else }}Mt Whitney (sommet US){{ end }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTENU PRINCIPAL : texte+photos gauche / tracking droite ═══ -->
+  <section class="pct-main" id="pct-main">
+    <div class="container">
+      <div class="row pct-main-row">
+
+        <!-- ── Colonne gauche : histoire + galerie ── -->
+        <div class="col-md-5 pct-left-col" id="pct-left-col">
+
+          <div class="pct-story-text">
+            {{ if eq $lang "en" }}
+            <h2>An extraordinary challenge</h2>
+            <p>The <strong>Pacific Crest Trail</strong> is one of the most demanding and spectacular hikes on the planet. Running <strong>4,265 km</strong> along the west coast of the United States — from the Mexican border to the Canadian border — it crosses California, Oregon and Washington, and traverses some of North America's most remote wilderness.</p>
+            <p>The trail passes at the foot of <strong>Mount Whitney (4,421 m)</strong>, the highest peak in the contiguous United States — a landmark that gives a sense of the scale of this undertaking.</p>
+            <p><strong>Florian Bertin</strong>, an engineer and long-time collaborator of the Syncheo team, took on this challenge: completing the entire PCT in a single thru-hike — a 4 to 6-month solo adventure with the Syncheo flag on his back.</p>
+            <h2 class="pct-story-h2-second">Why Syncheo is sponsoring this</h2>
+            <p>At Syncheo, we believe that the qualities that make a great long-distance hiker — perseverance, rigour, adaptability, and passion — are exactly those that drive our technical work. By sponsoring Florian, we want to highlight the human dimension behind what we do together.</p>
+            <p>This adventure will become a full feature article on the Syncheo blog: a testament to the spirit that guides us every day.</p>
+            {{ else if eq $lang "de" }}
+            <h2>Eine außergewöhnliche Herausforderung</h2>
+            <p>Der <strong>Pacific Crest Trail</strong> ist einer der anspruchsvollsten und spektakulärsten Fernwanderwege der Welt. Er erstreckt sich über <strong>4.265 km</strong> entlang der Westküste der USA — von der mexikanischen Grenze bis zur Grenze nach Kanada — durchquert Kalifornien, Oregon und Washington und führt durch einige der wildesten Gebiete Nordamerikas.</p>
+            <p>Der Trail führt am Fuß des <strong>Mount Whitney (4.421 m)</strong> entlang, dem höchsten Gipfel der zusammenhängenden USA — ein Meilenstein, der das Ausmaß dieses Abenteuers erahnen lässt.</p>
+            <p><strong>Florian Bertin</strong>, ein Ingenieur und langjähriger Wegbegleiter des Syncheo-Teams, nimmt diese Herausforderung an: den gesamten PCT in einem einzigen Durchmarsch zu bewältigen — ein 4 bis 6 Monate dauerndes Solo-Abenteuer mit der Syncheo-Fahne auf dem Rücken.</p>
+            <h2 class="pct-story-h2-second">Warum Syncheo dieses Abenteuer sponsert</h2>
+            <p>Bei Syncheo sind wir überzeugt, dass die Qualitäten, die einen großartigen Fernwanderer ausmachen — Ausdauer, Präzision, Anpassungsfähigkeit und Leidenschaft — genau die sind, die unsere gemeinsame Arbeit antreiben. Durch das Sponsoring von Florian möchten wir die menschliche Dimension hinter unserem Tun hervorheben.</p>
+            <p>Dieses Abenteuer wird zu einem vollständigen Artikel im Syncheo-Blog: ein Zeugnis des Geistes, der uns täglich leitet.</p>
+            {{ else }}
+            <h2>Un défi hors du commun</h2>
+            <p>Le <strong>Pacific Crest Trail</strong> est l'un des itinéraires de randonnée les plus exigeants et les plus spectaculaires de la planète. Reliant <strong>4 265 km</strong> le long de la côte ouest des États-Unis — de la frontière mexicaine jusqu'au Canada — il traverse la Californie, l'Oregon et l'État de Washington, et longe certains des espaces sauvages les plus reculés d'Amérique du Nord.</p>
+            <p>Le trail passe au pied du <strong>mont Whitney (4 421 m)</strong>, point culminant des États-Unis continentaux — une étape qui donne la pleine mesure de l'ampleur de l'aventure.</p>
+            <p><strong>Florian Bertin</strong>, ingénieur et collaborateur de longue date de l'équipe Syncheo, a relevé ce défi : traverser l'intégralité du PCT en un seul thru-hike — une aventure de 4 à 6 mois, en solo, avec le drapeau Syncheo dans le sac.</p>
+            <h2 class="pct-story-h2-second">Pourquoi Syncheo sponsorise cette aventure</h2>
+            <p>Chez Syncheo, nous pensons que les qualités qui font un grand randonneur de longue distance — persévérance, rigueur, adaptabilité et passion — sont précisément celles qui animent notre travail commun. En sponsorisant Florian, nous souhaitons mettre en avant la dimension humaine derrière ce que nous construisons ensemble.</p>
+            <p>Cette aventure donnera lieu à un article complet sur le blog Syncheo : un témoignage de l'esprit qui nous guide au quotidien dans nos projets.</p>
+            {{ end }}
+          </div>
+
+          <!-- Galerie photos -->
+          <div class="pct-gallery">
+            <div class="row">
+              <div class="col-xs-6 pct-photo-item">
+                <div class="pct-photo-wrap">
+                  <img src="{{ "img/pct/florian_depart.png" | relURL }}"
+                       alt="{{ if eq $lang "en" }}Florian at the PCT start{{ else if eq $lang "de" }}Florian am PCT-Start{{ else }}Florian au départ du PCT{{ end }}"
+                       class="pct-photo">
+                </div>
+                <p class="pct-photo-caption">
+                  {{ if eq $lang "en" }}Florian, flag in hand, ready to set off{{ else if eq $lang "de" }}Florian, Fahne in der Hand, bereit zum Aufbruch{{ else }}Florian, drapeau en main, prêt pour l'aventure{{ end }}
+                </p>
+              </div>
+              <div class="col-xs-6 pct-photo-item">
+                <div class="pct-photo-wrap">
+                  <img src="{{ "img/pct/syncheo_en_voyage.png" | relURL }}"
+                       alt="{{ if eq $lang "en" }}Syncheo flag on the trail{{ else if eq $lang "de" }}Syncheo-Fahne auf dem Trail{{ else }}Drapeau Syncheo sur le trail{{ end }}"
+                       class="pct-photo">
+                </div>
+                <p class="pct-photo-caption">
+                  {{ if eq $lang "en" }}The Syncheo flag hits the road{{ else if eq $lang "de" }}Die Syncheo-Fahne auf der Strecke{{ else }}Le drapeau Syncheo prend la route{{ end }}
+                </p>
+              </div>
+              <div class="col-xs-12 pct-photo-item">
+                <div class="pct-photo-wrap pct-photo-wide-wrap">
+                  <img src="{{ "img/pct/start_pct.png" | relURL }}"
+                       alt="{{ if eq $lang "en" }}Official PCT start marker, Mexican border{{ else if eq $lang "de" }}Offizieller PCT-Startmarker, mexikanische Grenze{{ else }}Balise officielle de départ du PCT, frontière mexicaine{{ end }}"
+                       class="pct-photo">
+                </div>
+                <p class="pct-photo-caption">
+                  {{ if eq $lang "en" }}The official PCT start marker at the Mexican border — kilometre zero{{ else if eq $lang "de" }}Die offizielle PCT-Startmarkierung an der mexikanischen Grenze — Kilometer null{{ else }}La balise officielle de départ du PCT, à la frontière mexicaine — kilomètre zéro{{ end }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /col gauche -->
+
+        <!-- ── Colonne droite : live tracking sticky ── -->
+        <div class="col-md-7 pct-right-col">
+          <div class="pct-tracking-sticky" id="pct-tracking">
+            <div class="pct-tracking-label">
+              <span class="pct-live-pulse"></span>
+              <span class="pct-tracking-title">
+                {{ if eq $lang "en" }}Live tracking — Florian Bertin{{ else if eq $lang "de" }}Live-Tracking — Florian Bertin{{ else }}Suivi en direct — Florian Bertin{{ end }}
+              </span>
+            </div>
+            <div class="pct-iframe-container">
+              <iframe
+                src="https://livetracking.pctflo.fr"
+                title="Live Tracking PCT — Florian Bertin"
+                id="pct-iframe"
+                allowfullscreen
+                loading="lazy"
+                class="pct-iframe">
+              </iframe>
+            </div>
+            <div class="pct-tracking-footer">
+              <p class="pct-tracking-sub">
+                {{ if eq $lang "en" }}Position updated in real time · distance covered · elevation profiles{{ else if eq $lang "de" }}Position in Echtzeit aktualisiert · zurückgelegte Distanz · Höhenprofile{{ else }}Position mise à jour en temps réel · distance parcourue · profils d'altitude{{ end }}
+              </p>
+              <a href="https://livetracking.pctflo.fr" target="_blank" rel="noopener noreferrer" class="btn pct-btn-tracking">
+                {{ if eq $lang "en" }}Open full map ↗{{ else if eq $lang "de" }}Vollständige Karte ↗{{ else }}Ouvrir la carte complète ↗{{ end }}
+              </a>
+            </div>
+          </div>
+        </div><!-- /col droite -->
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  function fitPctIframe() {
+    var leftCol = document.getElementById('pct-left-col');
+    var iframe  = document.getElementById('pct-iframe');
+    var sticky  = document.getElementById('pct-tracking');
+    if (!leftCol || !iframe || !sticky) return;
+
+    /* Mobile : hauteur fixe, pas de JS */
+    if (window.innerWidth < 992) {
+      iframe.style.height = '440px';
+      return;
+    }
+
+    var leftH   = leftCol.getBoundingClientRect().height;
+    var labelEl = sticky.querySelector('.pct-tracking-label');
+    var footerEl= sticky.querySelector('.pct-tracking-footer');
+    var labelH  = labelEl  ? labelEl.offsetHeight  : 36;
+    var footerH = footerEl ? footerEl.offsetHeight : 56;
+    var gaps    = 28; /* paddings internes */
+
+    /* L'iframe occupe toute la hauteur de la colonne gauche
+       moins le label, le footer et les marges */
+    var h = Math.max(leftH - labelH - footerH - gaps, 480);
+    iframe.style.height = h + 'px';
+  }
+
+  /* Après chargement complet (les images influencent la hauteur) */
+  window.addEventListener('load', fitPctIframe);
+  /* Recalcul si le viewport change */
+  window.addEventListener('resize', fitPctIframe);
+  /* Sécurité : deuxième passe 400ms après pour les images lentes */
+  window.addEventListener('load', function () {
+    setTimeout(fitPctIframe, 400);
+  });
+})();
+</script>

@@ -1,0 +1,33 @@
+{{ $lang := .Language.Lang }}
+<section class="pct-banner-home">
+  <div class="container">
+    <div class="pct-banner-inner">
+
+      <div class="pct-banner-photo hidden-xs">
+        <img src="{{ "img/pct/florian_depart.png" | relURL }}"
+             alt="{{ if eq $lang "en" }}Florian Bertin PCT{{ else if eq $lang "de" }}Florian Bertin PCT{{ else }}Florian Bertin PCT{{ end }}">
+      </div>
+
+      <div class="pct-banner-body">
+        <span class="pct-banner-tag">
+          <span class="pct-live-dot-sm"></span>
+          {{ if eq $lang "en" }}Live · Pacific Crest Trail{{ else if eq $lang "de" }}Live · Pacific Crest Trail{{ else }}En direct · Pacific Crest Trail{{ end }}
+        </span>
+        <h3 class="pct-banner-title">
+          {{ if eq $lang "en" }}Syncheo Conquers the United States{{ else if eq $lang "de" }}Syncheo erobert die Vereinigten Staaten{{ else }}Syncheo part à la conquête des États-Unis{{ end }}
+        </h3>
+        <p class="pct-banner-desc">
+          {{ if eq $lang "en" }}Our colleague <strong>Florian Bertin</strong> is completing the entire <strong>Pacific Crest Trail</strong> — 4,265 km across California, Oregon and Washington — with the Syncheo flag on his back.{{ else if eq $lang "de" }}Unser Kollege <strong>Florian Bertin</strong> bewältigt den gesamten <strong>Pacific Crest Trail</strong> — 4.265 km durch Kalifornien, Oregon und Washington — mit der Syncheo-Fahne auf dem Rücken.{{ else }}Notre collègue <strong>Florian Bertin</strong> traverse l'intégralité du <strong>Pacific Crest Trail</strong> — 4 265 km à travers la Californie, l'Oregon et l'État de Washington — avec le drapeau Syncheo dans le sac.{{ end }}
+        </p>
+      </div>
+
+      <div class="pct-banner-cta">
+        <a href="{{ "/sponsoring/pct/" | relLangURL }}" class="btn pct-banner-btn">
+          {{ if eq $lang "en" }}Follow the adventure{{ else if eq $lang "de" }}Abenteuer verfolgen{{ else }}Suivre l'aventure{{ end }}
+          <span class="pct-btn-arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
