@@ -1,5 +1,7 @@
 ---
-title: "Child Items Presentation - EWM-Plugin zur Steuerung untergeordneter Work Items vom übergeordneten Element aus"
+title: "Child Items Presentation — EWM-Plugin"
+subtitle: "Untergeordnete Work Items direkt im Parent-Editor steuern"
+description: "Von Syncheo entwickeltes IBM EWM-Plugin: konfigurierbare Kindertabelle, Inline-Bearbeitung sowie Hinzufügen/Entfernen untergeordneter Work Items direkt vom Parent aus."
 date: 2026-04-28T10:00:00+02:00
 draft: false
 slug: "ewm-plugin-child-items-presentation"

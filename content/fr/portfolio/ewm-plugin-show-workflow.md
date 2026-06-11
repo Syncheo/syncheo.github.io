@@ -1,5 +1,7 @@
 ---
-title: "Show Workitem Workflow - Plugin EWM pour visualiser les etats et transitions dans l'editeur"
+title: "Show Workitem Workflow — Plugin EWM"
+subtitle: "Visualisez les états et transitions du workflow sans quitter l'éditeur"
+description: "Plugin IBM EWM développé par Syncheo : le diagramme d'états complet d'un work item affiché directement dans son éditeur, sans quitter la page."
 date: 2026-04-15T10:00:00+02:00
 draft: false
 slug: "ewm-plugin-show-workflow"

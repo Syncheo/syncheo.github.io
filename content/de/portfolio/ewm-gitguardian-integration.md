@@ -1,18 +1,18 @@
 ---
-title: "Sicherung von ALM-Workflows: Native GitGuardian-Integration in IBM EWM"
+title: "GitGuardian-Integration — IBM EWM"
+subtitle: "Native Secret-Erkennung in ALM-Workflows: Blockierung bei der Auslieferung und Warnungen direkt in der IDE"
 date: 2026-03-18T11:30:00+01:00
 draft: false
 author: "Syncheo"
-description: "Bidirektionale Integrationsarchitektur zwischen IBM Engineering Workflow Management und GitGuardian zur Erkennung von Secrets."
-categories: ["DevSecOps", "Software-Engineering"]
+description: "Von Syncheo entwickelte bidirektionale Integration zwischen IBM EWM und GitGuardian: Server- und Client-Plugins, die Secret-Leaks bei der Auslieferung blockieren und jeden Vorfall nachvollziehbar machen."
+summary: "Syncheo hat eine bidirektionale Integration zwischen IBM Engineering Workflow Management (EWM) und GitGuardian entwickelt: ein Server-Plugin, das jede Change-Set-Auslieferung prüft, und ein Client-Plugin, das Entwickler direkt in der IDE warnt — nachvollziehbare Vorfälle, angereicherte Work Items, niemals offengelegte Secrets."
 tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin Development"]
 translationKey: "ewm-gitguardian-integration"
 banner: "img/blog/ewm-gitguardian-banner.png"
+aliases: ["/blog/2026/03/18/sicherung-alm-workflows-gitguardian-ewm/"]
 ---
 
 In einer Zeit zunehmender Cyber-Bedrohungen ist die präventive Erkennung von "Secret Leaks" (API-Schlüssel, Zertifikate, Anmeldedaten) im Quellcode zu einer zentralen Governance-Aufgabe geworden.
-
-<!--more-->
 
 Um dieser Herausforderung zu begegnen, wurde eine bidirektionale Integrationslösung zwischen **IBM Engineering Workflow Management (EWM)** und **GitGuardian** entwickelt. Diese ermöglicht die Absicherung des Software Development Life Cycle (SDLC), ohne die Agilität der Teams zu beeinträchtigen.
 

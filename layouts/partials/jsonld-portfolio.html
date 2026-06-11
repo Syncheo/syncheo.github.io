@@ -1,0 +1,30 @@
+{{/* Données structurées schema.org pour les fiches portfolio :
+     SoftwareApplication (plugins/outils) + BreadcrumbList.
+     Construit en dict Hugo puis sérialisé en une seule passe
+     (jsonify | safeJS) pour éviter le double-échappement du
+     contexte <script>. */}}
+{{ if and (eq .Type "portfolio") (eq .Kind "page") }}
+{{ $app := dict
+    "@type" "SoftwareApplication"
+    "name" (.Title | plainify)
+    "headline" ((.Params.subtitle | default .Title) | plainify)
+    "description" ((or .Description .Summary) | plainify)
+    "url" .Permalink
+    "inLanguage" .Language.Lang
+    "applicationCategory" "DeveloperApplication"
+    "operatingSystem" "IBM Engineering Lifecycle Management (ELM)"
+    "author" (dict "@type" "Organization" "name" "Syncheo" "url" "https://www.syncheo.tech/")
+}}
+{{ with .Params.banner }}{{ $app = merge $app (dict "image" (. | absURL)) }}{{ end }}
+{{ with .PublishDate }}{{ $app = merge $app (dict "datePublished" (.Format "2006-01-02")) }}{{ end }}
+{{ with .Params.tags }}{{ $app = merge $app (dict "keywords" (delimit . ", ")) }}{{ end }}
+{{ $breadcrumb := dict
+    "@type" "BreadcrumbList"
+    "itemListElement" (slice
+      (dict "@type" "ListItem" "position" 1 "name" "Syncheo" "item" site.Home.Permalink)
+      (dict "@type" "ListItem" "position" 2 "name" (.Parent.Title | plainify) "item" .Parent.Permalink)
+      (dict "@type" "ListItem" "position" 3 "name" (.Title | plainify) "item" .Permalink))
+}}
+{{ $schema := dict "@context" "https://schema.org" "@graph" (slice $app $breadcrumb) }}
+<script type="application/ld+json">{{ $schema | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{ end }}

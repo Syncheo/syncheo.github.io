@@ -11,5 +11,75 @@
       <a href="{{ .cta_secondary_link | relLangURL }}" class="btn-hero-secondary">{{ .cta_secondary }}</a>
     </div>
   </div>
+
+  {{/* Indicateur de scroll : signale que la page se déroule.
+       Cliquable (scroll vers la section suivante), masqué dès le premier scroll. */}}
+  <button type="button" class="hero-scroll-cue" id="hero-scroll-cue" aria-label="{{ i18n "scrollCue" }}">
+    <span class="hero-scroll-label">{{ i18n "scrollCue" }}</span>
+    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" aria-hidden="true">
+      <path d="M2 2l9 8 9-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
 </section>
+
+<style>
+  .hero-scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #210DBA;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+    padding: 8px 14px;
+  }
+  .hero-scroll-cue:hover { opacity: 1; }
+  .hero-scroll-cue.sy-cue-hidden { opacity: 0; pointer-events: none; }
+  .hero-scroll-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .hero-scroll-cue svg { animation: sy-cue-bounce 2s infinite; }
+  @keyframes sy-cue-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(7px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-scroll-cue svg { animation: none; }
+  }
+</style>
+
+<script>
+(function () {
+  var cue = document.getElementById('hero-scroll-cue');
+  if (!cue) return;
+
+  /* Clic : défile vers la section qui suit le hero */
+  cue.addEventListener('click', function () {
+    var hero = cue.closest('.hero-home');
+    var next = hero && hero.nextElementSibling;
+    if (next) next.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  /* Masque l'indicateur dès que l'utilisateur a commencé à défiler.
+     Sur l'accueil desktop, le container de scroll est <body> (scroll snap) ;
+     sur mobile c'est la fenêtre : on écoute les deux. */
+  function onScroll() {
+    var pos = Math.max(document.body.scrollTop, window.pageYOffset || 0);
+    cue.classList.toggle('sy-cue-hidden', pos > 40);
+  }
+  document.body.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
 {{ end }}

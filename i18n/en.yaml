@@ -138,3 +138,18 @@
 
 - id: privacyNotice
   translation: "Privacy Notice"
+
+- id: portfolioHomeTitle
+  translation: "Our work"
+
+- id: portfolioHomeSubtitle
+  translation: "Plugins and custom solutions built for the IBM Jazz ELM ecosystem."
+
+- id: portfolioHomeAll
+  translation: "View all projects"
+
+- id: portfolioViewProject
+  translation: "View project"
+
+- id: scrollCue
+  translation: "Discover"

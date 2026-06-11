@@ -4,6 +4,34 @@
   <head>
     {{ partial "headers.html" . }}
     {{ partial "custom_headers.html" . }}
+    <style>
+      .sy-pf-grid { display: flex; flex-wrap: wrap; margin: 0 -15px; }
+      .sy-pf-col { width: 50%; padding: 0 15px; margin-bottom: 30px; display: flex; }
+      @media (max-width: 767px) { .sy-pf-col { width: 100%; } }
+      .sy-pf-card {
+        display: flex; flex-direction: column; width: 100%;
+        background: #fff; border: 1px solid #E5E7EB; border-radius: 10px;
+        overflow: hidden; box-shadow: 0 2px 16px rgba(15,23,42,0.06);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .sy-pf-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(15,23,42,0.12); }
+      .sy-pf-card-img { display: block; aspect-ratio: 16/9; overflow: hidden; }
+      .sy-pf-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .sy-pf-card-body { padding: 24px 26px 26px; display: flex; flex-direction: column; flex: 1; }
+      .sy-pf-card-body h2 { margin: 0 0 8px; font-size: 1.6rem; font-weight: 700; }
+      .sy-pf-card-body h2 a { color: #1a1a2e; text-decoration: none; }
+      .sy-pf-card-body h2 a:hover { color: #210DBA; }
+      .sy-pf-subtitle { color: #4a4a6a; font-weight: 600; margin: 0 0 12px; line-height: 1.5; }
+      .sy-pf-summary { color: #6B7280; line-height: 1.7; margin: 0 0 16px; }
+      .sy-pf-tags { margin: 0 0 18px; }
+      .sy-pf-tag {
+        display: inline-block; background: rgba(33,13,186,0.06);
+        border: 1px solid rgba(33,13,186,0.18); color: #210DBA;
+        border-radius: 999px; padding: 3px 12px; margin: 0 6px 6px 0; font-size: 0.8rem;
+      }
+      .sy-pf-card-footer { margin-top: auto; }
+      .portfolio-intro { max-width: 760px; margin-bottom: 36px; color: #4a4a6a; line-height: 1.7; }
+    </style>
   </head>
 
   <body>
@@ -18,59 +46,46 @@
 
         <div id="content">
             <div class="container">
-                <div class="row">
 
-                    <div class="col-md-9" id="blog-listing-medium">
-
-                        {{ if .Content }}
-                        <div class="portfolio-intro" style="margin-bottom:2rem;">
-                            {{ .Content }}
-                        </div>
-                        {{ end }}
-
-                        {{ range .Pages }}
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="image">
-                                        <a href="{{ .Permalink }}">
-                                            {{ if .Params.banner }}
-                                            <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="{{ .Title }}" />
-                                            {{ else }}
-                                            <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="" />
-                                            {{ end }}
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                                    <div class="clearfix">
-                                        {{ if isset .Params "date" }}
-                                        {{ $createdAt := .Date.Format .Site.Params.date_format }}
-                                        {{ range $index, $month := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
-                                            {{ $createdAt = replace $createdAt $month (i18n $month) }}
-                                        {{ end }}
-                                        <p class="date-comments">
-                                            <a href="{{ .Permalink }}"><i class="far fa-calendar"></i> {{ $createdAt }}</a>
-                                        </p>
-                                        {{ end }}
-                                    </div>
-                                    <p class="intro">{{ .Summary }}</p>
-                                    <p class="read-more">
-                                        <a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-                        {{ end }}
-
-                    </div>
-
-                    <div class="col-md-3">
-                        {{ partial "sidebar-portfolio.html" . }}
-                    </div>
-
+                {{ if .Content }}
+                <div class="portfolio-intro">
+                    {{ .Content }}
                 </div>
+                {{ end }}
+
+                <div class="sy-pf-grid">
+                    {{ range .Pages }}
+                    <div class="sy-pf-col">
+                        <article class="sy-pf-card">
+                            <a href="{{ .RelPermalink }}" class="sy-pf-card-img">
+                                {{ if .Params.banner }}
+                                <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}{{ with .Params.subtitle }} — {{ . }}{{ end }}" loading="lazy" />
+                                {{ else }}
+                                <img src="{{ "img/placeholder.png" | relURL }}" alt="" loading="lazy" />
+                                {{ end }}
+                            </a>
+                            <div class="sy-pf-card-body">
+                                <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                                {{ with .Params.subtitle }}
+                                <p class="sy-pf-subtitle">{{ . }}</p>
+                                {{ end }}
+                                <p class="sy-pf-summary">{{ .Summary }}</p>
+                                {{ with .Params.tags }}
+                                <div class="sy-pf-tags">
+                                    {{ range . }}<span class="sy-pf-tag">{{ . }}</span>{{ end }}
+                                </div>
+                                {{ end }}
+                                <p class="sy-pf-card-footer">
+                                    <a href="{{ .RelPermalink }}" class="btn btn-template-main">{{ i18n "portfolioViewProject" }}</a>
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                    {{ end }}
+                </div>
+
+                {{ partial "cta-contact.html" . }}
+
             </div>
         </div>
 

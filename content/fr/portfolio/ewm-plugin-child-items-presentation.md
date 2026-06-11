@@ -1,5 +1,7 @@
 ---
-title: "Child Items Presentation - Plugin EWM pour piloter les work items enfants depuis le parent"
+title: "Child Items Presentation — Plugin EWM"
+subtitle: "Pilotez les work items enfants directement depuis l'éditeur du parent"
+description: "Plugin IBM EWM développé par Syncheo : tableau d'enfants configurable, édition en ligne et ajout/suppression d'enfants directement depuis le work item parent."
 date: 2026-04-28T10:00:00+02:00
 draft: false
 slug: "ewm-plugin-child-items-presentation"

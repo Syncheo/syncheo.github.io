@@ -138,3 +138,18 @@
 
 - id: privacyNotice
   translation: "Datenschutzerklärung"
+
+- id: portfolioHomeTitle
+  translation: "Unsere Referenzen"
+
+- id: portfolioHomeSubtitle
+  translation: "Plugins und maßgeschneiderte Lösungen für das IBM Jazz ELM-Ökosystem."
+
+- id: portfolioHomeAll
+  translation: "Alle Referenzen ansehen"
+
+- id: portfolioViewProject
+  translation: "Projekt ansehen"
+
+- id: scrollCue
+  translation: "Entdecken"

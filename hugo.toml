@@ -11,7 +11,9 @@ languageCode = "fr-fr"
 defaultContentLanguage = "fr"
 defaultContentLanguageInSubdir = true
 
-disableAliases = true
+# Aliases activés : ils génèrent les pages de redirection (meta refresh)
+# des anciennes URLs (ex. articles déplacés du blog vers le portfolio).
+disableAliases = false
 
 # Empêche Hugo de générer sa propre redirection "/" → "/fr/" (qui
 # écraserait static/index.html, notre page de détection de langue).
@@ -270,7 +272,7 @@ pluralizelisttitles = false
     latitude = "-12.043333"
     longitude = "-77.028333"
 
-    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
+    # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
     style = "default"
 
     # Since this template is static, the contact form uses www.formspree.io as a
@@ -286,7 +288,7 @@ pluralizelisttitles = false
     # - test a dummy email yourself
     # - you're done. Happy mailing!
     #
-    # Enable the contact form by entering your Formspree.io endpoint url
+    # Enable the contact form by entering your Formspree.io endpoint url
     formspree_action = "https://formspree.io/f/xjggkbyj"
     contact_form_ajax = false
 
@@ -405,4 +407,3 @@ pluralizelisttitles = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
