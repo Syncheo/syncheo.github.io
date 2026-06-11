@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syncheo — 404</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <script>
+  (function () {
+    /* Anciennes URLs FR sans préfixe de langue (ex. /services/) :
+       depuis le passage de fr en sous-répertoire, tout le contenu vit
+       sous /fr/, /en/ ou /de/. On redirige vers la langue choisie
+       (localStorage) ou celle du navigateur. Si l'URL contient déjà
+       un préfixe de langue, c'est un vrai 404 : on affiche la page. */
+    var path = window.location.pathname;
+    if (/^\/(fr|en|de)(\/|$)/.test(path)) return;
+
+    var lang = null;
+    try { lang = localStorage.getItem("site_lang"); } catch (e) {}
+    if (["fr", "en", "de"].indexOf(lang) === -1) {
+      var navLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+      if (navLang.indexOf("en") === 0) lang = "en";
+      else if (navLang.indexOf("de") === 0) lang = "de";
+      else lang = "fr";
+    }
+
+    window.location.replace("/" + lang + path + window.location.search + window.location.hash);
+  })();
+  </script>
+  <style>
+    body { font-family: Roboto, -apple-system, sans-serif; background: #F7F9FC; color: #1F2937;
+           display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+    .box { text-align: center; padding: 40px; }
+    h1 { color: #210DBA; font-size: 4rem; margin: 0 0 8px; }
+    p { color: #6B7280; margin: 0 0 24px; }
+    a { display: inline-block; margin: 0 8px; color: #210DBA; font-weight: 600; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>404</h1>
+    <p>Page introuvable · Page not found · Seite nicht gefunden</p>
+    <a href="/fr/">🇫🇷 Accueil</a>
+    <a href="/en/">🇺🇸 Home</a>
+    <a href="/de/">🇩🇪 Startseite</a>
+  </div>
+</body>
+</html>

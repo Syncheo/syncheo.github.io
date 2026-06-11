@@ -3,11 +3,19 @@ theme = "hugo-universal-theme"
 themesDir = "themes"
 languageCode = "fr-fr"
 
-# Force la langue par défaut
+# Langue par défaut : fr, servie sous /fr/ comme /en/ et /de/.
+# La racine "/" est une page statique (static/index.html) qui redirige
+# vers /fr/, /en/ ou /de/ selon la langue du navigateur (ou le choix
+# mémorisé via le sélecteur de langue). Toutes les URLs canoniques
+# portent donc leur préfixe de langue.
 defaultContentLanguage = "fr"
-defaultContentLanguageInSubdir = false
+defaultContentLanguageInSubdir = true
 
 disableAliases = true
+
+# Empêche Hugo de générer sa propre redirection "/" → "/fr/" (qui
+# écraserait static/index.html, notre page de détection de langue).
+disableDefaultLanguageRedirect = true
 
 
 [languages]
@@ -397,3 +405,4 @@ pluralizelisttitles = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+

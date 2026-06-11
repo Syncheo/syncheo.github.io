@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syncheo</title>
+  <!-- Page de redirection linguistique : jamais indexée, le contenu réel
+       vit sous /fr/, /en/ et /de/ (hreflang déclarés sur chaque page). -->
+  <meta name="robots" content="noindex">
+  <script>
+  (function () {
+    var supported = ["fr", "en", "de"];
+
+    // 1. Choix explicite mémorisé via le sélecteur de langue
+    var target = null;
+    try { target = localStorage.getItem("site_lang"); } catch (e) {}
+
+    // 2. Sinon, langue du navigateur (fr par défaut)
+    if (supported.indexOf(target) === -1) {
+      var navLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+      if (navLang.indexOf("en") === 0) target = "en";
+      else if (navLang.indexOf("de") === 0) target = "de";
+      else target = "fr";
+    }
+
+    window.location.replace("/" + target + "/");
+  })();
+  </script>
+  <!-- Fallback sans JavaScript -->
+  <meta http-equiv="refresh" content="1; url=/fr/">
+</head>
+<body>
+  <p>
+    <a href="/fr/">Français</a> ·
+    <a href="/en/">English</a> ·
+    <a href="/de/">Deutsch</a>
+  </p>
+</body>
+</html>

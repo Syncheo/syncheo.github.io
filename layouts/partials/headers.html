@@ -71,8 +71,8 @@
 <link href="{{ "css/owl.carousel.css" | relURL }}" rel="stylesheet">
 <link href="{{ "css/owl.theme.css" | relURL }}" rel="stylesheet">
 
-<!-- RSS feed -->
-<link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
+<!-- RSS feed (flux de la langue courante : /fr/index.xml, /en/index.xml, …) -->
+<link rel="alternate" href="{{ "index.xml" | absLangURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 
 <!-- Facebook OpenGraph tags -->
 {{ $is_blog := and (eq .Type "blog") (eq .Kind "page") }}

@@ -63,7 +63,7 @@
         </span>
         <div class="sy-lang-dropdown" id="sy-lang-dropdown">
           {{ range .AllTranslations }}
-          <a href="{{ .Permalink }}" class="{{ if eq .Language.Lang $.Language.Lang }}sy-lang-dd-active{{ end }}">
+          <a href="{{ .Permalink }}" data-lang="{{ .Language.Lang }}" class="{{ if eq .Language.Lang $.Language.Lang }}sy-lang-dd-active{{ end }}">
             {{ if eq .Language.Lang "en" }}🇺🇸 English
             {{ else if eq .Language.Lang "de" }}🇩🇪 Deutsch
             {{ else }}🇫🇷 Français{{ end }}
@@ -143,6 +143,14 @@
   });
   langBtn.addEventListener('keydown', function (e) {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); }
+  });
+
+  /* Mémorise le choix explicite de langue : la page racine "/" et la
+     page 404 l'utilisent pour rediriger vers la bonne langue. */
+  langDd.querySelectorAll('a[data-lang]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      try { localStorage.setItem('site_lang', this.getAttribute('data-lang')); } catch (e) {}
+    });
   });
 })();
 </script>

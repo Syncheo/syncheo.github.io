@@ -50,7 +50,7 @@
 
             {{ .Site.Params.address | safeHTML }}
 
-	    <a href="{{ default "/contact" .Site.Params.contact_url }}" class="btn btn-small btn-template-main">{{ i18n "contactGoTo" }}</a>
+	    <a href="{{ default ("contact" | relLangURL) .Site.Params.contact_url }}" class="btn btn-small btn-template-main">{{ i18n "contactGoTo" }}</a>
 
             <hr class="hidden-md hidden-lg hidden-sm">
 
@@ -88,33 +88,9 @@ _________________________________________________________ -->
 
 <!-- *** COPYRIGHT END *** -->
 
-<script>
-(function () {
-  const path = window.location.pathname;
-
-  // Ne rien faire si on est déjà sur une langue explicite
-  if (path === "/en/" || path.startsWith("/en/") || path === "/de/" || path.startsWith("/de/")) return;
-
-  // Si l'utilisateur a déjà choisi une langue (persistante), on la respecte
-  const savedLang = localStorage.getItem("site_lang"); // "en" / "de" / "fr"
-  if (savedLang && savedLang !== "fr") {
-    window.location.replace("/" + savedLang + (path === "/" ? "/" : path));
-    return;
-  }
-  if (savedLang === "fr") return;
-
-  // Si l'utilisateur a choisi dans cet onglet, ne force plus
-  if (sessionStorage.getItem("manualLanguageChoice")) return;
-
-  // Sinon, langue navigateur
-  const navLang = (navigator.language || "").toLowerCase();
-  let target = null;
-  if (navLang.startsWith("en")) target = "en";
-  else if (navLang.startsWith("de")) target = "de";
-  else return; // FR par défaut
-
-  window.location.replace("/" + target + (path === "/" ? "/" : path));
-})();
-</script>
+{{/* La détection de langue navigateur est gérée par static/index.html (racine "/")
+     et layouts/404.html (anciennes URLs sans préfixe de langue). Les pages de
+     contenu portent toutes leur langue dans l'URL (/fr/, /en/, /de/) : aucune
+     redirection JS n'est nécessaire ici. */}}
 
 
