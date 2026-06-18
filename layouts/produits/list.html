@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  <head>
+    {{ partial "headers.html" . }}
+    {{ partial "custom_headers.html" . }}
+    <style>
+      .produits-intro {
+        width: 100%; margin-bottom: 40px;
+        color: #4a4a6a; line-height: 1.7; font-size: 20px;
+      }
+      .sy-prod-list { list-style: none; margin: 0; padding: 0; }
+      .sy-prod-item {
+        display: flex; align-items: flex-start; gap: 32px;
+        padding: 36px 0;
+        border-bottom: 1px solid #E5E7EB;
+      }
+      .sy-prod-item:first-child { border-top: 1px solid #E5E7EB; }
+      .sy-prod-item--soon { opacity: 0.65; }
+
+      /* Image */
+      .sy-prod-img-wrap {
+        flex: 0 0 280px; width: 280px;
+        border-radius: 8px; overflow: hidden;
+        aspect-ratio: 16/9;
+        background: #F3F4F6;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .sy-prod-img-wrap img {
+        width: 100%; height: 100%; object-fit: cover; display: block;
+      }
+      .sy-prod-img-wrap a { display: block; width: 100%; height: 100%; }
+      .sy-prod-img-placeholder { color: #C9CACC; font-size: 2rem; }
+
+      /* Body */
+      .sy-prod-body { flex: 1; min-width: 0; }
+      .sy-prod-title {
+        margin: 0 0 8px; font-size: 2.5rem; font-weight: 700; line-height: 1.2;
+      }
+      .sy-prod-title a { color: #1a1a2e; text-decoration: none; }
+      .sy-prod-title a:hover { color: #210DBA; }
+      .sy-prod-subtitle {
+        margin: 0 0 14px; font-size: 2rem;
+        font-weight: 600; color: #4a4a6a; line-height: 1.3;
+      }
+      .sy-prod-desc {
+        margin: 0 0 16px; font-size: 1.8rem;
+        color: #6B7280; line-height: 1.55;
+      }
+      .sy-prod-tags { margin: 0 0 18px; }
+      .sy-prod-tag {
+        display: inline-block;
+        background: rgba(33,13,186,0.06);
+        border: 1px solid rgba(33,13,186,0.18);
+        color: #210DBA;
+        border-radius: 999px; padding: 4px 14px;
+        margin: 0 6px 6px 0; font-size: 1rem;
+      }
+      .sy-prod-badge-soon {
+        display: inline-block;
+        background: #F3F4F6; border: 1px solid #D1D5DB;
+        color: #6B7280; border-radius: 999px;
+        padding: 5px 16px; font-size: 1rem; font-weight: 600;
+      }
+
+      @media (max-width: 767px) {
+        .sy-prod-item { flex-direction: column; gap: 16px; }
+        .sy-prod-img-wrap { flex: none; width: 100%; }
+        .sy-prod-title { font-size: 1.6rem; }
+        .sy-prod-subtitle { font-size: 1.3rem; }
+        .sy-prod-desc { font-size: 1.2rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="all">
+
+      {{ partial "top.html" . }}
+      {{ partial "nav.html" . }}
+      {{ partial "header.html" . }}
+
+      <div id="content">
+        <div class="container">
+
+          {{ if .Content }}
+          <div class="produits-intro">{{ .Content }}</div>
+          {{ end }}
+
+          <ul class="sy-prod-list">
+            {{ range .Params.products }}
+            {{ $soon := .coming_soon | default false }}
+            <li class="sy-prod-item{{ if $soon }} sy-prod-item--soon{{ end }}">
+
+              <div class="sy-prod-img-wrap">
+                {{ if and .url (not $soon) }}
+                  <a href="{{ .url | relLangURL }}">
+                {{ end }}
+                {{ if .banner }}
+                  <img src="{{ .banner | relURL }}" alt="{{ .title }}" loading="lazy" />
+                {{ else }}
+                  <div class="sy-prod-img-placeholder">⚙</div>
+                {{ end }}
+                {{ if and .url (not $soon) }}
+                  </a>
+                {{ end }}
+              </div>
+
+              <div class="sy-prod-body">
+                <h2 class="sy-prod-title">
+                  {{ if and .url (not $soon) }}
+                  <a href="{{ .url | relLangURL }}">{{ .title }}</a>
+                  {{ else }}
+                  {{ .title }}
+                  {{ end }}
+                </h2>
+                {{ with .subtitle }}
+                <p class="sy-prod-subtitle">{{ . }}</p>
+                {{ end }}
+                <p class="sy-prod-desc">{{ .description }}</p>
+                {{ with .tags }}
+                <div class="sy-prod-tags">
+                  {{ range . }}<span class="sy-prod-tag">{{ . }}</span>{{ end }}
+                </div>
+                {{ end }}
+                {{ if and .url (not $soon) }}
+                <a href="{{ .url | relLangURL }}" class="btn btn-template-main btn-sm">{{ i18n "produitsViewProduct" }}</a>
+                {{ else }}
+                <span class="sy-prod-badge-soon">{{ i18n "produitsSoon" }}</span>
+                {{ end }}
+              </div>
+
+            </li>
+            {{ end }}
+          </ul>
+
+          {{ partial "cta-contact.html" . }}
+
+        </div>
+      </div>
+
+      {{ partial "footer.html" . }}
+
+    </div>
+    {{ partial "scripts.html" . }}
+  </body>
+</html>

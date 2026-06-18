@@ -9,7 +9,7 @@ summary: "Syncheo a développé une intégration bidirectionnelle entre IBM Engi
 tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin Development"]
 translationKey: "ewm-gitguardian-integration"
 banner: "img/blog/ewm-gitguardian-banner.png"
-aliases: ["/blog/2026/03/18/securisation-ewm-gitguardian/"]
+aliases: ["/fr/portfolio/ewm-gitguardian-integration/", "/blog/2026/03/18/securisation-ewm-gitguardian/"]
 ---
 
 Dans un contexte de cybermenaces accrues, la détection préventive de fuites de secrets (clés d'API, certificats, identifiants) au sein du code source est devenue un impératif de gouvernance.

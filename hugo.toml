@@ -41,15 +41,15 @@ disableDefaultLanguageRedirect = true
 				weight = 2
 
 			[[languages.fr.menu.main]]
-    			name = "Réalisations"
-    			pageRef = "/portfolio"
+    			name = "Produits"
+    			pageRef = "/produits"
     			weight = 3
 
 			[[languages.fr.menu.main]]
 				identifier = "ressources_fr"
     			name = "Ressources"
 				pageRef = "/blog"
-				weight = 4
+				weight = 5
 
 				[[languages.fr.menu.main]]
 					parent = "ressources_fr"
@@ -67,7 +67,7 @@ disableDefaultLanguageRedirect = true
 				identifier = "syncheo_fr"
     			name = "Syncheo"
 				url = "#"
-    			weight = 5
+    			weight = 6
 
 				[[languages.fr.menu.main]]
 					parent = "syncheo_fr"
@@ -78,7 +78,7 @@ disableDefaultLanguageRedirect = true
 			[[languages.fr.menu.main]]
     			name = "Contact"
     			pageRef = "/contact"
-    			weight = 6
+    			weight = 7
 
 	[languages.en]
 		title = "Syncheo - IBM Jazz ELM Expertise"
@@ -100,15 +100,15 @@ disableDefaultLanguageRedirect = true
     			weight = 2
 
 			[[languages.en.menu.main]]
-				name = "Portfolio"
-				pageRef = "/portfolio"
+				name = "Products"
+				pageRef = "/produits"
 				weight = 3
 
 			[[languages.en.menu.main]]
 				identifier = "resources_en"
 				name = "Resources"
 				pageRef = "/blog"
-				weight = 4
+				weight = 5
 
 				[[languages.en.menu.main]]
 					parent = "resources_en"
@@ -126,7 +126,7 @@ disableDefaultLanguageRedirect = true
 				identifier = "syncheo_en"
 				name = "Syncheo"
 				url = "#"
-				weight = 5
+				weight = 6
 
 				[[languages.en.menu.main]]
 					parent = "syncheo_en"
@@ -137,7 +137,7 @@ disableDefaultLanguageRedirect = true
 			[[languages.en.menu.main]]
 				name = "Contact"
 				pageRef = "/contact"
-				weight = 6
+				weight = 7
 
 	[languages.de]
 		title = "Syncheo - IBM Jazz ELM Experte"
@@ -159,15 +159,15 @@ disableDefaultLanguageRedirect = true
 				weight = 2
 
 			[[languages.de.menu.main]]
-				name = "Portfolio"
-				pageRef = "/portfolio"
+				name = "Produkte"
+				pageRef = "/produits"
 				weight = 3
 
 			[[languages.de.menu.main]]
 				identifier = "resources_de"
 				name = "Ressourcen"
 				pageRef = "/blog"
-				weight = 4
+				weight = 5
 
 				[[languages.de.menu.main]]
 					parent = "resources_de"
@@ -185,7 +185,7 @@ disableDefaultLanguageRedirect = true
 				identifier = "syncheo_de"
 				name = "Syncheo"
 				url = "#"
-				weight = 5
+				weight = 6
 
 				[[languages.de.menu.main]]
 					parent = "syncheo_de"
@@ -196,7 +196,7 @@ disableDefaultLanguageRedirect = true
 			[[languages.de.menu.main]]
 				name = "Kontakt"
 				pageRef = "/contact"
-				weight = 6
+				weight = 7
 
 # number of words of summarized post content (default 70)
 summaryLength = 70

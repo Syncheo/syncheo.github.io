@@ -154,3 +154,9 @@
 
 - id: scrollCue
   translation: "Découvrir"
+
+- id: produitsViewProduct
+  translation: "Découvrir le produit"
+
+- id: produitsSoon
+  translation: "Bientôt disponible"

@@ -10,6 +10,7 @@ author: "Syncheo Engineering"
 summary: "Syncheo built a plugin for IBM Engineering Workflow Management (EWM) that turns the native Children presentation into a real control panel: configurable table, inline editing, adding and removing children — all fully integrated into the Save / Cancel cycle of the Jazz editor."
 banner: "img/portfolio/ewm-childitems-plugin-banner.png"
 translationKey: "ewm-plugin-child-items-presentation"
+aliases: ["/en/portfolio/ewm-plugin-child-items-presentation/"]
 ---
 
 Parent / child hierarchies structure an essential part of the work in IBM Engineering Workflow Management (EWM, formerly Rational Team Concert): an Epic broken down into Stories, a Task that aggregates Sub-tasks, a Defect that groups its fixes. Yet the Children presentation shipped as standard is limited to a minimalist list of identifiers and labels, with no visibility into the business attributes that actually matter day to day.

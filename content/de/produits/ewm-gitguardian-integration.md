@@ -9,7 +9,7 @@ summary: "Syncheo hat eine bidirektionale Integration zwischen IBM Engineering W
 tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin Development"]
 translationKey: "ewm-gitguardian-integration"
 banner: "img/blog/ewm-gitguardian-banner.png"
-aliases: ["/blog/2026/03/18/sicherung-alm-workflows-gitguardian-ewm/"]
+aliases: ["/de/portfolio/ewm-gitguardian-integration/", "/blog/2026/03/18/sicherung-alm-workflows-gitguardian-ewm/"]
 ---
 
 In einer Zeit zunehmender Cyber-Bedrohungen ist die präventive Erkennung von "Secret Leaks" (API-Schlüssel, Zertifikate, Anmeldedaten) im Quellcode zu einer zentralen Governance-Aufgabe geworden.

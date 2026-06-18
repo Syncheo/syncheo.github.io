@@ -10,6 +10,7 @@ author: "Syncheo Engineering"
 summary: "Syncheo built a plugin for IBM Engineering Workflow Management (EWM) that displays the full state diagram of a work item directly inside its editor, without leaving the page."
 banner: "img/portfolio/ewm-workflow-plugin-banner.png"
 translationKey: "ewm-plugin-show-workflow"
+aliases: ["/en/portfolio/ewm-plugin-show-workflow/"]
 ---
 
 IBM Engineering Workflow Management (EWM) shows the current state of every work item, but nowhere in the editor can you see the workflow as a whole: which states exist, which transitions lead to them, how to move from one state to another. For a contributor who is not familiar with the project configuration, the workflow is a black box.
