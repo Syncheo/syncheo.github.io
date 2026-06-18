@@ -28,7 +28,7 @@
             {{ $href = .URL | relLangURL }}
           {{ end }}
           {{ if .HasChildren }}
-          <li class="sy-has-dropdown{{ if $.IsMenuCurrent "main" . }} sy-menu-active{{ end }}">
+          <li class="sy-has-dropdown{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} sy-menu-active{{ end }}">
             <a href="{{ $href }}" class="sy-menu-toggle">{{ .Name }}<span class="sy-caret">▾</span></a>
             <ul class="sy-dropdown">
               {{ range .Children }}
@@ -45,7 +45,7 @@
             </ul>
           </li>
           {{ else }}
-          <li{{ if $.IsMenuCurrent "main" . }} class="sy-menu-active"{{ end }}>
+          <li{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} class="sy-menu-active"{{ end }}>
             <a href="{{ $href }}">{{ .Name }}</a>
           </li>
           {{ end }}
