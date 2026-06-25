@@ -37,25 +37,32 @@
 
 {{ hugo.Generator }}
 
-<!-- Font -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+<!-- Preconnect pour les domaines critiques (réduit le RTT) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://use.fontawesome.com">
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
 
-<!-- Bootstrap and Font Awesome CSS -->
-<link rel="stylesheet" href="//use.fontawesome.com/releases/v6.7.2/css/all.css">
+<!-- Preload du logo (LCP element — évite la découverte tardive) -->
+{{ if .Site.Params.logo }}
+<link rel="preload" as="image" href="{{ .Site.Params.logo | relURL }}">
+{{ end }}
+
+<!-- Bootstrap CSS (critique pour le layout — chargé en priorité) -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
 <!-- CSS animations  -->
 <link href="{{ "css/animate.css" | relURL }}" rel="stylesheet">
 
-<!-- Theme stylesheet, if possible do not edit this stylesheet -->
+<!-- Theme stylesheet -->
 {{ with .Site.Params.style }}
   <link href="{{ "css/style" | relURL }}.{{ . }}.css" rel="stylesheet" id="theme-stylesheet">
 {{ else }}
   <link href="{{ "css/style.default.css" | relURL }}" rel="stylesheet" id="theme-stylesheet">
 {{ end }}
 
-<!-- Custom stylesheet - for your changes -->
-<link href="{{ "css/custom.css" | relURL }}?{{ now.Unix }}" rel="stylesheet">
+<!-- Custom stylesheet (pas de cache-buster dynamique → cache navigateur préservé) -->
+<link href="{{ "css/custom.css" | relURL }}" rel="stylesheet">
 
 <!-- Responsivity for older IE -->
 {{ `
@@ -67,9 +74,21 @@
 
 <!-- Favicons are declared in custom_headers.html (Syncheo-branded set) -->
 
-<!-- owl carousel CSS -->
-<link href="{{ "css/owl.carousel.css" | relURL }}" rel="stylesheet">
-<link href="{{ "css/owl.theme.css" | relURL }}" rel="stylesheet">
+<!-- Owl carousel CSS — non-bloquant (chargé en asynchrone) -->
+<link rel="preload" as="style" href="{{ "css/owl.carousel.css" | relURL }}" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" as="style" href="{{ "css/owl.theme.css" | relURL }}" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link href="{{ "css/owl.carousel.css" | relURL }}" rel="stylesheet">
+  <link href="{{ "css/owl.theme.css" | relURL }}" rel="stylesheet">
+</noscript>
+
+<!-- Google Fonts — non-bloquant (font-display:swap évite le FOIT) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;1,100;1,300&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;1,100;1,300&display=swap"></noscript>
+
+<!-- Font Awesome — non-bloquant -->
+<link rel="preload" as="style" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css"></noscript>
 
 <!-- RSS feed (flux de la langue courante : /fr/index.xml, /en/index.xml, …) -->
 <link rel="alternate" href="{{ "index.xml" | absLangURL }}" type="application/rss+xml" title="{{ .Site.Title }}">

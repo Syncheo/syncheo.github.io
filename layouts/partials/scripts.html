@@ -1,0 +1,29 @@
+{{ partial "google_analytics.html" . }}
+
+{{/* Tous les scripts sont chargés avec defer :
+     - le parser HTML n'est plus bloqué → TBT réduit
+     - les scripts defer s'exécutent dans l'ordre après le DOM → dépendances jQuery respectées */}}
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous" defer></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous" defer></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js" defer></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js" defer></script>
+
+{{ if and .Site.Params.enableGoogleMaps .Site.Params.googleMapsApiKey }}
+<script src="//maps.googleapis.com/maps/api/js?key={{.Site.Params.googleMapsApiKey}}&v=3.exp" defer></script>
+<script src="{{ "js/hpneo.gmaps.js" | relURL }}" defer></script>
+<script src="{{ "js/gmaps.init.js" | relURL }}" defer></script>
+{{ end }}
+
+{{ if and .Site.Params.enableRecaptchaInContactForm .Site.Params.googleRecaptchaKey }}
+<script src="//www.google.com/recaptcha/api.js" async defer></script>
+{{ end }}
+
+<script src="{{ "js/front.js" | relURL }}" defer></script>
+
+<!-- owl carousel — chargé uniquement sur les pages qui l'utilisent -->
+{{ if or (eq .Kind "home") (eq .Type "blog") (eq .Layout "list") }}
+<script src="{{ "js/owl.carousel.min.js" | relURL }}" defer></script>
+{{ end }}
