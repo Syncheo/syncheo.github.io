@@ -8,7 +8,7 @@ description: "Von Syncheo entwickelte bidirektionale Integration zwischen IBM EW
 summary: "Syncheo hat eine bidirektionale Integration zwischen IBM Engineering Workflow Management (EWM) und GitGuardian entwickelt: ein Server-Plugin, das jede Change-Set-Auslieferung prüft, und ein Client-Plugin, das Entwickler direkt in der IDE warnt — nachvollziehbare Vorfälle, angereicherte Work Items, niemals offengelegte Secrets."
 tags: ["IBM EWM", "GitGuardian", "Jazz Platform", "Security", "Plugin Development"]
 translationKey: "ewm-gitguardian-integration"
-banner: "img/blog/ewm-gitguardian-banner.png"
+banner: "img/banners/ewm-gitguardian-banner.png"
 aliases: ["/de/portfolio/ewm-gitguardian-integration/", "/blog/2026/03/18/sicherung-alm-workflows-gitguardian-ewm/"]
 ---
 

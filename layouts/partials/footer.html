@@ -1,3 +1,5 @@
+{{ partial "newsletter.html" . }}
+
 <footer id="footer">
     <div class="container">
 
@@ -92,3 +94,25 @@ _________________________________________________________ -->
      et layouts/404.html (anciennes URLs sans préfixe de langue). Les pages de
      contenu portent toutes leur langue dans l'URL (/fr/, /en/, /de/) : aucune
      redirection JS n'est nécessaire ici. */}}
+
+<!-- *** BREVO NEWSLETTER JS *** -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
+  window.LOCALE = '{{ .Lang }}';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Les informations fournies ne sont pas valides. Veuillez vérifier le format et réessayer.";
+  window.REQUIRED_ERROR_MESSAGE = "Ce champ est obligatoire.";
+  window.GENERIC_INVALID_MESSAGE = "Les informations fournies ne sont pas valides.";
+  window.INVALID_DATE = "Veuillez saisir une date valide.";
+  window.REQUIRED_MULTISELECT_MESSAGE = 'Veuillez choisir au moins une option';
+  window.translation = {
+    common: {
+      selectedList: '{quantity} liste sélectionnée',
+      selectedLists: '{quantity} listes sélectionnées',
+      selectedOption: '{quantity} sélectionné',
+      selectedOptions: '{quantity} sélectionnés',
+    }
+  };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<!-- *** BREVO NEWSLETTER JS END *** -->

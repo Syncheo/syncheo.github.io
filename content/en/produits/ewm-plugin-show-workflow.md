@@ -8,7 +8,7 @@ slug: "ewm-plugin-show-workflow"
 tags: ["IBM EWM", "ELM", "Plugin", "Jazz", "Workflow"]
 author: "Syncheo Engineering"
 summary: "Syncheo built a plugin for IBM Engineering Workflow Management (EWM) that displays the full state diagram of a work item directly inside its editor, without leaving the page."
-banner: "img/portfolio/ewm-workflow-plugin-banner.png"
+banner: "img/banners/ewm-workflow-plugin-banner.png"
 translationKey: "ewm-plugin-show-workflow"
 aliases: ["/en/portfolio/ewm-plugin-show-workflow/"]
 ---

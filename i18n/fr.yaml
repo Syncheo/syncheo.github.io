@@ -1,3 +1,21 @@
+- id: newsletter_title
+  translation: "Restez informé"
+
+- id: newsletter_desc
+  translation: "Nos analyses techniques et actualités IBM Jazz ELM, directement dans votre boîte mail."
+
+- id: newsletter_placeholder
+  translation: "votre@email.com"
+
+- id: newsletter_cta
+  translation: "S'inscrire"
+
+- id: newsletter_success
+  translation: "Votre inscription est confirmée."
+
+- id: newsletter_error
+  translation: "Nous n'avons pas pu confirmer votre inscription."
+
 - id: cta_title
   translation: "Approfondir ce sujet"
 

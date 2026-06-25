@@ -8,7 +8,7 @@ slug: "ewm-plugin-child-items-presentation"
 tags: ["IBM EWM", "ELM", "Plugin", "Jazz", "Work Items"]
 author: "Syncheo Engineering"
 summary: "Syncheo hat ein Plugin für IBM Engineering Workflow Management (EWM) entwickelt, das die native Children-Präsentation in eine echte Steuerzentrale verwandelt: konfigurierbare Tabelle, Inline-Bearbeitung, Hinzufügen und Entfernen von untergeordneten Elementen — vollständig in den Save-/Cancel-Zyklus des Jazz-Editors integriert."
-banner: "img/portfolio/ewm-childitems-plugin-banner.png"
+banner: "img/banners/ewm-childitems-plugin-banner.png"
 translationKey: "ewm-plugin-child-items-presentation"
 aliases: ["/de/portfolio/ewm-plugin-child-items-presentation/"]
 ---

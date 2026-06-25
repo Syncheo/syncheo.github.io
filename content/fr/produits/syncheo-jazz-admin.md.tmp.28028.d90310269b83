@@ -1,0 +1,119 @@
+---
+title: "Syncheo Jazz Admin"
+subtitle: "Pilotez les accès, les licences et les widgets Jazz depuis une interface centralisée"
+date: 2026-06-25T10:00:00+01:00
+draft: false
+author: "Syncheo"
+description: "Syncheo Jazz Admin est une console d'administration web qui connecte IBM Jazz (ELM/CLM) à votre Active Directory. Gérez les accès, les licences et les widgets depuis un seul endroit."
+summary: "Syncheo Jazz Admin centralise l'administration de la plateforme IBM Jazz : gestion des accès par projet et par utilisateur, synchronisation Active Directory, suivi des licences en temps réel et gestion du catalogue de widgets — depuis une interface web unique, sans passer par les écrans natifs Jazz."
+tags: ["IBM Jazz", "ELM", "Administration", "Active Directory", "Licences", "Syncheo"]
+translationKey: "syncheo-jazz-admin"
+banner: "img/banners/syncheo-jazz-admin-banner.png"
+---
+
+Administrer IBM Jazz, c'est jongler en permanence entre plusieurs interfaces dispersées : gestion des membres par projet, attribution des licences, configuration des accès Active Directory, publication de widgets. Chaque opération demande de naviguer dans des écrans complexes, souvent réservés à des profils hautement techniques.
+
+**Syncheo Jazz Admin** rassemble toutes ces opérations dans une application web unique, claire et accessible. Connectée à votre annuaire d'entreprise (Active Directory), elle permet à vos administrateurs de garder le contrôle sans effort.
+
+![Barre de navigation principale — onglets Utilisateurs, Licences, Widgets et bouton de connexion Jazz](/img/produits/jazz-admin-navigation.png)
+
+*La barre de navigation principale avec ses trois espaces — Utilisateurs, Licences, Widgets — et l'indicateur de connexion à la plateforme Jazz.*
+
+---
+
+## Gestion des utilisateurs
+
+La section Utilisateurs offre trois vues complémentaires pour maîtriser complètement les accès à votre plateforme Jazz.
+
+### Vue par projet
+
+Consultez en un coup d'œil la liste complète des membres de chaque zone de projet Jazz : qui a accès, quel rôle il occupe, et quel est son statut. Fini les allers-retours dans l'interface d'administration native — toutes les informations sont regroupées, filtrables et lisibles immédiatement.
+
+![Vue par projet — liste des membres d'une zone de projet avec rôles et statuts](/img/produits/jazz-admin-users-by-project.png)
+
+*Liste des membres d'un projet Jazz : nom, rôle et statut affichés d'un seul regard.*
+
+### Vue par utilisateur
+
+Recherchez un collaborateur et obtenez instantanément la liste de tous ses projets et appartenances sur l'ensemble de vos applications Jazz. Idéal lors d'un départ, d'une mobilité interne ou d'un audit d'accès.
+
+![Vue par utilisateur — résultats de recherche montrant tous les projets et rôles d'un collaborateur](/img/produits/jazz-admin-users-by-user.png)
+
+*Vue centrée sur un utilisateur : tous ses projets Jazz et ses rôles associés en une seule recherche.*
+
+### Mapping Active Directory
+
+Configurez les correspondances entre vos groupes Active Directory et les rôles Jazz — au niveau d'un projet ou d'une équipe. Une fois le mapping défini, déclenchez une synchronisation à la demande ou programmez une synchronisation automatique quotidienne. Les accès suivent automatiquement les mouvements de votre annuaire d'entreprise.
+
+![Vue Mapping AD — tableau de correspondance rôles Jazz et groupes AD avec boutons Ajouter et Synchroniser](/img/produits/jazz-admin-users-ad-mapping.png)
+
+*Configuration du mapping Active Directory : chaque groupe AD est associé à son rôle Jazz, avec déclenchement manuel ou automatique de la synchronisation.*
+
+---
+
+## Gestion des licences
+
+La section Licences donne une visibilité complète sur la consommation des licences Jazz — en temps réel et dans le temps.
+
+### Licences disponibles
+
+Un tableau de bord synthétique affiche, pour chaque type de licence Jazz, le nombre total attribué, le nombre actuellement utilisé, le nombre encore disponible, et les dates de validité. Plus besoin de chercher cette information dans plusieurs rapports épars.
+
+![Vue Licences disponibles — tableau de bord avec compteurs total, utilisées et disponibles par type de licence](/img/produits/jazz-admin-licenses-available.png)
+
+*Tableau de bord des licences : totaux, utilisation en cours et disponibilités par type, avec dates de validité.*
+
+### Licences par utilisateur
+
+Recherchez un utilisateur et consultez en quelques secondes toutes les licences qui lui sont attribuées. Utile pour valider une attribution, préparer un départ ou répondre à un audit.
+
+![Vue Licences par utilisateur — détail des licences attribuées à un utilisateur donné](/img/produits/jazz-admin-licenses-by-user.png)
+
+*Détail des licences d'un collaborateur : types attribués et statuts consultables en un instant.*
+
+### Suivi de consommation
+
+Des graphiques d'évolution permettent de visualiser l'utilisation des licences dans le temps — sur les 24 dernières heures, 7 jours, 30 jours ou 90 jours — par type de licence ou par utilisateur. Les données sont collectées automatiquement et en continu, sans aucune intervention manuelle.
+
+![Vue Consommation — graphiques d'évolution de l'utilisation des licences par type et par utilisateur](/img/produits/jazz-admin-licenses-consumption.png)
+
+*Graphiques de consommation des licences dans le temps : repérez les pics d'utilisation, anticipez les besoins et optimisez vos allocations.*
+
+### Mapping AD — Licences
+
+Associez chaque type de licence Jazz à un groupe Active Directory. Lorsque les membres de ce groupe changent, les licences sont redistribuées automatiquement. Vous gardez la maîtrise de vos coûts sans gestion manuelle.
+
+![Vue Mapping AD Licences — tableau de correspondance types de licences et groupes AD](/img/produits/jazz-admin-licenses-ad-mapping.png)
+
+*Mapping entre licences Jazz et groupes AD : les attributions suivent automatiquement les évolutions de votre annuaire.*
+
+---
+
+## Gestion des widgets
+
+La section Widgets centralise le catalogue de composants personnalisés publiés dans l'écosystème Jazz.
+
+Ajoutez de nouveaux widgets, modifiez les existants, activez ou désactivez leur disponibilité, et publiez-les à l'ensemble de vos utilisateurs Jazz — le tout depuis un formulaire d'édition simple. Vos équipes disposent ainsi des bons outils dans leurs tableaux de bord, sans dépendre d'une intervention technique à chaque mise à jour.
+
+![Vue Widgets — catalogue avec formulaire d'édition et liste des widgets publiés dans l'écosystème Jazz](/img/produits/jazz-admin-widgets.png)
+
+*Gestion du catalogue de widgets : formulaire d'édition et liste des widgets actifs publiés sur la plateforme Jazz.*
+
+---
+
+## Ce que ça change au quotidien
+
+| Avant Syncheo Jazz Admin | Avec Syncheo Jazz Admin |
+|---|---|
+| Gestion des accès éclatée entre plusieurs interfaces | Vue centralisée par projet ou par utilisateur |
+| Synchronisation AD manuelle et chronophage | Mapping AD configurable, synchro automatique quotidienne |
+| Aucune visibilité globale sur les licences | Tableau de bord en temps réel, graphiques historiques |
+| Publication de widgets complexe et réservée aux experts | Catalogue gérable en quelques clics |
+
+---
+
+## Conclusion
+
+Syncheo Jazz Admin transforme l'administration IBM Jazz en une tâche maîtrisable, rapide et fiable. En connectant Jazz à votre Active Directory et en regroupant toutes les opérations dans une interface unique, il libère vos administrateurs des tâches répétitives et leur donne une visibilité qu'ils n'avaient pas auparavant.
+
+**Vous souhaitez en savoir plus ou planifier une démonstration ?** [Contactez-nous](/fr/contact).

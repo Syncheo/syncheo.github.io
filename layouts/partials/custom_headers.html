@@ -1,4 +1,83 @@
+<!-- Brevo newsletter form styles -->
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <style>
+  /* ══════════════════════════════════════════════
+     NEWSLETTER BREVO — section & overrides
+     ══════════════════════════════════════════════ */
+  .sy-newsletter-section {
+    background: linear-gradient(135deg, var(--color-primary-dark, #0A2E4E) 0%, var(--color-primary, #0F4C81) 100%);
+    padding: 56px 0;
+  }
+  .sy-newsletter-title {
+    color: #ffffff;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .sy-newsletter-desc {
+    color: rgba(255,255,255,0.80);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .sy-newsletter-form-container {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
+    border-radius: 8px !important;
+    padding: 24px !important;
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+  .sy-newsletter-input-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .sy-newsletter-input-wrap {
+    flex: 1;
+    min-width: 200px;
+  }
+  .sy-newsletter-input {
+    width: 100%;
+    background: rgba(255,255,255,0.10) !important;
+    border: 1px solid rgba(255,255,255,0.30) !important;
+    border-radius: 4px !important;
+    color: #ffffff !important;
+    padding: 10px 14px !important;
+    font-size: 15px !important;
+    transition: border-color 0.2s;
+  }
+  .sy-newsletter-input::placeholder { color: rgba(255,255,255,0.50) !important; }
+  .sy-newsletter-input:focus { border-color: rgba(255,255,255,0.70) !important; outline: none; }
+  .sy-newsletter-entry-error { color: #ffb3b3 !important; }
+  .sy-newsletter-btn {
+    white-space: nowrap;
+    border-radius: 4px !important;
+    font-weight: 700 !important;
+    padding: 10px 24px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  .sy-newsletter-msg {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  .sy-newsletter-msg--error {
+    color: #661d1d;
+    background-color: #ffeded;
+    border: 1px solid #ff4949;
+  }
+  .sy-newsletter-msg--success {
+    color: #085229;
+    background-color: #e7faf0;
+    border: 1px solid #13ce66;
+  }
+  @media (max-width: 600px) {
+    .sy-newsletter-input-row { flex-direction: column; }
+    .sy-newsletter-btn { width: 100%; justify-content: center; }
+  }
+
   /* ══════════════════════════════════════════════
      PALETTE SYNCHEO — modifier ici uniquement
      ══════════════════════════════════════════════ */
