@@ -102,7 +102,7 @@ Ajoutez de nouveaux widgets, modifiez les existants, activez ou désactivez leur
 | Avant Syncheo Jazz Admin | Avec Syncheo Jazz Admin |
 |---|---|
 | Gestion des accès éclatée entre plusieurs interfaces | Vue centralisée par projet ou par utilisateur |
-| Synchronisation AD manuelle et chronophage | Mapping AD configurable, synchro automatique quotidienne |
+| Pas de synchronisation AD | Mapping AD configurable, synchro automatique quotidienne |
 | Aucune visibilité globale sur les licences | Tableau de bord en temps réel, graphiques historiques |
 | Publication de widgets complexe et réservée aux experts | Catalogue gérable en quelques clics |
 
