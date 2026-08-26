@@ -9,6 +9,9 @@
     <div class="hero-actions">
       <a href="{{ .cta_primary_link | relLangURL }}" class="btn-hero-primary">{{ .cta_primary }}</a>
       <a href="{{ .cta_secondary_link | relLangURL }}" class="btn-hero-secondary">{{ .cta_secondary }}</a>
+      {{ if .cta_tertiary }}
+      <a href="{{ .cta_tertiary_link | relLangURL }}" class="btn-hero-tertiary">{{ .cta_tertiary }}</a>
+      {{ end }}
     </div>
   </div>
 </section>

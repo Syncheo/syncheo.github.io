@@ -1,4 +1,4 @@
-{{ $portfolio := where site.RegularPages "Type" "portfolio" }}
+{{ $portfolio := where site.RegularPages "Type" "produits" }}
 {{ if gt (len $portfolio) 0 }}
 <style>
   .portfolio-home-section .sy-pfh-card {
@@ -40,7 +40,7 @@
     </div>
 
     <p style="margin-top:8px;">
-      <a href="{{ "portfolio/" | relLangURL }}" class="btn btn-template-main">{{ i18n "portfolioHomeAll" }}</a>
+      <a href="{{ "produits/" | relLangURL }}" class="btn btn-template-main">{{ i18n "portfolioHomeAll" }}</a>
     </p>
   </div>
 </section>

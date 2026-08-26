@@ -6,10 +6,12 @@ hero:
   headline: "Vos projets IBM ELM. Maîtrisés."
   subheadline: "Syncheo accompagne les grandes équipes d'ingénierie dans la maîtrise, l'optimisation et l'évolution de leurs environnements IBM Jazz ELM."
   badge: "Partenaire de confiance des grands groupes industriels"
-  cta_primary: "Réserver un appel gratuit"
+  cta_primary: "Parlons de votre projet"
   cta_primary_link: "/contact/"
   cta_secondary: "Découvrir nos services"
   cta_secondary_link: "/services/"
+  cta_tertiary: "Découvrir nos produits"
+  cta_tertiary_link: "/produits/"
 
 problems:
   title: "Tirez le meilleur de votre plateforme IBM ELM"
@@ -103,6 +105,6 @@ industries:
 cta_home:
   title: "Améliorons votre plateforme ELM ensemble"
   text: "Obtenez un diagnostic gratuit et identifiez les quick wins dans votre environnement. Optimisation, migration, support ou développement sur-mesure : nous vous aidons à avancer plus vite avec moins de complexité."
-  button: "Réserver un appel gratuit"
+  button: "Parlons de votre projet"
   link: "/contact/"
 ---

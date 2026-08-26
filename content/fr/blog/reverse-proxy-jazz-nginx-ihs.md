@@ -52,9 +52,9 @@ sub_filter_once off;
 
 **Solution IHS** — directive `ProxyHTMLURLMap` :
 ```apache
-ProxyHTMLURLMap https://jazz1\.kse\.ksegroup\.net:9443  https://jazz.syncheo.tech  Riex
-ProxyHTMLURLMap https://jazz2\.kse\.ksegroup\.net:9443  https://jazz.syncheo.tech  Riex
-ProxyHTMLURLMap https://jazz3\.kse\.ksegroup\.net:9443  https://jazz.syncheo.tech  Riex
+ProxyHTMLURLMap https://jazz1\.kse\.ksegroup\.net:9443  https://jazz.example.com  Riex
+ProxyHTMLURLMap https://jazz2\.kse\.ksegroup\.net:9443  https://jazz.example.com  Riex
+ProxyHTMLURLMap https://jazz3\.kse\.ksegroup\.net:9443  https://jazz.example.com  Riex
 ```
 
 `ProxyHTMLURLMap` est plus puissant que `sub_filter` : il parse réellement le HTML et comprend la structure des attributs (`href`, `src`, `action`…).
@@ -153,7 +153,7 @@ Voici les endroits **précis** à modifier quand vous renommez vos serveurs Jazz
 
 ### Cas 1 — Changement du nom de domaine public
 
-Exemple : `jazz.syncheo.tech` → `jazz.monentreprise.com`
+Exemple : `jazz.example.com` → `jazz.monentreprise.com`
 
 | Fichier | Directive | Ancienne valeur | Nouvelle valeur |
 |---|---|---|---|
@@ -185,7 +185,7 @@ map $host $internal_url {
 **Dans ihs.conf**, modifier les `ProxyHTMLURLMap` et `ProxyPassReverse` :
 ```apache
 ProxyPassReverse / https://jazz-prod-jts.syncheo.tech:9443/
-ProxyHTMLURLMap https://jazz-prod-jts\.kse\.ksegroup\.net:9443  https://jazz.syncheo.tech  Riex
+ProxyHTMLURLMap https://jazz-prod-jts\.kse\.ksegroup\.net:9443  https://jazz.example.com  Riex
 ```
 
 ---
@@ -227,25 +227,25 @@ Après toute modification, vérifiez ces points dans l'ordre :
 
 **1. Test SSL** :
 ```bash
-openssl s_client -connect jazz.syncheo.tech:443 -servername jazz.syncheo.tech
+openssl s_client -connect jazz.example.com:443 -servername jazz.example.com
 ```
 
 **2. Test de redirection HTTP→HTTPS** :
 ```bash
-curl -I http://jazz.syncheo.tech
+curl -I http://jazz.example.com
 # Attendu : HTTP/1.1 301 Moved Permanently + Location: https://...
 ```
 
 **3. Test d'accès JTS** :
 ```bash
-curl -k https://jazz.syncheo.tech/jts/auth/authrequired
+curl -k https://jazz.example.com/jts/auth/authrequired
 # Attendu : 200 ou 401 (pas d'erreur proxy)
 ```
 
 **4. Test CORS preflight** :
 ```bash
-curl -I -X OPTIONS https://jazz.syncheo.tech/jts/ \
-  -H "Origin: https://jazz.syncheo.tech" \
+curl -I -X OPTIONS https://jazz.example.com/jts/ \
+  -H "Origin: https://jazz.example.com" \
   -H "Access-Control-Request-Method: POST"
 # Attendu : 204 + Access-Control-Allow-Origin présent
 ```

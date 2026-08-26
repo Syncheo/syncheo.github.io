@@ -4,6 +4,13 @@ description: "Extensions and tools built by Syncheo for the IBM Jazz ELM platfor
 translationKey: "produits"
 
 products:
+  - title: "XWiki ↔ IBM Jazz Connector (OSLC)"
+    subtitle: "Link your XWiki pages natively to IBM Jazz engineering artifacts"
+    description: "A native OSLC connector between XWiki and IBM Jazz: bidirectional traceability links, preview and editing of XWiki pages from Jazz, an OSLC delegated picker, Jazz menu integration and shared authentication."
+    tags: ["XWiki", "IBM Jazz", "OSLC", "Traceability"]
+    banner: "img/banners/xwiki-oslc-banner.png"
+    url: "/produits/xwiki-oslc-connector"
+
   - title: "Child Items Presentation"
     subtitle: "Manage child work items directly from the parent editor"
     description: "A configurable table to view, add, or remove child work items without losing context — with inline editing and full integration into Jazz's native Save/Cancel cycle."
