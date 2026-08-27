@@ -97,12 +97,16 @@
     window.scrollTo({ top: target, behavior: 'smooth' });
   });
 
-  /* Visible tant que le bas de la page n'est pas atteint.
+  /* Visible uniquement sur le premier écran : l'indicateur n'a de sens
+     qu'en haut de page (une fois qu'on a commencé à défiler, on sait que la
+     page se déroule). On le masque dès qu'on a dépassé ~60% du premier
+     écran, ce qui évite qu'il chevauche les sections suivantes (bannière
+     PCT, bouton « Voir toutes les réalisations », etc.).
      Sur l'accueil desktop le container de scroll est <body> (scroll snap),
      sur mobile c'est la fenêtre : on écoute les deux. */
   function onScroll() {
-    var atBottom = scrollPos() + window.innerHeight >= pageHeight() - 80;
-    cue.classList.toggle('sy-cue-hidden', atBottom);
+    var pastFirstScreen = scrollPos() > window.innerHeight * 0.6;
+    cue.classList.toggle('sy-cue-hidden', pastFirstScreen);
   }
   document.body.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('scroll', onScroll, { passive: true });
