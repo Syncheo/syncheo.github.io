@@ -648,3 +648,54 @@
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* ══════════════════════════════════════════════
+   IMAGES FLOTTANTES DANS LES ARTICLES (fiches produit)
+   Figures alignées à gauche/droite, entourées par le texte.
+   ══════════════════════════════════════════════ */
+#post-content h2,
+#post-content h3 { clear: both; }
+
+#post-content .post-figure {
+  margin: 6px 0 18px;
+  max-width: 100%;
+}
+#post-content .post-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(15, 20, 60, 0.08);
+}
+#post-content .post-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: #6B7280;
+  font-style: italic;
+  line-height: 1.45;
+}
+#post-content .post-figure--right {
+  float: right;
+  width: 300px;
+  margin-left: 26px;
+}
+#post-content .post-figure--left {
+  float: left;
+  width: 300px;
+  margin-right: 26px;
+}
+/* Variante étroite pour les captures verticales (modes USER / STATUS) */
+#post-content .post-figure--narrow { width: 200px; }
+
+/* Sur mobile : plus de flottement, image centrée pleine largeur */
+@media (max-width: 767px) {
+  #post-content .post-figure--left,
+  #post-content .post-figure--right,
+  #post-content .post-figure--narrow {
+    float: none;
+    width: 100%;
+    max-width: 420px;
+    margin: 16px auto;
+  }
+}

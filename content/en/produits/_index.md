@@ -25,6 +25,13 @@ products:
     banner: "img/banners/ewm-workflow-plugin-banner.png"
     url: "/produits/ewm-plugin-show-workflow"
 
+  - title: "Status History Presentation"
+    subtitle: "Follow a work item's status changes as a timeline"
+    description: "Open source widget (jazz-community) that displays a work item's status history graphically — repackaged by Syncheo to install easily on the latest Jazz versions."
+    tags: ["IBM EWM", "ELM", "Open Source", "Work Items"]
+    banner: "img/banners/status-history-banner.png"
+    url: "/produits/status-history-presentation"
+
   - title: "GitGuardian Integration — IBM EWM"
     subtitle: "Native secret detection in ALM workflows: delivery gating and in-IDE alerts"
     description: "Server and client plugins bridging IBM EWM and GitGuardian: every change set delivery is gated, developers are alerted right in the IDE, and every incident is traced in a work item."
