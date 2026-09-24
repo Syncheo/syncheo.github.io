@@ -1,100 +1,76 @@
 # ChangeReqIf
 
-Utilitaire Windows qui corrige un export **ReqIF** (`.reqifz`) : pour chaque
-pièce jointe, il détecte le **vrai type de fichier** (via sa signature binaire)
-et lui applique la bonne extension — à la fois sur le fichier et dans les
-références de `Requirements.reqif` — puis reconstruit une archive
-`<nom>.changed.reqifz` prête à être réimportée.
+Utilitaire Windows qui répare et normalise un export **ReqIF** (`.reqifz`) :
 
-Le fichier d'origine n'est pas modifié : une nouvelle archive `.changed.reqifz`
-est produite à côté.
+1. **Restauration des extensions des pièces jointes** : pour chaque pièce jointe, détecte le **vrai type de fichier** (via sa signature binaire) et lui applique la bonne extension — à la fois sur le fichier et dans les références du `.reqif`.
+2. **Conformité du schéma XHTML ReqIF** : corrige automatiquement les non-conformités XSD (ex: texte direct et balises `<br/>` non encapsulés dans des `<blockquote>`), évitant ainsi les rejets stricts lors de la réimportation.
+3. **Reconstruction d'archive** : produit une archive `<nom>.changed.reqifz` propre et prête à être réimportée.
+
+Le fichier d'origine n'est jamais modifié : une nouvelle archive `.changed.reqifz` est produite à côté.
 
 ## Pourquoi
 
-Dans un export ReqIF, les pièces jointes sont souvent stockées **sans
-extension** (noms de type GUID). Sans extension, l'outil de lecture des
-exigences n'affiche pas correctement les images ou documents. Ce script leur
-rend leur extension d'origine en se basant sur le contenu réel du fichier, et
-non sur une supposition.
+* **Pièces jointes sans extension** : dans beaucoup d'exports ReqIF (DOORS, DOORS Next, PTC...), les pièces jointes sont stockées sans extension (noms GUID). Sans extension, l'outil de lecture ou de gestion des exigences n'affiche pas correctement les images et documents intégrés.
+* **Erreurs de validation de schéma XSD** : certains générateurs ReqIF produisent du XHTML non conforme aux spécifications strictes du W3C et du standard ReqIF (par exemple, des éléments *inline* ou du texte brut placés directement sous un `<blockquote>` sans balise `<p>`), ce qui bloque l'importation avec des erreurs de type `cvc-complex-type.2.4.a`.
 
 ## Fichiers
 
 Deux fichiers, à garder **ensemble dans le même dossier** :
 
 | Fichier | Rôle |
-|---------|------|
-| `change.bat` | Le lanceur — c'est celui qu'on exécute. |
-| `change.ps1` | Toute la logique (détection, renommage, reconstruction). |
+|---|---|
+| `change.bat` | Le lanceur — c'est celui qu'on exécute en ligne de commande. |
+| `change.ps1` | Toute la logique (détection dynamique du `.reqif`, assainissement XHTML, renommage binaire et reconstruction). |
 
 ## Pré-requis
 
-- **Windows** avec **PowerShell 5.0 ou supérieur** (présent par défaut sur
-  Windows 10/11).
-- Aucune configuration nécessaire : le lanceur fonctionne même si l'exécution
-  des scripts `.ps1` est désactivée (`ExecutionPolicy` sur *Restricted*, y
-  compris imposée par GPO). Le code est chargé en mémoire et exécuté, ce qui
-  n'est pas soumis à cette restriction.
+* **Windows** avec **PowerShell 5.0 ou supérieur** (intégré par défaut sur Windows 10/11).
+* Aucune modification de sécurité requise : le lanceur fonctionne même si l'exécution des scripts `.ps1` est restreinte (`ExecutionPolicy` sur *Restricted*, y compris via GPO).
 
 ## Utilisation
 
-Dans une invite de commande, depuis le dossier contenant le `.reqifz` :
+Dans une invite de commandes (`cmd`), depuis le dossier contenant le fichier :
 
 ```bat
 change.bat "MonFichier.reqifz"
 ```
 
-> Gardez les guillemets si le chemin contient des espaces.
+> **Note :** Conservez les guillemets si le chemin ou le nom du fichier contient des espaces.
 
-### Exemple
+### Résultat
 
-```bat
-change.bat "MonFichier.reqifz"
-```
+Un fichier `MonFichier.changed.reqifz` est généré dans le même répertoire.
 
-Résultat : un fichier `MonFichier.reqifz` est créé dans
-le même dossier.
+## Fonctionnalités & Détections
 
-## Types de fichiers détectés
+### Détection dynamique du fichier ReqIF
+Le script recherche automatiquement le fichier `.reqif` présent à la racine de l'archive (qu'il se nomme `Requirements.reqif`, `Export.reqif` ou tout autre nom).
 
-La détection se fait sur la signature (« magic bytes »), indépendamment du nom :
+### Correction XHTML automatique
+* Repère les balises `<blockquote>` (avec ou sans namespace, tel que `reqif-xhtml:blockquote`) contenant du texte libre ou des balises orphelines (`<br/>`).
+* Encapsule automatiquement le contenu dans un paragraphe `<p>` conforme sans altérer le texte d'origine.
 
-- **Images** : `png`, `jpg`, `gif`, `bmp`, `tif`, `emf`, `wmf`
-- **Documents** : `pdf`, `rtf`
-- **Office récent (OOXML)** : `docx`, `xlsx`, `pptx`
-- **Office ancien (OLE)** : `doc`, `xls`, `ppt`
+### Types de fichiers détectés
+La détection s'appuie sur les « magic bytes » (signature binaire) du fichier :
 
-Un fichier dont le type n'est **pas reconnu** est laissé intact (aucune
-extension n'est ajoutée à l'aveugle). Un fichier qui porte déjà la bonne
-extension n'est pas retouché.
+* **Images** : `png`, `jpg`, `gif`, `bmp`, `tif`, `emf`, `wmf`
+* **Documents** : `pdf`, `rtf`
+* **Office récent (OOXML)** : `docx`, `xlsx`, `pptx`
+* **Office hérité (OLE compound)** : `doc`, `xls`, `ppt`
 
-## Déroulé
+Un fichier dont le type n'est **pas reconnu** est laissé intact (aucune extension arbitraire n'est ajoutée). Un fichier portant déjà la bonne extension n'est pas modifié.
 
-1. Extraction de l'archive `.reqifz` dans un dossier temporaire.
-2. Détection du type de chaque pièce jointe.
-3. Renommage des fichiers concernés + mise à jour de toutes leurs références
-   dans `Requirements.reqif`, en une seule passe.
-4. Reconstruction de l'archive `<nom>.changed.reqifz`.
+## Déroulé du traitement
 
-## Notes techniques
-
-- **Performance** : la mise à jour du `.reqif` se fait en une seule passe
-  (une regex regroupant tous les noms), adaptée aux exports de plusieurs Mo
-  contenant des centaines de pièces jointes.
-- **Sûreté des remplacements** : un nom n'est jamais remplacé à l'intérieur
-  d'un nom plus long (par ex. le préfixe d'un fichier `..._alternative_image.png`
-  n'est pas altéré). L'encodage du `.reqif` est préservé (lecture/écriture
-  octet-à-octet).
-- **Détection Office ancien** : heuristique (recherche des noms de flux internes
-  dans l'en-tête du fichier). Fiable en pratique.
+1. Extraction temporaire de l'archive `.reqifz`.
+2. Détection dynamique du fichier principal `.reqif`.
+3. Correction de structure XHTML pour satisfaire les contraintes du schéma XSD.
+4. Analyse binaire de toutes les pièces jointes et renommage si nécessaire.
+5. Mise à jour de toutes les références dans le fichier `.reqif` en une seule passe globale.
+6. Recompression de l'archive vers `<nom>.changed.reqifz`.
 
 ## Dépannage
 
-- **« l'exécution de scripts est désactivée sur ce système »** en lançant
-  directement `change.ps1` : c'est normal. Utilisez `change.bat`, prévu pour
-  contourner cette restriction.
-- **« change.ps1 est introuvable »** : vérifiez que `change.bat` et `change.ps1`
-  sont bien dans le même dossier.
-- **`Requirements.reqif introuvable`** : l'archive fournie n'est pas un export
-  ReqIF valide (le fichier `Requirements.reqif` est attendu à sa racine).
-- **Cas très verrouillés (AppLocker / WDAC en *Constrained Language Mode*)** :
-  même le lanceur peut être bloqué ; il faudrait alors signer le script.
+* **`Aucun fichier .reqif n'a été trouvé`** : l'archive fournie n'est pas un export ReqIF valide ou le fichier `.reqif` est manquant.
+* **`change.ps1 est introuvable`** : vérifiez que `change.bat` et `change.ps1` sont situés dans le même répertoire.
+* **Cas d'environnements très verrouillés (WDAC / AppLocker en Constrained Language Mode)** : si l'exécution en mémoire est interceptée par la politique de sécurité de l'entreprise, le script doit être signé numériquement.

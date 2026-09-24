@@ -116,11 +116,16 @@ Expand-Archive -LiteralPath $zip -DestinationPath $folder -Force
 Remove-Item -LiteralPath $zip -Force
 
 # ============ 2. Detection + renommage + mise a jour du reqif ==============
-$reqifPath = Join-Path $folder 'Requirements.reqif'
-if (-not (Test-Path -LiteralPath $reqifPath)) {
-    Write-Error "Requirements.reqif introuvable dans '$folder'"
+# Recherche dynamique du fichier .reqif dans l'archive extraite
+$reqifFileItem = Get-ChildItem -LiteralPath $folder -Filter "*.reqif" -File | Select-Object -First 1
+
+if (-not $reqifFileItem) {
+    Write-Error "Aucun fichier .reqif n'a été trouvé dans le dossier '$folder'."
     exit 1
 }
+
+$reqifPath = $reqifFileItem.FullName
+Write-Host ("Fichier ReqIF identifié : {0}" -f $reqifFileItem.Name)
 
 # Lecture octet-par-octet (Latin1 = mapping 1:1) pour ne pas alterer l'encodage.
 $latin1 = [Text.Encoding]::GetEncoding(28591)
@@ -191,6 +196,28 @@ if ($map.Count -gt 0) {
     $text = $rx.Replace($text, $evaluator)
     [IO.File]::WriteAllBytes($reqifPath, $latin1.GetBytes($text))
 }
+
+# ================= 2b-bis. Correction schéma XHTML (blockquote) ==============
+# Dans le schéma XHTML ReqIF, <blockquote> ne peut contenir que des éléments
+# de type bloc (<p>, <div>, etc.). Tout contenu direct non-bloc doit être encapsulé dans un <p>.
+
+$patternBlockquote = '(?is)<(?<ns>[a-z0-9_-]+:)?blockquote(?<attr>[^>]*)>(?!\s*<\k<ns>?(?:p|div|h[1-6]|ul|ol)\b)(?<content>.*?)</\k<ns>?blockquote>'
+
+$evalBlockquote = [System.Text.RegularExpressions.MatchEvaluator]{
+    param($m)
+    $ns = $m.Groups['ns'].Value
+    $attr = $m.Groups['attr'].Value
+    $inner = $m.Groups['content'].Value
+
+    # Encapsule le contenu direct dans un paragraphe <p>
+    "<$($ns)blockquote$attr><$($ns)p>$inner</$($ns)p></$($ns)blockquote>"
+}
+
+$text = [regex]::Replace($text, $patternBlockquote, $evalBlockquote)
+
+# Sauvegarde systématique dans le fichier .reqif détecté
+[IO.File]::WriteAllBytes($reqifPath, $latin1.GetBytes($text))
+
 
 # 2c. Renommage physique des fichiers concernes.
 foreach ($f in $files) {
