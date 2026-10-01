@@ -69,4 +69,4 @@ solutions_cta:
   url: "/produits/migration-jira-ewm"
 ---
 
-Syncheo builds extensions and tools to improve the daily workflows of te
+Syncheo builds custom extensions and tools to improve the daily workflows of teams working on IBM Jazz ELM. Here is our full product catalog.
