@@ -1,9 +1,18 @@
 ---
 title: "Nos Produits"
-description: "Extensions et outils développés par Syncheo pour la plateforme IBM Jazz ELM"
+description: "Plugins et outils pour IBM Jazz ELM et EWM : connecteur Jira, Super Comment, Jazz Admin, GitGuardian, XWiki OSLC. Développés par Syncheo, consultant IBM Jazz."
+subtitle: "Extensions et outils développés par Syncheo pour la plateforme IBM Jazz ELM"
+seo_title: "Produits Syncheo — Plugins et outils IBM Jazz ELM / EWM"
 translationKey: "produits"
 
 products:
+  - title: "Syncheo Connect — Connecteur Jira ↔ IBM EWM"
+    subtitle: "Synchronisation bidirectionnelle automatique entre Jira et IBM EWM"
+    description: "Tickets, champs, commentaires et pièces jointes restent automatiquement cohérents dans les deux outils. Interface web intuitive, planification configurable, alertes email et logs en temps réel."
+    tags: ["IBM EWM", "Jira", "Connecteur", "Synchronisation"]
+    banner: "img/banners/jira-to-ewm-banner.png"
+    url: "/produits/jira-to-ewm-connector"
+
   - title: "Connecteur XWiki ↔ IBM Jazz (OSLC)"
     subtitle: "Reliez nativement vos pages XWiki aux artefacts d'ingénierie IBM Jazz"
     description: "Un connecteur OSLC natif entre XWiki et IBM Jazz : liens de traçabilité bidirectionnels, aperçu et édition des pages XWiki depuis Jazz, sélecteur délégué OSLC, intégration au menu Jazz et authentification partagée."
@@ -53,12 +62,11 @@ products:
     banner: "img/banners/syncheo-jazz-admin-banner.png"
     url: "/produits/syncheo-jazz-admin"
 
-  - title: "Syncheo Connect — Connecteur Jira ↔ IBM EWM"
-    subtitle: "Synchronisation bidirectionnelle automatique entre Jira et IBM EWM"
-    description: "Tickets, champs, commentaires et pièces jointes restent automatiquement cohérents dans les deux outils. Interface web intuitive, planification configurable, alertes email et logs en temps réel."
-    tags: ["IBM EWM", "Jira", "Connecteur", "Synchronisation"]
-    banner: "img/banners/jira-to-ewm-banner.png"
-    url: "/produits/jira-to-ewm-connector"
+solutions_cta:
+  title: "Besoin de plusieurs outils pour un même projet ?"
+  text: "Certains besoins dépassent un seul outil. Découvrez la combinaison d'outils Syncheo packagée pour migrer de Jira vers IBM EWM."
+  button: "Découvrir la migration Jira → EWM"
+  url: "/produits/migration-jira-ewm"
 ---
 
 Syncheo conçoit des extensions et des outils sur mesure pour améliorer le quotidien des équipes qui travai

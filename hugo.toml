@@ -41,9 +41,22 @@ disableDefaultLanguageRedirect = true
 				weight = 2
 
 			[[languages.fr.menu.main]]
+				identifier = "produits_fr"
     			name = "Produits"
     			pageRef = "/produits"
     			weight = 3
+
+				[[languages.fr.menu.main]]
+					parent = "produits_fr"
+					name = "Tous les produits"
+					pageRef = "/produits"
+					weight = 1
+
+				[[languages.fr.menu.main]]
+					parent = "produits_fr"
+					name = "Migration Jira → EWM"
+					pageRef = "/produits/migration-jira-ewm"
+					weight = 2
 
 			[[languages.fr.menu.main]]
 				identifier = "ressources_fr"
@@ -100,9 +113,22 @@ disableDefaultLanguageRedirect = true
     			weight = 2
 
 			[[languages.en.menu.main]]
+				identifier = "produits_en"
 				name = "Products"
 				pageRef = "/produits"
 				weight = 3
+
+				[[languages.en.menu.main]]
+					parent = "produits_en"
+					name = "All products"
+					pageRef = "/produits"
+					weight = 1
+
+				[[languages.en.menu.main]]
+					parent = "produits_en"
+					name = "Jira → EWM Migration"
+					pageRef = "/produits/migration-jira-ewm"
+					weight = 2
 
 			[[languages.en.menu.main]]
 				identifier = "resources_en"
@@ -159,9 +185,22 @@ disableDefaultLanguageRedirect = true
 				weight = 2
 
 			[[languages.de.menu.main]]
+				identifier = "produits_de"
 				name = "Produkte"
 				pageRef = "/produits"
 				weight = 3
+
+				[[languages.de.menu.main]]
+					parent = "produits_de"
+					name = "Alle Produkte"
+					pageRef = "/produits"
+					weight = 1
+
+				[[languages.de.menu.main]]
+					parent = "produits_de"
+					name = "Migration Jira → EWM"
+					pageRef = "/produits/migration-jira-ewm"
+					weight = 2
 
 			[[languages.de.menu.main]]
 				identifier = "resources_de"

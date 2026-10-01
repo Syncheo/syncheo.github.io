@@ -45,6 +45,8 @@ Recherchez un collaborateur et obtenez instantanément la liste de tous ses proj
 
 Configurez les correspondances entre vos groupes Active Directory et les rôles Jazz — au niveau d'un projet ou d'une équipe. Une fois le mapping défini, déclenchez une synchronisation à la demande ou programmez une synchronisation automatique quotidienne. Les accès suivent automatiquement les mouvements de votre annuaire d'entreprise.
 
+![Configuration du mapping Active Directory — groupes AD associés aux rôles Jazz](/img/produits/ad-mapping.png)
+
 *Configuration du mapping Active Directory : chaque groupe AD est associé à son rôle Jazz, avec déclenchement manuel ou automatique de la synchronisation.*
 
 ---
@@ -80,6 +82,8 @@ Des graphiques d'évolution permettent de visualiser l'utilisation des licences 
 ### Mapping AD — Licences
 
 Associez chaque type de licence Jazz à un groupe Active Directory. Lorsque les membres de ce groupe changent, les licences sont redistribuées automatiquement. Vous gardez la maîtrise de vos coûts sans gestion manuelle.
+
+![Mapping entre licences Jazz et groupes Active Directory](/img/produits/ad-mapping-licence.png)
 
 *Mapping entre licences Jazz et groupes AD : les attributions suivent automatiquement les évolutions de votre annuaire.*
 

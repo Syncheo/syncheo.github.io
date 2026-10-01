@@ -177,3 +177,18 @@
 
 - id: produitsSoon
   translation: "Demnächst verfügbar"
+
+- id: produitsGlanceTitle
+  translation: "Alle Produkte auf einen Blick"
+
+- id: produitsGlanceMore
+  translation: "Details ansehen ↓"
+
+- id: produitsDetailTitle
+  translation: "Jedes Produkt im Detail"
+
+- id: produitsFlagship
+  translation: "Flaggschiff-Produkt"
+
+- id: produitsBackTop
+  translation: "Zurück zur Übersicht"

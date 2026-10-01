@@ -29,7 +29,7 @@ The Users section offers three complementary views to give you complete control 
 
 See at a glance the full list of members in each Jazz project area: who has access, what role they hold, and what their status is. No more back-and-forth in the native admin interface — all information is grouped, filterable, and immediately readable.
 
-![Project view — list of project area members with roles and statuses](/img/produits/jazz-admin-users-by-project.png)
+![Project view — list of project area members with roles and statuses](/img/produits/jazz-admin/01-par-projet.png)
 
 *Jazz project member list: name, role, and status visible at a single glance.*
 
@@ -37,7 +37,7 @@ See at a glance the full list of members in each Jazz project area: who has acce
 
 Search for a team member and instantly retrieve the list of all their projects and memberships across all your Jazz applications. Ideal when offboarding, handling internal moves, or conducting access audits.
 
-![User view — search results showing all projects and roles for a given team member](/img/produits/jazz-admin-users-by-user.png)
+![User view — search results showing all projects and roles for a given team member](/img/produits/jazz-admin/02-par-utilisateur.png)
 
 *User-centred view: all Jazz projects and associated roles in a single search.*
 
@@ -45,7 +45,7 @@ Search for a team member and instantly retrieve the list of all their projects a
 
 Configure the correspondences between your Active Directory groups and Jazz roles — at project or team level. Once the mapping is set, trigger a synchronisation on demand or schedule a daily automatic sync. Access rights automatically follow changes in your corporate directory.
 
-![AD Mapping view — Jazz roles to AD groups correspondence table with Add and Synchronise buttons](/img/produits/jazz-admin-users-ad-mapping.png)
+![AD Mapping view — Jazz roles to AD groups correspondence table with Add and Synchronise buttons](/img/produits/ad-mapping.png)
 
 *Active Directory mapping configuration: each AD group is linked to its Jazz role, with manual or automatic synchronisation.*
 
@@ -59,7 +59,7 @@ The Licences section provides complete visibility into Jazz licence consumption 
 
 A summary dashboard displays, for each Jazz licence type, the total number allocated, the number currently in use, the number still available, and expiry dates. No more hunting for this information across multiple scattered reports.
 
-![Available licences view — dashboard with total, used, and available counters by licence type](/img/produits/jazz-admin-licenses-available.png)
+![Available licences view — dashboard with total, used, and available counters by licence type](/img/produits/jazz-admin/03-licences-disponibles.png)
 
 *Licence dashboard: totals, current usage, and availability by type, with expiry dates.*
 
@@ -67,7 +67,7 @@ A summary dashboard displays, for each Jazz licence type, the total number alloc
 
 Search for a user and see all their assigned licences in seconds. Useful for validating an assignment, preparing an offboarding, or responding to an audit.
 
-![Licences by user view — detail of licences assigned to a given user](/img/produits/jazz-admin-licenses-by-user.png)
+![Licences by user view — detail of licences assigned to a given user](/img/produits/jazz-admin/04-licences-utilisateur.png)
 
 *A team member's licence detail: assigned types and statuses consultable instantly.*
 
@@ -75,7 +75,7 @@ Search for a user and see all their assigned licences in seconds. Useful for val
 
 Evolution charts let you visualise licence usage over time — over the last 24 hours, 7 days, 30 days, or 90 days — by licence type or by user. Data is collected automatically and continuously, with no manual intervention required.
 
-![Consumption view — licence usage evolution charts by type and by user](/img/produits/jazz-admin-licenses-consumption.png)
+![Consumption view — licence usage evolution charts by type and by user](/img/produits/jazz-admin/05-consommation.png)
 
 *Licence consumption charts over time: spot usage peaks, anticipate needs, and optimise allocations.*
 
@@ -83,7 +83,7 @@ Evolution charts let you visualise licence usage over time — over the last 24 
 
 Associate each Jazz licence type with an Active Directory group. When group members change, licences are redistributed automatically. You maintain full control over costs without any manual management.
 
-![AD Licence Mapping view — licence types to AD groups correspondence table](/img/produits/jazz-admin-licenses-ad-mapping.png)
+![AD Licence Mapping view — licence types to AD groups correspondence table](/img/produits/ad-mapping-licence.png)
 
 *Mapping between Jazz licences and AD groups: assignments automatically follow changes in your directory.*
 
@@ -95,7 +95,7 @@ The Widgets section centralises the catalogue of custom components published acr
 
 Add new widgets, edit existing ones, enable or disable their availability, and publish them to all your Jazz users — all from a simple editing form. Your teams have the right tools in their dashboards without depending on technical intervention for every update.
 
-![Widgets view — catalogue with editing form and list of published widgets in the Jazz ecosystem](/img/produits/jazz-admin-widgets.png)
+![Widgets view — catalogue with editing form and list of published widgets in the Jazz ecosystem](/img/produits/jazz-admin/06-widgets.png)
 
 *Widget catalogue management: editing form and list of active widgets published on the Jazz platform.*
 

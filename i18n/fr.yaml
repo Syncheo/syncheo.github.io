@@ -178,3 +178,18 @@
 
 - id: produitsSoon
   translation: "Bientôt disponible"
+
+- id: produitsGlanceTitle
+  translation: "Tous nos produits en un coup d'œil"
+
+- id: produitsGlanceMore
+  translation: "Voir le détail ↓"
+
+- id: produitsDetailTitle
+  translation: "Le détail de chaque produit"
+
+- id: produitsFlagship
+  translation: "Produit phare"
+
+- id: produitsBackTop
+  translation: "Retour à la vue d'ensemble"

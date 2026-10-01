@@ -29,7 +29,7 @@ Der Bereich Benutzer bietet drei ergänzende Ansichten, um die Zugriffe auf Ihre
 
 Sehen Sie auf einen Blick die vollständige Liste der Mitglieder jedes Jazz-Projektbereichs: wer Zugriff hat, welche Rolle er innehat und wie sein Status ist. Kein Hin-und-Her in der nativen Administrationsoberfläche mehr — alle Informationen sind gebündelt, filterbar und sofort lesbar.
 
-![Projektansicht — Mitgliederliste eines Projektbereichs mit Rollen und Status](/img/produits/jazz-admin-users-by-project.png)
+![Projektansicht — Mitgliederliste eines Projektbereichs mit Rollen und Status](/img/produits/jazz-admin/01-par-projet.png)
 
 *Jazz-Projektmitgliederliste: Name, Rolle und Status auf einen Blick.*
 
@@ -37,7 +37,7 @@ Sehen Sie auf einen Blick die vollständige Liste der Mitglieder jedes Jazz-Proj
 
 Suchen Sie einen Mitarbeiter und rufen Sie sofort die Liste aller seiner Projekte und Mitgliedschaften in allen Ihren Jazz-Anwendungen ab. Ideal bei Offboarding, internen Wechseln oder Zugriffsaudits.
 
-![Benutzeransicht — Suchergebnisse mit allen Projekten und Rollen eines Mitarbeiters](/img/produits/jazz-admin-users-by-user.png)
+![Benutzeransicht — Suchergebnisse mit allen Projekten und Rollen eines Mitarbeiters](/img/produits/jazz-admin/02-par-utilisateur.png)
 
 *Benutzerzentrierte Ansicht: alle Jazz-Projekte und zugehörigen Rollen in einer einzigen Suche.*
 
@@ -45,7 +45,7 @@ Suchen Sie einen Mitarbeiter und rufen Sie sofort die Liste aller seiner Projekt
 
 Konfigurieren Sie die Zuordnungen zwischen Ihren Active Directory-Gruppen und Jazz-Rollen — auf Projekt- oder Teamebene. Sobald das Mapping festgelegt ist, lösen Sie eine Synchronisation manuell aus oder planen Sie eine tägliche automatische Synchronisation. Zugriffsrechte folgen automatisch den Änderungen in Ihrem Unternehmensverzeichnis.
 
-![AD-Mapping-Ansicht — Zuordnungstabelle Jazz-Rollen zu AD-Gruppen mit Hinzufügen- und Synchronisieren-Schaltflächen](/img/produits/jazz-admin-users-ad-mapping.png)
+![AD-Mapping-Ansicht — Zuordnungstabelle Jazz-Rollen zu AD-Gruppen mit Hinzufügen- und Synchronisieren-Schaltflächen](/img/produits/ad-mapping.png)
 
 *Active Directory-Mapping-Konfiguration: Jede AD-Gruppe ist mit ihrer Jazz-Rolle verknüpft, mit manueller oder automatischer Synchronisation.*
 
@@ -59,7 +59,7 @@ Der Bereich Lizenzen bietet vollständige Transparenz über den Jazz-Lizenzverbr
 
 Ein zusammenfassendes Dashboard zeigt für jeden Jazz-Lizenztyp die Gesamtanzahl, die aktuell verwendete Anzahl, die noch verfügbare Anzahl und die Ablaufdaten an. Kein Suchen dieser Informationen mehr in verschiedenen verstreuten Berichten.
 
-![Verfügbare Lizenzen — Dashboard mit Gesamt-, Verwendungs- und Verfügbarkeitszählern nach Lizenztyp](/img/produits/jazz-admin-licenses-available.png)
+![Verfügbare Lizenzen — Dashboard mit Gesamt-, Verwendungs- und Verfügbarkeitszählern nach Lizenztyp](/img/produits/jazz-admin/03-licences-disponibles.png)
 
 *Lizenz-Dashboard: Gesamtzahlen, aktuelle Nutzung und Verfügbarkeit nach Typ, mit Ablaufdaten.*
 
@@ -67,7 +67,7 @@ Ein zusammenfassendes Dashboard zeigt für jeden Jazz-Lizenztyp die Gesamtanzahl
 
 Suchen Sie einen Benutzer und sehen Sie in Sekunden alle ihm zugewiesenen Lizenzen. Nützlich zur Validierung einer Zuweisung, Vorbereitung eines Offboardings oder Beantwortung eines Audits.
 
-![Lizenzen nach Benutzer — Detail der einem bestimmten Benutzer zugewiesenen Lizenzen](/img/produits/jazz-admin-licenses-by-user.png)
+![Lizenzen nach Benutzer — Detail der einem bestimmten Benutzer zugewiesenen Lizenzen](/img/produits/jazz-admin/04-licences-utilisateur.png)
 
 *Lizenzdetails eines Mitarbeiters: zugewiesene Typen und Status sofort abrufbar.*
 
@@ -75,7 +75,7 @@ Suchen Sie einen Benutzer und sehen Sie in Sekunden alle ihm zugewiesenen Lizenz
 
 Verlaufsdiagramme ermöglichen die Visualisierung der Lizenznutzung im Zeitverlauf — in den letzten 24 Stunden, 7 Tagen, 30 Tagen oder 90 Tagen — nach Lizenztyp oder Benutzer. Daten werden automatisch und kontinuierlich erfasst, ohne manuellen Eingriff.
 
-![Verbrauchsansicht — Verlaufsdiagramme der Lizenznutzung nach Typ und Benutzer](/img/produits/jazz-admin-licenses-consumption.png)
+![Verbrauchsansicht — Verlaufsdiagramme der Lizenznutzung nach Typ und Benutzer](/img/produits/jazz-admin/05-consommation.png)
 
 *Lizenzverbrauchsdiagramme im Zeitverlauf: Nutzungsspitzen erkennen, Bedarf antizipieren und Zuteilungen optimieren.*
 
@@ -83,7 +83,7 @@ Verlaufsdiagramme ermöglichen die Visualisierung der Lizenznutzung im Zeitverla
 
 Ordnen Sie jeden Jazz-Lizenztyp einer Active Directory-Gruppe zu. Wenn sich die Gruppenmitglieder ändern, werden Lizenzen automatisch neu verteilt. Sie behalten die volle Kontrolle über Kosten ohne manuelle Verwaltung.
 
-![AD-Lizenzmapping — Zuordnungstabelle Lizenztypen zu AD-Gruppen](/img/produits/jazz-admin-licenses-ad-mapping.png)
+![AD-Lizenzmapping — Zuordnungstabelle Lizenztypen zu AD-Gruppen](/img/produits/ad-mapping-licence.png)
 
 *Mapping zwischen Jazz-Lizenzen und AD-Gruppen: Zuweisungen folgen automatisch den Änderungen in Ihrem Verzeichnis.*
 
@@ -95,7 +95,7 @@ Der Bereich Widgets zentralisiert den Katalog benutzerdefinierter Komponenten, d
 
 Fügen Sie neue Widgets hinzu, bearbeiten Sie bestehende, aktivieren oder deaktivieren Sie deren Verfügbarkeit, und veröffentlichen Sie sie für alle Ihre Jazz-Benutzer — alles über ein einfaches Bearbeitungsformular. Ihre Teams verfügen über die richtigen Werkzeuge in ihren Dashboards, ohne bei jeder Aktualisierung auf technische Unterstützung angewiesen zu sein.
 
-![Widget-Ansicht — Katalog mit Bearbeitungsformular und Liste der veröffentlichten Widgets im Jazz-Ökosystem](/img/produits/jazz-admin-widgets.png)
+![Widget-Ansicht — Katalog mit Bearbeitungsformular und Liste der veröffentlichten Widgets im Jazz-Ökosystem](/img/produits/jazz-admin/06-widgets.png)
 
 *Widget-Katalogverwaltung: Bearbeitungsformular und Liste der aktiven, auf der Jazz-Plattform veröffentlichten Widgets.*
 

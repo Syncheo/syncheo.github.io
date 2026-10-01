@@ -1,0 +1,54 @@
+{{/* Données structurées schema.org de la section "produits".
+     - Fiche produit (page)   : SoftwareApplication + BreadcrumbList
+     - Liste (section)        : CollectionPage + ItemList + BreadcrumbList
+       (page Produits et pages de solution comme "migration-jira-ewm").
+     Aucune offre/prix n'est déclaré : rien n'est inventé.
+     Sérialisé en une passe (jsonify | safeJS) pour éviter le
+     double-échappement dans le contexte <script>. */}}
+{{ $org := dict "@type" "Organization" "name" "Syncheo" "url" "https://www.syncheo.tech/" }}
+{{ if eq .Type "produits" }}
+{{ if eq .Kind "page" }}
+{{ $app := dict
+    "@type" "SoftwareApplication"
+    "name" (.Title | plainify)
+    "headline" ((.Params.subtitle | default .Title) | plainify)
+    "description" ((or .Description .Summary) | plainify)
+    "url" .Permalink
+    "inLanguage" .Language.Lang
+    "applicationCategory" "DeveloperApplication"
+    "operatingSystem" "IBM Engineering Lifecycle Management (ELM)"
+    "author" $org
+    "publisher" $org
+}}
+{{ with .Params.banner }}{{ $app = merge $app (dict "image" (. | absURL)) }}{{ end }}
+{{ with .PublishDate }}{{ if not .IsZero }}{{ $app = merge $app (dict "datePublished" (.Format "2006-01-02")) }}{{ end }}{{ end }}
+{{ with .Lastmod }}{{ if not .IsZero }}{{ $app = merge $app (dict "dateModified" (.Format "2006-01-02")) }}{{ end }}{{ end }}
+{{ with .Params.tags }}{{ $app = merge $app (dict "keywords" (delimit . ", ")) }}{{ end }}
+{{ $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Syncheo" "item" site.Home.Permalink) }}
+{{ with .Parent }}{{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" (.Title | plainify) "item" .Permalink) }}{{ end }}
+{{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" (add (len $crumbs) 1) "name" (.Title | plainify) "item" .Permalink) }}
+{{ $breadcrumb := dict "@type" "BreadcrumbList" "itemListElement" $crumbs }}
+{{ $schema := dict "@context" "https://schema.org" "@graph" (slice $app $breadcrumb) }}
+<script type="application/ld+json">{{ $schema | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{ else if and (eq .Kind "section") .Params.products }}
+{{ $items := slice }}
+{{ range $i, $p := .Params.products }}
+{{ $items = $items | append (dict "@type" "ListItem" "position" (add $i 1) "name" ($p.title | plainify) "url" (printf "%s/" (strings.TrimSuffix "/" ($p.url | absLangURL)))) }}
+{{ end }}
+{{ $list := dict
+    "@type" "CollectionPage"
+    "name" (.Title | plainify)
+    "description" (.Description | plainify)
+    "url" .Permalink
+    "inLanguage" .Language.Lang
+    "publisher" $org
+    "mainEntity" (dict "@type" "ItemList" "numberOfItems" (len $items) "itemListElement" $items)
+}}
+{{ $crumbs := slice (dict "@type" "ListItem" "position" 1 "name" "Syncheo" "item" site.Home.Permalink) }}
+{{ with .Parent }}{{ if not .IsHome }}{{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" (.Title | plainify) "item" .Permalink) }}{{ end }}{{ end }}
+{{ $crumbs = $crumbs | append (dict "@type" "ListItem" "position" (add (len $crumbs) 1) "name" (.Title | plainify) "item" .Permalink) }}
+{{ $breadcrumb := dict "@type" "BreadcrumbList" "itemListElement" $crumbs }}
+{{ $schema := dict "@context" "https://schema.org" "@graph" (slice $list $breadcrumb) }}
+<script type="application/ld+json">{{ $schema | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{ end }}
+{{ end }}

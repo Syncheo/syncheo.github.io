@@ -9,7 +9,8 @@
 <meta name="googlebot" content="index,follow,snippet,archive">
 {{ end }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{{ $title_plain := .Title | markdownify | plainify }}
+{{/* seo_title (front matter) : titre <title>/og dédié, distinct du H1 affiché. */}}
+{{ $title_plain := (.Params.seo_title | default .Title) | markdownify | plainify }}
 <title>{{ $title_plain }}</title>
 <meta name="author" content="{{ .Param "author" }}" />
 {{ $keywords := .Site.Params.defaultKeywords | default (slice "" | first 0) }}
@@ -131,7 +132,8 @@
 {{ end }}
 
 <!-- Twitter Card meta tags -->
-<meta name="twitter:card" content="summary{{ if (and $is_showcase (and $has_image $is_valid_image)) }}_large_image{{ end }}">
+{{ $is_card_large := and (in (slice "blog" "portfolio" "produits") .Type) (or (eq .Kind "page") (and (eq .Kind "section") $has_image)) }}
+<meta name="twitter:card" content="summary{{ if (and $is_card_large (and $has_image $is_valid_image)) }}_large_image{{ end }}">
 {{ with .Param "twitter_site" }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
 <meta name="twitter:title" content="{{ $title_plain | truncate 70 }}">
 {{ if $is_valid_image }}

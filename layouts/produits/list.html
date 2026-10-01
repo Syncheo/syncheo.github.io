@@ -4,6 +4,7 @@
   <head>
     {{ partial "headers.html" . }}
     {{ partial "custom_headers.html" . }}
+    {{ partial "jsonld-produits.html" . }}
     <style>
       .produits-intro {
         width: 100%; margin-bottom: 40px;
@@ -63,6 +64,72 @@
         padding: 5px 16px; font-size: 1rem; font-weight: 600;
       }
 
+
+      /* ---------- Vue d'ensemble (d'un coup d'oeil) ---------- */
+      .sy-glance { margin: 0 0 56px; }
+      .sy-glance-title, .sy-detail-title {
+        margin: 0 0 24px; font-size: 2.2rem; font-weight: 700; color: #1a1a2e;
+      }
+      .sy-glance-grid {
+        display: grid; gap: 20px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+      .sy-glance-card {
+        display: flex; flex-direction: column;
+        border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden;
+        background: #fff; text-decoration: none !important;
+        transition: box-shadow .15s, transform .15s, border-color .15s;
+      }
+      .sy-glance-card:hover {
+        box-shadow: 0 6px 18px rgba(33,13,186,0.12);
+        transform: translateY(-2px); border-color: rgba(33,13,186,0.35);
+      }
+      .sy-glance-card--featured {
+        grid-column: span 2; grid-row: span 2;
+        border: 2px solid #210DBA;
+      }
+      .sy-glance-thumb { aspect-ratio: 16/9; background: #F3F4F6; overflow: hidden; }
+      .sy-glance-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .sy-glance-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+      .sy-glance-name { margin: 0; font-size: 1.15rem; font-weight: 700; color: #1a1a2e; line-height: 1.25; }
+      .sy-glance-sub { margin: 0; font-size: 0.95rem; color: #6B7280; line-height: 1.4; }
+      .sy-glance-card--featured .sy-glance-name { font-size: 1.6rem; }
+      .sy-glance-card--featured .sy-glance-sub { font-size: 1.1rem; }
+      .sy-glance-more { margin-top: auto; padding-top: 8px; font-size: 0.9rem; font-weight: 600; color: #210DBA; }
+      .sy-badge-flagship {
+        align-self: flex-start;
+        background: #210DBA; color: #fff; border-radius: 999px;
+        padding: 3px 12px; font-size: 0.8rem; font-weight: 700; letter-spacing: .02em;
+      }
+
+      /* Bandeau Solutions */
+      .sy-solutions-cta {
+        display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+        margin: 0 0 56px; padding: 24px 28px; border-radius: 10px;
+        background: rgba(33,13,186,0.05); border: 1px solid rgba(33,13,186,0.18);
+      }
+      .sy-solutions-cta h3 { margin: 0 0 6px; font-size: 1.5rem; font-weight: 700; color: #1a1a2e; }
+      .sy-solutions-cta p { margin: 0; font-size: 1.1rem; color: #4a4a6a; max-width: 760px; }
+
+      /* ---------- Détail ---------- */
+      .sy-prod-item { scroll-margin-top: 90px; }
+      .sy-prod-item--featured {
+        background: rgba(33,13,186,0.03);
+        border-left: 4px solid #210DBA; padding-left: 28px;
+      }
+      .sy-prod-backtop { margin-top: 10px; font-size: 0.9rem; }
+      .sy-prod-backtop a { color: #6B7280; }
+
+      @media (max-width: 991px) {
+        .sy-glance-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .sy-glance-card--featured { grid-column: span 2; grid-row: auto; }
+      }
+      @media (max-width: 575px) {
+        .sy-glance-grid { grid-template-columns: 1fr; }
+        .sy-glance-card--featured { grid-column: auto; }
+        .sy-glance-title, .sy-detail-title { font-size: 1.6rem; }
+      }
+
       @media (max-width: 767px) {
         .sy-prod-item { flex-direction: column; gap: 16px; }
         .sy-prod-img-wrap { flex: none; width: 100%; }
@@ -87,10 +154,45 @@
           <div class="produits-intro">{{ .Content }}</div>
           {{ end }}
 
+          {{ if ne .Params.glance false }}
+          <section class="sy-glance" id="apercu">
+            <h2 class="sy-glance-title">{{ i18n "produitsGlanceTitle" }}</h2>
+            <div class="sy-glance-grid">
+              {{ range .Params.products }}
+              {{ $soon := .coming_soon | default false }}
+              {{ $anchor := printf "#p-%s" (path.Base .url) }}
+              <a class="sy-glance-card{{ if .featured }} sy-glance-card--featured{{ end }}" href="{{ if $soon }}#{{ else }}{{ $anchor }}{{ end }}">
+                <div class="sy-glance-thumb">
+                  {{ if .banner }}<img src="{{ .banner | relURL }}" alt="{{ .title }}" loading="lazy" />{{ end }}
+                </div>
+                <div class="sy-glance-body">
+                  {{ if .featured }}<span class="sy-badge-flagship">{{ i18n "produitsFlagship" }}</span>{{ end }}
+                  <h3 class="sy-glance-name">{{ .title }}</h3>
+                  {{ with .subtitle }}<p class="sy-glance-sub">{{ . }}</p>{{ end }}
+                  <span class="sy-glance-more">{{ i18n "produitsGlanceMore" }}</span>
+                </div>
+              </a>
+              {{ end }}
+            </div>
+          </section>
+          {{ end }}
+
+          {{ with .Params.solutions_cta }}
+          <div class="sy-solutions-cta">
+            <div>
+              <h3>{{ .title }}</h3>
+              <p>{{ .text }}</p>
+            </div>
+            <a href="{{ .url | relLangURL }}" class="btn btn-template-main">{{ .button }}</a>
+          </div>
+          {{ end }}
+
+          {{ if ne .Params.glance false }}<h2 class="sy-detail-title" id="detail">{{ i18n "produitsDetailTitle" }}</h2>{{ end }}
+
           <ul class="sy-prod-list">
             {{ range .Params.products }}
             {{ $soon := .coming_soon | default false }}
-            <li class="sy-prod-item{{ if $soon }} sy-prod-item--soon{{ end }}">
+            <li class="sy-prod-item{{ if $soon }} sy-prod-item--soon{{ end }}{{ if .featured }} sy-prod-item--featured{{ end }}" id="p-{{ path.Base .url }}">
 
               <div class="sy-prod-img-wrap">
                 {{ if and .url (not $soon) }}
@@ -107,6 +209,7 @@
               </div>
 
               <div class="sy-prod-body">
+                {{ if .featured }}<span class="sy-badge-flagship" style="margin-bottom:10px;display:inline-block">{{ i18n "produitsFlagship" }}</span>{{ end }}
                 <h2 class="sy-prod-title">
                   {{ if and .url (not $soon) }}
                   <a href="{{ .url | relLangURL }}">{{ .title }}</a>
@@ -124,10 +227,11 @@
                 </div>
                 {{ end }}
                 {{ if and .url (not $soon) }}
-                <a href="{{ .url | relLangURL }}" class="btn btn-template-main btn-sm">{{ i18n "produitsViewProduct" }}</a>
+                <a href="{{ .url | relLangURL }}" class="btn btn-template-main btn-sm">{{ .cta | default (i18n "produitsViewProduct") }}</a>
                 {{ else }}
                 <span class="sy-prod-badge-soon">{{ i18n "produitsSoon" }}</span>
                 {{ end }}
+                {{ if ne $.Params.glance false }}<div class="sy-prod-backtop"><a href="#apercu">↑ {{ i18n "produitsBackTop" }}</a></div>{{ end }}
               </div>
 
             </li>
