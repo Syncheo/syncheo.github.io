@@ -158,13 +158,13 @@
   translation: "Datenschutzerklärung"
 
 - id: portfolioHomeTitle
-  translation: "Unsere Referenzen"
+  translation: "Unsere Produkte"
 
 - id: portfolioHomeSubtitle
   translation: "Plugins und maßgeschneiderte Lösungen für das IBM Jazz ELM-Ökosystem."
 
 - id: portfolioHomeAll
-  translation: "Alle Referenzen ansehen"
+  translation: "Alle Produkte ansehen"
 
 - id: portfolioViewProject
   translation: "Projekt ansehen"
@@ -192,3 +192,12 @@
 
 - id: produitsBackTop
   translation: "Zurück zur Übersicht"
+
+- id: tocTitle
+  translation: "Auf dieser Seite"
+
+- id: seeAlsoTitle
+  translation: "Siehe auch"
+
+- id: partOfSolution
+  translation: "Dieses Werkzeug ist Teil der Lösung"

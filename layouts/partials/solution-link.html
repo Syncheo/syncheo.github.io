@@ -1,0 +1,35 @@
+{{/* Lien "Cet outil fait partie de la solution …" vers la page d'ensemble.
+     Appel : partial "solution-link.html" (dict "page" . "variant" "side" | "bottom")
+     "side"   : colonne de droite (masquée sur mobile avec le sommaire)
+     "bottom" : encart dans la colonne principale (visible partout, dont mobile) */}}
+{{ $solutions := partial "product-solutions.html" .page }}
+{{ if gt (len $solutions) 0 }}
+{{ if eq .variant "side" }}
+<style>
+  .sy-solution-side { margin-top: 28px; border-left: 2px solid #210DBA; padding-left: 18px; }
+  .sy-solution-side p {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: #6B7280; margin: 0 0 8px;
+  }
+  .sy-solution-side a { display: block; padding: 3px 0; color: #210DBA; font-size: 14px; font-weight: 600; line-height: 1.4; text-decoration: none; }
+  .sy-solution-side a:hover { text-decoration: underline; }
+</style>
+<div class="sy-solution-side">
+  <p>{{ i18n "partOfSolution" }}</p>
+  {{ range $solutions }}<a href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>{{ end }}
+</div>
+{{ else }}
+<style>
+  .sy-solution-callout {
+    margin-top: 40px; padding: 16px 20px; border-radius: 10px;
+    background: rgba(33,13,186,0.05); border: 1px solid rgba(33,13,186,0.18);
+    color: #4a4a6a; line-height: 1.6;
+  }
+  .sy-solution-callout a { font-weight: 700; color: #210DBA; }
+</style>
+<div class="sy-solution-callout">
+  {{ i18n "partOfSolution" }}
+  {{ range $i, $s := $solutions }}{{ if $i }}, {{ end }}<a href="{{ $s.RelPermalink }}">{{ $s.Title }} &rarr;</a>{{ end }}
+</div>
+{{ end }}
+{{ end }}

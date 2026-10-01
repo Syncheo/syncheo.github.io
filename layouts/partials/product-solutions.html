@@ -1,0 +1,22 @@
+{{/* Retourne les pages "solution" (ensembles de produits, ex. Migration Jira → EWM)
+     qui incluent la page produit courante.
+     Une solution = sous-section de produits dont le front matter liste `products:`
+     avec un `url` par produit ; la correspondance se fait sur le nom du fichier.
+     (L'index de la section produits a aussi un `products:`, il est exclu car son
+     parent est la home.) */}}
+{{- $cur := "" -}}
+{{- with .File }}{{ $cur = .ContentBaseName }}{{ end -}}
+{{- $found := slice -}}
+{{- if $cur -}}
+  {{- range where site.Pages "Type" "produits" -}}
+    {{- if and .IsSection .Params.products (eq .Parent.Section "produits") -}}
+      {{- $sol := . -}}
+      {{- range .Params.products -}}
+        {{- if and .url (eq (path.Base (strings.TrimSuffix "/" .url)) $cur) -}}
+          {{- $found = $found | append $sol -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $found -}}

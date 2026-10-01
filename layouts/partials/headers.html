@@ -96,9 +96,9 @@
 
 <!-- Facebook OpenGraph tags -->
 {{ $is_blog := and (eq .Type "blog") (eq .Kind "page") }}
-{{/* Pages "vitrines" : articles de blog ET fiches portfolio — elles ont des
+{{/* Pages "vitrines" : articles de blog — elles ont des
      bannières et méritent les grandes cartes de partage social. */}}
-{{ $is_showcase := and (in (slice "blog" "portfolio") .Type) (eq .Kind "page") }}
+{{ $is_showcase := and (in (slice "blog") .Type) (eq .Kind "page") }}
 {{ $has_image :=  isset .Params "banner" }}
 {{ $image := cond $has_image .Params.banner (.Site.Params.default_sharing_image | default "img/sharing-default.png") }}
 {{ $is_valid_image := print "static/" $image | fileExists }}
@@ -132,7 +132,7 @@
 {{ end }}
 
 <!-- Twitter Card meta tags -->
-{{ $is_card_large := and (in (slice "blog" "portfolio" "produits") .Type) (or (eq .Kind "page") (and (eq .Kind "section") $has_image)) }}
+{{ $is_card_large := and (in (slice "blog" "produits") .Type) (or (eq .Kind "page") (and (eq .Kind "section") $has_image)) }}
 <meta name="twitter:card" content="summary{{ if (and $is_card_large (and $has_image $is_valid_image)) }}_large_image{{ end }}">
 {{ with .Param "twitter_site" }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
 <meta name="twitter:title" content="{{ $title_plain | truncate 70 }}">

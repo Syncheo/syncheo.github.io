@@ -1,0 +1,23 @@
+{{/* Mélange les produits à chaque visite. Les liens du côté et les cartes du
+     bas reçoivent le même ordre, donc montrent les mêmes 3 produits. À inclure
+     APRÈS les deux blocs pour s'exécuter avant l'affichage. */}}
+<script>
+(function () {
+  var main = document.querySelector('.sy-seealso-list');
+  var side = document.querySelector('.sy-seealso-links');
+  var ref = side || main;
+  if (!ref) return;
+  var keys = Array.prototype.map.call(ref.children, function (n) { return n.getAttribute('data-key'); });
+  for (var i = keys.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = keys[i]; keys[i] = keys[j]; keys[j] = t;
+  }
+  function apply(list, order) {
+    var byKey = {};
+    Array.prototype.forEach.call(list.children, function (n) { byKey[n.getAttribute('data-key')] = n; });
+    order.forEach(function (k) { if (byKey[k]) list.appendChild(byKey[k]); });
+  }
+  if (side) apply(side, keys);
+  if (main) apply(main, keys);
+})();
+</script>

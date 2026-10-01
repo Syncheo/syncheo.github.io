@@ -158,13 +158,13 @@
   translation: "Privacy Notice"
 
 - id: portfolioHomeTitle
-  translation: "Our work"
+  translation: "Our products"
 
 - id: portfolioHomeSubtitle
   translation: "Plugins and custom solutions built for the IBM Jazz ELM ecosystem."
 
 - id: portfolioHomeAll
-  translation: "View all projects"
+  translation: "View all products"
 
 - id: portfolioViewProject
   translation: "View project"
@@ -192,3 +192,12 @@
 
 - id: produitsBackTop
   translation: "Back to overview"
+
+- id: tocTitle
+  translation: "On this page"
+
+- id: seeAlsoTitle
+  translation: "See also"
+
+- id: partOfSolution
+  translation: "This tool is part of the solution"

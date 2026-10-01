@@ -1,0 +1,28 @@
+{{/* "Voir aussi" compact (3 liens texte) sous le sommaire, colonne de droite.
+     Tous les autres produits sont dans le HTML ; le CSS n'en montre que 3 et
+     see-also-script.html les mélange à chaque visite. */}}
+{{ $others := partial "products-others.html" . }}
+{{ if gt (len $others) 0 }}
+<style>
+  .sy-seealso-side { margin-top: 28px; border-left: 2px solid #E5E7EB; padding-left: 18px; }
+  .sy-seealso-side-title {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: #6B7280; margin: 0 0 10px;
+  }
+  .sy-seealso-links { list-style: none; padding: 0; margin: 0; }
+  .sy-seealso-links li:nth-child(n+4) { display: none; }
+  .sy-seealso-links a {
+    display: block; padding: 5px 0; color: #4B5563;
+    font-size: 14px; line-height: 1.4; text-decoration: none;
+  }
+  .sy-seealso-links a:hover { color: #210DBA; }
+</style>
+<div class="sy-seealso-side">
+  <p class="sy-seealso-side-title">{{ i18n "seeAlsoTitle" }}</p>
+  <ul class="sy-seealso-links">
+    {{ range $others }}
+    <li data-key="{{ .RelPermalink }}"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

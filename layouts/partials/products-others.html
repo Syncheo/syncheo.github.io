@@ -1,0 +1,12 @@
+{{/* Retourne les autres produits (même langue), du plus récent au plus ancien :
+     pages produit (.IsPage : exclut l'index de section ET les pages de solution
+     comme Migration Jira → EWM, qui n'ont pas la navigation de droite) ayant une
+     bannière, sauf la page courante. */}}
+{{- $current := . -}}
+{{- $others := slice -}}
+{{- range where site.Pages "Type" "produits" -}}
+  {{- if and .IsPage .Params.banner (ne .RelPermalink $current.RelPermalink) -}}
+    {{- $others = $others | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return (sort $others "Date" "desc") -}}

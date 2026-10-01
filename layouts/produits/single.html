@@ -1,3 +1,4 @@
+{{- $hasToc := gt (len .Fragments.Headings) 0 -}}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
@@ -20,26 +21,38 @@
         <div id="content">
             <div class="container">
 
-                <div class="row">
+                <div class="row{{ if $hasToc }} sy-product-row{{ end }}">
 
-                    <div class="col-md-9" id="blog-post">
+                    <div class="{{ if $hasToc }}col-md-9{{ else }}col-md-12{{ end }}" id="blog-post">
 
                         <div id="post-content">
                           {{ .Content }}
                         </div>
 
+                        {{ partial "solution-link.html" (dict "page" . "variant" "bottom") }}
+
+                        {{ partial "see-also-produits.html" . }}
+
                         {{ partial "cta-contact.html" . }}
 
                     </div>
 
-                    <div class="col-md-3">
-                        {{ partial "sidebar-portfolio.html" . }}
+                    {{ if $hasToc }}
+                    <div class="col-md-3 sy-toc-col">
+                        <div class="sy-side">
+                            {{ partial "toc-produit.html" . }}
+                            {{ partial "solution-link.html" (dict "page" . "variant" "side") }}
+                            {{ partial "see-also-side.html" . }}
+                        </div>
                     </div>
+                    {{ end }}
 
                 </div>
 
             </div>
         </div>
+
+        {{ partial "see-also-script.html" . }}
 
         {{ partial "footer.html" . }}
 

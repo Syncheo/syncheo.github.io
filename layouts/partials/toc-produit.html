@@ -1,0 +1,65 @@
+{{/*
+  Sommaire "Sur cette page" des fiches produit.
+  Généré par Hugo à partir des titres ## du contenu (niveaux réglés dans
+  [markup.tableOfContents] de hugo.toml). Collant au défilement sur grand écran,
+  masqué sur mobile/tablette. La section en cours est surlignée via un petit script.
+*/}}
+{{ if .Fragments.Headings }}
+<style>
+  @media (min-width: 992px) {
+    .sy-product-row { display: flex; }
+    .sy-product-row:before, .sy-product-row:after { display: none; }
+    .sy-toc-col .sy-side { position: sticky; top: 100px; }
+  }
+  @media (max-width: 991px) { .sy-toc-col { display: none; } }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  #post-content h2, #post-content h3 { scroll-margin-top: 100px; }
+
+  .sy-toc { border-left: 2px solid #E5E7EB; padding-left: 18px; }
+  .sy-toc-title {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: #6B7280; margin: 0 0 10px;
+  }
+  .sy-toc nav#TableOfContents ul { list-style: none; padding: 0; margin: 0; }
+  .sy-toc nav#TableOfContents li { margin: 0; }
+  .sy-toc nav#TableOfContents a {
+    display: block; margin-left: -20px; padding: 5px 0 5px 18px;
+    border-left: 2px solid transparent; color: #4B5563;
+    font-size: 14px; line-height: 1.4; text-decoration: none;
+  }
+  .sy-toc nav#TableOfContents a:hover { color: #210DBA; }
+  .sy-toc nav#TableOfContents a.active {
+    color: #210DBA; font-weight: 600; border-left-color: #210DBA;
+  }
+</style>
+
+<div class="sy-toc">
+  <p class="sy-toc-title">{{ i18n "tocTitle" }}</p>
+  {{ .TableOfContents }}
+</div>
+
+<script>
+(function () {
+  var links = document.querySelectorAll('.sy-toc nav#TableOfContents a[href^="#"]');
+  var items = [];
+  Array.prototype.forEach.call(links, function (a) {
+    var h = document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+    if (h) items.push({ link: a, head: h });
+  });
+  if (!items.length) return;
+  var ticking = false;
+  function update() {
+    var current = null;
+    items.forEach(function (it) {
+      if (it.head.getBoundingClientRect().top <= 130) current = it;
+    });
+    items.forEach(function (it) { it.link.classList.toggle('active', it === current); });
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+})();
+</script>
+{{ end }}
