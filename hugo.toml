@@ -76,17 +76,11 @@ disableDefaultLanguageRedirect = true
     				pageRef = "/faq"
     				weight = 2
 
-			[[languages.fr.menu.main]]
-				identifier = "syncheo_fr"
-    			name = "Syncheo"
-				url = "#"
-    			weight = 6
-
 				[[languages.fr.menu.main]]
-					parent = "syncheo_fr"
+					parent = "ressources_fr"
     				name = "🌲 Sponsoring PCT"
     				pageRef = "/sponsoring/pct"
-    				weight = 1
+    				weight = 3
 
 			[[languages.fr.menu.main]]
     			name = "Contact"
@@ -148,17 +142,11 @@ disableDefaultLanguageRedirect = true
 					pageRef = "/faq"
 					weight = 2
 
-			[[languages.en.menu.main]]
-				identifier = "syncheo_en"
-				name = "Syncheo"
-				url = "#"
-				weight = 6
-
 				[[languages.en.menu.main]]
-					parent = "syncheo_en"
+					parent = "resources_en"
 					name = "🌲 PCT Sponsoring"
 					pageRef = "/sponsoring/pct"
-					weight = 1
+					weight = 3
 
 			[[languages.en.menu.main]]
 				name = "Contact"
@@ -220,17 +208,11 @@ disableDefaultLanguageRedirect = true
 					pageRef = "/faq"
 					weight = 2
 
-			[[languages.de.menu.main]]
-				identifier = "syncheo_de"
-				name = "Syncheo"
-				url = "#"
-				weight = 6
-
 				[[languages.de.menu.main]]
-					parent = "syncheo_de"
+					parent = "resources_de"
 					name = "🌲 PCT-Sponsoring"
 					pageRef = "/sponsoring/pct"
-					weight = 1
+					weight = 3
 
 			[[languages.de.menu.main]]
 				name = "Kontakt"
