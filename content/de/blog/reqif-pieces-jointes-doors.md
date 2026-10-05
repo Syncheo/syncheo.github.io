@@ -80,16 +80,17 @@ Bewahren Sie `change.bat` und `change.ps1` **im selben Ordner** auf. Voraussetzu
 
 ### Dateiintegrität prüfen
 
-Die **SHA-256**-Prüfsummen der beiden ausführbaren Dateien lauten:
+Die **SHA-256**-Prüfsummen der Dateien lauten:
 
 | Datei | SHA-256 |
 |-------|---------|
 | `change.bat` | `ef05de15b35328d2acd35fca3fb93c8f1f2ab36b31cd3430ff3914523880530e` |
 | `change.ps1` | `f46a785778785131d1fa8e006da2ced1c07ee7b61526e46532dd15df6e323706` |
+| `README.md` | `043c713d24f19547054057584f3306e92858bfffe8a9f3f75a736de60723ce9c` |
 
 Zur Prüfung einer heruntergeladenen Datei in PowerShell: `Get-FileHash .\change.ps1 -Algorithm SHA256`, anschließend den Wert vergleichen (Groß-/Kleinschreibung egal). Eine Prüfsummendatei (<a href="/downloads/CHECKSUMS.txt" download><code>CHECKSUMS.txt</code></a>) steht ebenfalls bereit.
 
-**Um jedes Kompromittierungsrisiko auszuschließen**: Auf derselben Website wie die Dateien veröffentlichte Prüfsummen schützen nicht, falls die Website selbst kompromittiert wäre. Die Referenz-Prüfsummen, die offline auf unserem Rechner aufbewahrt werden, erhalten Sie daher über [Kontakt](/de/contact): Wir senden sie Ihnen über einen separaten Kanal zu.
+**Zur zusätzlichen Absicherung**: Auf Wunsch können Sie unsere Referenz-Prüfsummen über [Kontakt](/de/contact) anfordern: Wir senden sie Ihnen direkt zu.
 
 ## Quellen
 

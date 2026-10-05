@@ -80,16 +80,17 @@ Keep `change.bat` and `change.ps1` **in the same folder**. Prerequisite: Windows
 
 ### Verify file integrity
 
-The **SHA-256** checksums of the two executable files are:
+The **SHA-256** checksums of the files are:
 
 | File | SHA-256 |
 |------|---------|
 | `change.bat` | `ef05de15b35328d2acd35fca3fb93c8f1f2ab36b31cd3430ff3914523880530e` |
 | `change.ps1` | `f46a785778785131d1fa8e006da2ced1c07ee7b61526e46532dd15df6e323706` |
+| `README.md` | `043c713d24f19547054057584f3306e92858bfffe8a9f3f75a736de60723ce9c` |
 
 To verify a downloaded file, in PowerShell: `Get-FileHash .\change.ps1 -Algorithm SHA256`, then compare the result (case-insensitive). A checksums file (<a href="/downloads/CHECKSUMS.txt" download><code>CHECKSUMS.txt</code></a>) is also available.
 
-**To rule out any risk of compromise**: checksums published on the same site as the files offer no protection if that site were itself compromised. You can therefore obtain the reference checksums, kept offline on our own computer, by clicking [Contact us](/en/contact): we will send them to you through a separate channel.
+**For additional assurance**: if you wish, you can obtain our reference checksums by clicking [Contact us](/en/contact): we will send them to you directly.
 
 ## Sources
 

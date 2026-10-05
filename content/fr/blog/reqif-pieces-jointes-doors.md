@@ -80,16 +80,17 @@ Gardez `change.bat` et `change.ps1` **dans le même dossier**. Pré-requis : Win
 
 ### Vérifier l'intégrité des fichiers
 
-Les empreintes **SHA-256** des deux fichiers exécutables sont les suivantes :
+Les empreintes **SHA-256** des fichiers sont les suivantes :
 
 | Fichier | SHA-256 |
 |---------|---------|
 | `change.bat` | `ef05de15b35328d2acd35fca3fb93c8f1f2ab36b31cd3430ff3914523880530e` |
 | `change.ps1` | `f46a785778785131d1fa8e006da2ced1c07ee7b61526e46532dd15df6e323706` |
+| `README.md` | `043c713d24f19547054057584f3306e92858bfffe8a9f3f75a736de60723ce9c` |
 
 Pour vérifier un fichier téléchargé, sous PowerShell : `Get-FileHash .\change.ps1 -Algorithm SHA256`, puis comparez la valeur obtenue (insensible à la casse). Un fichier de checksums (<a href="/downloads/CHECKSUMS.txt" download><code>CHECKSUMS.txt</code></a>) est également disponible.
 
-**Pour écarter tout risque de compromission** : des empreintes publiées sur le même site que les fichiers ne protègent pas si ce site était lui-même compromis. Vous pouvez donc obtenir les empreintes de référence, conservées hors ligne sur notre poste, en cliquant sur [Nous contacter](/fr/contact) : nous vous les transmettrons par un canal distinct.
+**Pour une vérification supplémentaire** : si vous le souhaitez, vous pouvez obtenir nos empreintes de référence en cliquant sur [Nous contacter](/fr/contact) : nous vous les transmettrons directement.
 
 ## Sources
 
