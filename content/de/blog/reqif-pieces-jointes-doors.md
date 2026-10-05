@@ -78,6 +78,19 @@ Die beiden Dateien des Werkzeugs samt seiner Dokumentation:
 
 Bewahren Sie `change.bat` und `change.ps1` **im selben Ordner** auf. Voraussetzung: Windows mit PowerShell 5.0 oder höher (standardmäßig auf Windows 10/11 vorhanden).
 
+### Dateiintegrität prüfen
+
+Die **SHA-256**-Prüfsummen der beiden ausführbaren Dateien lauten:
+
+| Datei | SHA-256 |
+|-------|---------|
+| `change.bat` | `ef05de15b35328d2acd35fca3fb93c8f1f2ab36b31cd3430ff3914523880530e` |
+| `change.ps1` | `f46a785778785131d1fa8e006da2ced1c07ee7b61526e46532dd15df6e323706` |
+
+Zur Prüfung einer heruntergeladenen Datei in PowerShell: `Get-FileHash .\change.ps1 -Algorithm SHA256`, anschließend den Wert vergleichen (Groß-/Kleinschreibung egal). Eine Prüfsummendatei (<a href="/downloads/CHECKSUMS.txt" download><code>CHECKSUMS.txt</code></a>) steht ebenfalls bereit.
+
+**Um jedes Kompromittierungsrisiko auszuschließen**: Auf derselben Website wie die Dateien veröffentlichte Prüfsummen schützen nicht, falls die Website selbst kompromittiert wäre. Die Referenz-Prüfsummen, die offline auf unserem Rechner aufbewahrt werden, erhalten Sie daher über [Kontakt](/de/contact): Wir senden sie Ihnen über einen separaten Kanal zu.
+
 ## Quellen
 
 - [Why OLE object is not visible after importing ReqIF file into DOORS — jazz.net](https://jazz.net/forum/questions/241237/why-ole-object-is-not-visible-after-importing-reqif-file-in-to-doors)

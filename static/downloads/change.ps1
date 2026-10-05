@@ -215,6 +215,18 @@ $evalBlockquote = [System.Text.RegularExpressions.MatchEvaluator]{
 
 $text = [regex]::Replace($text, $patternBlockquote, $evalBlockquote)
 
+# ============ 2b-ter. Suppression des attributs d'evenement (onclick...) =====
+# Le schema ReqIF-XHTML interdit les gestionnaires d'evenements (onclick,
+# onmouseover, ondblclick, ...). On retire ces attributs des elements, qu'ils
+# soient en guillemets doubles ou simples. Ne touche jamais au texte : il faut
+# un nom "on..." suivi de = et d'une valeur entre guillemets.
+$rxOn = [regex]'(?i)\son[a-z]+\s*=\s*("[^"]*"|''[^'']*'')'
+$nbOn = $rxOn.Matches($text).Count
+if ($nbOn -gt 0) {
+    $text = $rxOn.Replace($text, '')
+}
+Write-Host ("Attributs d'evenement (on...) retires : {0}" -f $nbOn)
+
 # Sauvegarde systématique dans le fichier .reqif détecté
 [IO.File]::WriteAllBytes($reqifPath, $latin1.GetBytes($text))
 

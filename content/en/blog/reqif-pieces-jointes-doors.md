@@ -78,6 +78,19 @@ The two files of the utility, together with its documentation:
 
 Keep `change.bat` and `change.ps1` **in the same folder**. Prerequisite: Windows with PowerShell 5.0 or later (present by default on Windows 10/11).
 
+### Verify file integrity
+
+The **SHA-256** checksums of the two executable files are:
+
+| File | SHA-256 |
+|------|---------|
+| `change.bat` | `ef05de15b35328d2acd35fca3fb93c8f1f2ab36b31cd3430ff3914523880530e` |
+| `change.ps1` | `f46a785778785131d1fa8e006da2ced1c07ee7b61526e46532dd15df6e323706` |
+
+To verify a downloaded file, in PowerShell: `Get-FileHash .\change.ps1 -Algorithm SHA256`, then compare the result (case-insensitive). A checksums file (<a href="/downloads/CHECKSUMS.txt" download><code>CHECKSUMS.txt</code></a>) is also available.
+
+**To rule out any risk of compromise**: checksums published on the same site as the files offer no protection if that site were itself compromised. You can therefore obtain the reference checksums, kept offline on our own computer, by clicking [Contact us](/en/contact): we will send them to you through a separate channel.
+
 ## Sources
 
 - [Why OLE object is not visible after importing ReqIF file into DOORS — jazz.net](https://jazz.net/forum/questions/241237/why-ole-object-is-not-visible-after-importing-reqif-file-in-to-doors)

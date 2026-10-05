@@ -1,0 +1,9 @@
+# ChangeReqIf - empreintes SHA-256 (Syncheo SAS)
+#
+# Verifiez l'integrite d'un fichier telecharge avec, sous Windows PowerShell :
+#     Get-FileHash .\change.ps1 -Algorithm SHA256
+# puis comparez la valeur affichee a celle ci-dessous (insensible a la casse).
+
+ef05de15b35328d2acd35fca3fb93c8f1f2ab36b31cd3430ff3914523880530e  change.bat
+f46a785778785131d1fa8e006da2ced1c07ee7b61526e46532dd15df6e323706  change.ps1
+ce72b9509721bab5b1be4749618bd3df2fc11e53499f16d07c27a2edcbe34ce5  README.md
