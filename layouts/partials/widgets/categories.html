@@ -1,0 +1,31 @@
+{{/* Surcharge du thème : ne compte et n'affiche que les articles de blog. */}}
+{{ if .Site.Params.widgets.categories }}
+{{ if isset .Site.Taxonomies "categories" }}
+{{ $current := . }}
+{{ $sections := .Site.Params.mainSections }}
+{{ $visible := dict }}
+{{ range $name, $items := .Site.Taxonomies.categories }}
+  {{ $n := len (where $items.Pages "Type" "in" $sections) }}
+  {{ if gt $n 0 }}{{ $visible = merge $visible (dict $name $n) }}{{ end }}
+{{ end }}
+{{ if gt (len $visible) 0 }}
+<div class="panel panel-default sidebar-menu">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ i18n "categoriesTitle" }}</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="nav nav-pills nav-stacked">
+            {{ range $name, $n := $visible }}
+            <li {{ if eq $current.RelPermalink ($name | urlize | lower | printf "/categories/%s/") }}class="active"{{ end }}>
+                <a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | upper }} ({{ $n }})</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+</div>
+{{ end }}
+{{ end }}
+{{ end }}

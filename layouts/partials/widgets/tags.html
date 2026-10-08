@@ -1,0 +1,33 @@
+{{/* Surcharge du thème : n'affiche que les tags ayant au moins un article de blog
+     (les tags des pages produits menaient à des pages de liste vides). */}}
+{{ if .Site.Params.widgets.tags }}
+{{ if isset .Site.Taxonomies "tags" }}
+{{ $current := . }}
+{{ $sections := .Site.Params.mainSections }}
+{{ $visible := slice }}
+{{ range $name, $items := .Site.Taxonomies.tags }}
+  {{ if gt (len (where $items.Pages "Type" "in" $sections)) 0 }}
+    {{ $visible = $visible | append $name }}
+  {{ end }}
+{{ end }}
+{{ if gt (len $visible) 0 }}
+<div class="panel sidebar-menu">
+
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ i18n "tagsTitle" }}</h3>
+    </div>
+
+    <div class="panel-body">
+        <ul class="tag-cloud">
+            {{ range $name := $visible }}
+            <li {{ if eq $current.RelPermalink (printf "%s/%s/" ("tags" | relLangURL) ($name | urlize | lower)) }}class="active"{{ end }}>
+                <a href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}"><i class="fas fa-tags"></i> {{ $name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+</div>
+{{ end }}
+{{ end }}
+{{ end }}
